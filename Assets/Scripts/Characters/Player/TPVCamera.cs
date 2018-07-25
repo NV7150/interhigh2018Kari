@@ -16,12 +16,16 @@ public class TPVCamera : MonoBehaviour {
 	public float SlideDistanceM = 0f;       // カメラを横にスライドさせる；プラスの時右へ，マイナスの時左へ[m]
 	public float HeightM = 1.2f;            // 注視点の高さ[m]
 	public float RotationSensitivity = 300f;// 感度
+
+	private int bgLayerMask;
 	
 	void Start () {
 		if(Target == null) {
 			Debug.LogError("ターゲットが設定されていない");
 			Application.Quit();
 		}
+
+		bgLayerMask = LayerMask.GetMask("BackGround");
 	}
 
 	void FixedUpdate () {
@@ -51,5 +55,25 @@ public class TPVCamera : MonoBehaviour {
 
 		// カメラを横にずらして中央を開ける
 		transform.position = transform.position + transform.right * SlideDistanceM;
+		
+		adjustToSeePL(lookAt);
+	}
+
+	void adjustToSeePL(Vector3 lookAt) {
+		//カメラからプレイヤーにレイを飛ばす
+		Ray camToPlRay = new Ray(transform.position,Target.position + new Vector3(0,1.25f,0) - transform.position);
+		RaycastHit hit;
+		if (Physics.Raycast(camToPlRay,out hit)) {
+			Debug.DrawLine(transform.position,hit.point);
+			//プレイヤーに当たらなかったら
+			if (!hit.collider.CompareTag("Player")) {
+				Ray plTocamRay = new Ray(Target.position,transform.position - Target.position + new Vector3(0,1.25f,0) );
+				RaycastHit nearestHit;
+				if (Physics.Raycast(plTocamRay,out nearestHit,DistanceToPlayerM,bgLayerMask)) {
+					//距離を調整
+					transform.position = lookAt - transform.forward * nearestHit.distance;
+				}
+			}
+		}
 	}
 }

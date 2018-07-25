@@ -64,8 +64,7 @@ namespace Characters.Enemy {
                 bool isPlayerInRange = false;
 
                 //プレイヤー方向にレイを飛ばす
-                var ray = new Ray(transform.position + new Vector3(0, 1, 0),
-                    player.transform.position - transform.position);
+                var ray = new Ray(transform.position + new Vector3(0, 1, 0),player.transform.position - transform.position);
                 RaycastHit hit;
                 //プレイヤーを発見できた方向に向かう
                 if (Physics.Raycast(ray, out hit, searchRange)) {
