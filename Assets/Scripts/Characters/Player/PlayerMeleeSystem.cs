@@ -9,12 +9,20 @@ namespace Characters.Player{
         /// アニメーターコンポーネント
         /// </summary>
         public Animator animator;
+
+        public Camera cam;
+        private AimIK ik;
+
+        void Start() {
+            ik = GetComponent<AimIK>();
+        }
 	
         // Update is called once per frame
         void Update () {
             float atk = Input.GetAxis("Fire1");
             if(atk == 1f)
                 Attack();
+            searchAim();
         }
         
         /// <summary>
@@ -22,6 +30,34 @@ namespace Characters.Player{
         /// </summary>
         void Attack(){
            animator.SetBool("Attack",true);
+        }
+        
+        /// <summary>
+        /// 銃口の向き（AimIKの位置）を修正します。
+        /// update毎に呼ばれます。
+        /// </summary>
+        void searchAim() {
+            //カメラからRayを発信
+            var ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+            RaycastHit hit;
+            //とりあえずPlayer以外なら命中判定
+            if (Physics.Raycast(ray, out hit,100) && !hit.collider.gameObject.CompareTag("Player")) {
+                //物体に当たればそっちを向く
+                ik.solver.IKPosition = hit.point;
+                //距離を更新
+            } else {
+                //Rayの終端を計算//
+                //元となるベクトル（射程）
+                var vector = new Vector3(0,0,100);
+                //射程をカメラの回転度分回転
+                vector = cam.transform.rotation * vector;
+                //カメラのpositionを加算
+                vector = cam.transform.position + vector;
+			
+                //Rayの終端を向く
+                ik.solver.IKPosition = vector;
+                //距離は最大距離
+            }
         }
     }
 }

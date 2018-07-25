@@ -30,10 +30,10 @@ public class TPVCamera : MonoBehaviour {
 		var lookAt = Target.position + Vector3.up * HeightM;
 		
 		// カメラがプレイヤーの真上や真下にあるときにそれ以上回転させないようにする
-		if(transform.forward.y > 0.5f && rotY < 0) {
+		if(transform.forward.y > 0.3f && rotY < 0) {
 			rotY = 0;
 		}
-		if(transform.forward.y < -0.5f && rotY > 0) {
+		if(transform.forward.y < -0.4f && rotY > 0) {
 			rotY = 0;
 		}
 		transform.RotateAround(lookAt, transform.right, rotY);

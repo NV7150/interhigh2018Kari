@@ -69,7 +69,6 @@ namespace Characters.Enemy {
 
             if (nav.remainingDistance <= nav.stoppingDistance) {
                 nav.isStopped = true;
-                Debug.Log("called");
             }
             return nav.isStopped;
         }

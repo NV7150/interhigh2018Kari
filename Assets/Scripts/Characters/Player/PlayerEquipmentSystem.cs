@@ -39,6 +39,8 @@ namespace Characters.Player {
 	    /// AimIK
 	    /// </summary>
 	    private AimIK aimIk;
+
+	    private bool pressed = false;
 	    
         // Use this for initialization
         void Start () {
@@ -51,8 +53,12 @@ namespace Characters.Player {
         // Update is called once per frame
         void Update () {
 	        float change = Input.GetAxis("ChangeWeapon");
-	        if (change == 1)
+	        if (change == 1 && !pressed) {
 		        switchWeapon();
+		        pressed = true;
+	        } else if(change == 0){
+		        pressed = false;
+	        }
         }
 
 	    private void switchWeapon() {
@@ -69,6 +75,7 @@ namespace Characters.Player {
 		    meleeWp.SetActive(false);
 		    shootWp.SetActive(true);
 		    //aimIKの対象を射撃武器に変更
+		    aimIk.enabled = true;
 		    aimIk.solver.axis = new Vector3(1,0,0);
 		    aimIk.solver.transform = shootAim.transform;
 		    aimIk.solver.target = null;
@@ -87,9 +94,7 @@ namespace Characters.Player {
 		    meleeWp.SetActive(true);
 		    shootWp.SetActive(false);
 		    //aimIKの対象を近接武器に変更
-		    aimIk.solver.axis = new Vector3(0,1,0);
-		    aimIk.solver.transform = meleeAim.transform;
-		    aimIk.solver.target = meleeAim;
+		    aimIk.enabled = false;
 		    //各武器システムの有効化
 		    meleeSys.enabled = true;
 		    shootSys.enabled = false;
