@@ -514,8 +514,6 @@
             <e p="Player" t="Include">
               <e p="PlayerEquipmentSystem.cs" t="Include" />
               <e p="PlayerMeleeSystem.cs" t="Include" />
-              <e p="PlayerMotionSystem.cs" t="Include" />
-              <e p="PlayerMotionSystemTest.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
               <e p="PlayerNotifySystem.cs" t="Include" />
               <e p="PlayerShootingSystem.cs" t="Include" />

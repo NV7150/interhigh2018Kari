@@ -31,7 +31,6 @@ namespace Characters.Enemy {
                         attackingFunc();
                         break;
             }
-            Debug.Log(stateMan.State);
         }
 
         private void findingFunc() {

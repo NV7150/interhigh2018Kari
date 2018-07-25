@@ -37,6 +37,11 @@ public class TPVCamera : MonoBehaviour {
 			rotY = 0;
 		}
 		transform.RotateAround(lookAt, transform.right, rotY);
+		
+		//なんかの拍子にカメラが反対側行ったら戻す
+		if (Math.Abs(Target.forward.normalized.z - transform.forward.normalized.z) >= 1) {
+			transform.RotateAround(lookAt,Target.up,180);
+		}
 
 		// カメラとプレイヤーとの間の距離を調整
 		transform.position = lookAt - transform.forward * DistanceToPlayerM;
