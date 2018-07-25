@@ -40,6 +40,7 @@ namespace Characters.Enemy {
         /// </summary>
         /// <param name="other">感知したトリガー</param>
         private void OnTriggerStay(Collider other) {
+            Debug.Log("called");
             if (other.CompareTag("Player")) {
                 if (player == null)
                     player = other.gameObject;
@@ -57,20 +58,34 @@ namespace Characters.Enemy {
             //プレイヤーが発見されていない時の例外
             if(player == null)
                 throw new Exception("this enemy hasn't found player yet.");
-            //プレイヤー方向にレイを飛ばす
-            var ray = new Ray(transform.position + new Vector3(0,1,0),player.transform.position - transform.position);
-            RaycastHit hit;
-            //プレイヤーを発見できた方向に向かう
-            if (Physics.Raycast(ray, out hit, searchRange)) {
-                if (hit.collider.CompareTag("Player")) {
-                    nav.destination = player.transform.position;
-                }
-            }
+            if (!nav.pathPending) {
 
-            if (nav.remainingDistance <= nav.stoppingDistance) {
-                nav.isStopped = true;
+                //プレイヤーが視界内にいるかどうか
+                bool isPlayerInRange = false;
+
+                //プレイヤー方向にレイを飛ばす
+                var ray = new Ray(transform.position + new Vector3(0, 1, 0),
+                    player.transform.position - transform.position);
+                RaycastHit hit;
+                //プレイヤーを発見できた方向に向かう
+                if (Physics.Raycast(ray, out hit, searchRange)) {
+                    if (hit.collider.CompareTag("Player")) {
+                        nav.destination = player.transform.position;
+                        isPlayerInRange = true;
+                        Debug.Log(transform.position + "" + nav.destination);
+                    }
+                }
+
+                if (nav.remainingDistance <= nav.stoppingDistance) {
+                    nav.isStopped = true;
+                } else {
+                    nav.isStopped = false;
+                }
+
+                return nav.isStopped && !isPlayerInRange;
+            } else {
+                return false;
             }
-            return nav.isStopped;
         }
     }
 }
