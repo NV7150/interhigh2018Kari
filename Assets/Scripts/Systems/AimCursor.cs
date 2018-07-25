@@ -29,10 +29,6 @@ public class AimCursor : MonoBehaviour {
 	/// 弾の最大射程で、カメラに映っている四角形の高さ
 	/// </summary>
 	private float hitSclHeight;
-	/// <summary>
-	/// 弾の最大射程での命中範囲の半径
-	/// </summary>
-	private float hitSclRad;
 	
 	
 	// Use this for initialization
@@ -40,18 +36,19 @@ public class AimCursor : MonoBehaviour {
 		shootSys = player.GetComponent<PlayerShootingSystem>();
 		//各種値を計算
 		hitSclHeight = shootSys.ShootRange * 2.0f * Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad);
-		hitSclRad = Mathf.Sin(shootSys.shootWide * Mathf.PI / 180f) * shootSys.ShootRange;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//最大射程でのカメラに映る範囲の高さ / 命中円の半径 * UIスクリーン高さ ＝ UIスクリーンの高さに対する命中円の半径の大きさ
-		var radius = hitSclRad / hitSclHeight * Screen.height;
+		//最大射程時の命中円の半径 / 最大射程でのカメラに映る範囲の高さ * UIスクリーンの高さ ＝ UIスクリーンの高さに対する命中円の半径の大きさ
+		var radius = shootSys.ShootWide / hitSclHeight * Screen.height;
 		
-		//最大射程に対してどれくらいの距離の物体にロックしてるか計算
-		float distRate = shootSys.RockDistance / shootSys.ShootRange;
-		//命中円の半径を計算
-		float screenRad = distRate * radius + 6.25f;
+		//ロックしてる部分による補正値
+		var distRate = shootSys.RockDistance / shootSys.ShootRange;
+		
+		//最終計算
+		float screenRad = radius * distRate + 6.25f;
+		
 		//各オブジェクトに反映
 		cursorUp.rectTransform.localPosition = new Vector3(0,screenRad);
 		cursorDown.rectTransform.localPosition = new Vector3(0,-screenRad);

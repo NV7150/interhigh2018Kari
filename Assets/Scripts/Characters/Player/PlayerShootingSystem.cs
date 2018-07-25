@@ -102,11 +102,18 @@ public class PlayerShootingSystem : MonoBehaviour {
 	/// 射撃します
 	/// </summary>
 	void shoot() {
-		//ランダムなベクトルを生成（弾はtransform.upで前進が前提）→正規化（最大ぶれ） * ランダム値（ぶれ率）
-		var vector = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f));
-		vector = vector.normalized * Random.Range(0f,shootWide);
-		//仮
-		var obj = Instantiate(bulletPrefab,shootFrom.position,Quaternion.Euler(ik.solver.transform.rotation.eulerAngles + new Vector3(0,0,-90)));
-		obj.transform.Rotate(vector);
+		//ワールド軸から見たマズルの角度
+		var forwardDirection = Quaternion.FromToRotation(Vector3.forward, shootFrom.forward);
+		
+		//(半径１の円周常にあるランダムなある一点の一般化)　* (0~shootRange * (rockdis * shootrange)によって中心〜円周までの割合を決定)
+		var randomCerclePoint = new Vector2(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f)).normalized * Random.Range(0f,shootWide * (rockDistance / shootRange));
+		//上を三次元化：zにはrockdis
+		var vector = forwardDirection * new Vector3(randomCerclePoint.x,randomCerclePoint.y,rockDistance);
+		
+		//射撃
+		var shootRay = new Ray(shootFrom.position,vector);
+		var hit = new RaycastHit();
+		if (Physics.Raycast(shootRay,out hit,shootRange)) {
+		}
 	}
 }
