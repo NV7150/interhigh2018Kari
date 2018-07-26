@@ -60,6 +60,7 @@ public class PlayerShootingSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		searchAim();
 
 		float atk = Input.GetAxis("Fire1");
