@@ -117,5 +117,13 @@ namespace Characters.Enemy {
                 }
             }
         }
+        
+        /// <summary>
+        /// ナビゲーションの目的地を設定します
+        /// </summary>
+        /// <param name="pos"></param>
+        public void setDistnation(Vector3 pos) {
+            nav.SetDestination(pos);
+        }
     }
 }
