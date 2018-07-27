@@ -7,8 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	private CharacterController _characterController;
 
 	private readonly int SPEED = 500;
-	private int HASH_WALK_H = Animator.StringToHash("walkH");
-	private int HASH_WALK_V = Animator.StringToHash("walkV");
+	private int HASH_WALK = Animator.StringToHash("speed");
 	private float SPEED_DAMP = 0.1f;
 	
 	// Use this for initialization
@@ -36,8 +35,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Animate(float h,float v) {
-		_animator.SetFloat(HASH_WALK_H,h,SPEED_DAMP,Time.deltaTime);
-		_animator.SetFloat(HASH_WALK_V,v,SPEED_DAMP,Time.deltaTime);
+		_animator.SetFloat(HASH_WALK,v,SPEED_DAMP,Time.deltaTime);
 	}
 	
 	void Turn() {

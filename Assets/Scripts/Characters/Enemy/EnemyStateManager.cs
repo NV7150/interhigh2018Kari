@@ -2,11 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStateManager : MonoBehaviour {
-    private EnemyState state = EnemyState.FINDING;
+namespace Characters.Enemy {
+    public class EnemyStateManager : MonoBehaviour {
+        /// <summary>
+        /// 現在のエネミーのステート
+        /// </summary>
+        private EnemyState state = EnemyState.FINDING;
+        
+        /// <summary>
+        /// 現在発見したプレイヤー
+        /// </summary>
+        private Transform player;
 
-    public EnemyState State {
-        get { return state; }
-        set { state = value; }
+        public EnemyState State {
+            get { return state; }
+            set { state = value; }
+        }
+        
+        public Transform Player {
+            get { return player; }
+            set { player = value; }
+        }
     }
 }
+

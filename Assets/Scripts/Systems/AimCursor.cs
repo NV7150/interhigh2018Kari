@@ -41,7 +41,7 @@ public class AimCursor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//最大射程時の命中円の半径 / 最大射程でのカメラに映る範囲の高さ * UIスクリーンの高さ ＝ UIスクリーンの高さに対する命中円の半径の大きさ
-		var radius = shootSys.ShootWide / hitSclHeight * Screen.height;
+		var radius = (shootSys.ShootWide * shootSys.RockDistance / 10) / hitSclHeight * Screen.height;
 		
 		//ロックしてる部分による補正値
 		var distRate = shootSys.RockDistance / shootSys.ShootRange;

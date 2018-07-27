@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnemyState{
-    FINDING,
-    FOUND,
-    ATTACKING,
-    DEAD
+namespace Characters.Enemy {
+    public enum EnemyState{
+        FINDING,
+        FOUND,
+        ATTACKING,
+        DEAD
+    }
 }
+

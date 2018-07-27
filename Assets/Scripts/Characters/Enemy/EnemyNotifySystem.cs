@@ -13,12 +13,6 @@ namespace Characters.Enemy {
         private EnemyStateManager stateMan;
         
         /// <summary>
-        /// プレイヤー
-        /// notifyで初期化される
-        /// </summary>
-        private Transform player;
-        
-        /// <summary>
         /// アタッチされているEnemyMotionSystem
         /// </summary>
         private EnemyMotionSystem enemyMotion;
@@ -26,7 +20,7 @@ namespace Characters.Enemy {
         /// <summary>
         /// 視界の距離
         /// </summary>
-        public float seeRange = 100;
+        public float seeRange = 1000;
         
         /// <summary>
         /// 隠密判定を行う間隔
@@ -38,11 +32,22 @@ namespace Characters.Enemy {
         /// 隠密判定を続けるかのフラグ
         /// </summary>
         private bool isInJudge = false;
+
+        private bool isCoroutineStarted = false;
+
+        private Transform foundPlayer;
         
         // Use this for initialization
         void Start() {
             stateMan = GetComponent<EnemyStateManager>();
             enemyMotion = GetComponent<EnemyMotionSystem>();
+        }
+
+        private void Update() {
+            if (isCoroutineStarted && isEnemySeeingPlayer(foundPlayer)) {
+                notified(foundPlayer);
+                isInJudge = false;
+            }
         }
 
         /// <summary>
@@ -52,14 +57,13 @@ namespace Characters.Enemy {
         private void OnTriggerEnter(Collider other) {
             //プレイヤーを感知したら
             if (other.CompareTag("Player")) {
-                player = other.transform;
-                
+                foundPlayer = other.transform;
                 //プレイヤーを視認していれば無条件で発見
-                if (isEnemySeeingPlayer()) {
-                    notified();
+                if (isEnemySeeingPlayer(foundPlayer)) {
+                    notified(foundPlayer);
                 } else {
                     //それ以外なら隠密判定（コルーチン）を開始
-                    StartCoroutine(judgeNotifyCoroutine());
+                    StartCoroutine(judgeNotifyCoroutine(foundPlayer));
                 }
             }
         }
@@ -78,15 +82,15 @@ namespace Characters.Enemy {
         /// このエネミーがプレイヤーを視認しているかの判定
         /// </summary>
         /// <returns>視認しているならtrue</returns>
-        private bool isEnemySeeingPlayer() {
+        private bool isEnemySeeingPlayer(Transform player) {
             //プレイヤーとの間に障害物がなければ
             RaycastHit hit;
-            if(Physics.Linecast(transform.position, player.position,out hit)){
+            if(Physics.Linecast(transform.position + new Vector3(0,1,0), player.position + new Vector3(0,1,0),out hit)){
                 if (hit.collider.CompareTag("Player")) {
                     //かつ、視認範囲内なら
                     if (Vector3.Distance(transform.position, player.position) <= seeRange) {
-                        //かつ、zプレイヤーがエネミーの100度以内の位置なら視認していると判定
-                        if (Vector3.Angle(transform.forward, player.forward) >= 100) {
+                        //かつ、プレイヤーがエネミーの100度以内の位置なら視認していると判定
+                        if (Vector3.Angle(transform.forward, player.position - transform.position) <= 100) {
                             return true;
                         }
                     }
@@ -99,9 +103,9 @@ namespace Characters.Enemy {
         /// <summary>
         /// エネミーがプレイヤーに気づいた時の処理
         /// </summary>
-        private void notified() {
-            if (enemyMotion.Player == null) {
-                enemyMotion.Player = player.transform;
+        private void notified(Transform player) {
+            if (stateMan.Player == null) {
+                stateMan.Player = player.transform;
             }
             //目的地を設定
             enemyMotion.setDistnation(player.position);
@@ -111,17 +115,19 @@ namespace Characters.Enemy {
         /// <summary>
         /// 隠密判定を行うコルーチン
         /// </summary>
-        private IEnumerator judgeNotifyCoroutine() {
-            
+        private IEnumerator judgeNotifyCoroutine(Transform player) {
+            isCoroutineStarted = true;
             isInJudge = true;
             while (isInJudge) {
                 //隠密判定に勝利したらコルーチン終了
                 if (judgeNotify()) {
-                    notified();
+                    notified(player);
                     break;
                 }
                 yield return new WaitForSeconds(judgeInterval);
             }
+
+            isCoroutineStarted = false;
         }
         
         /// <summary>

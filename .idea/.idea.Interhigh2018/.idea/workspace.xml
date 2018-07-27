@@ -2,237 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cf78f5b-3170-4d16-9ecd-3e227e942f9c" name="デフォルト" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Interhigh2018/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Interhigh2018/.idea/contentModel.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Interhigh2018/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Interhigh2018/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Dummy.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Dummy/Dummy.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Teddy/Teddy.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Teddy/Teddy.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Idle.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Idle.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Run.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Run.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Walk.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking Walk.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Back.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Back.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Breathe.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Breathe.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Down.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Down.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Front.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Front.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Idle.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Idle.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Left.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Left.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Right.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Right.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Up.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Aim MP-40/Aim MP-40 Standing Up.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Boxing.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Boxing.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Swing Right Loop.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Swing Right Loop.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Upperbody Swing Prop.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Upperbody Swing Prop.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Walk and Run In Place.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Walk and Run In Place.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Walk.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Plugins/RootMotion/Shared Demo Assets/Humanoid Animations/Walk.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/Banner.png.meta" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/Banner.png.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/Banner_Hover.png.meta" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/Banner_Hover.png.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/Banner_Normal.png.meta" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/Banner_Normal.png.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/DownloadPB_Hover.png.meta" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/DownloadPB_Hover.png.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/DownloadPB_Normal.png.meta" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/DownloadPB_Normal.png.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/ScrollBackground_Light.png.meta" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/ScrollBackground_Light.png.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/ScrollBackground_Pro.png.meta" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/About/Images/ScrollBackground_Pro.png.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/Editor/pb_MissingScriptEditor.cs" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/Editor/pb_MissingScriptEditor.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/1H_Hero_singe_animations/51_1H_Hero@1H_sword_swing_low_left/51_1H_Hero@1H_sword_swing_low_left_humanoid.FBX.meta" afterPath="$PROJECT_DIR$/Assets/Tests/1H_Hero_singe_animations/51_1H_Hero@1H_sword_swing_low_left/51_1H_Hero@1H_sword_swing_low_left_humanoid.FBX.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Animations/FUCM02_0029_Cha01_STL01_ScrewK01.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Animations/FUCM02_0029_Cha01_STL01_ScrewK01.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Animations/FUCM05_0001_M_CMN_LJAB.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Animations/FUCM05_0001_M_CMN_LJAB.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Animations/FUCM05_0022_M_RISING_P.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Animations/FUCM05_0022_M_RISING_P.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/HalfSteps2Idle_IdleTOShortStepfwdTOIdle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/HalfSteps2Idle_IdleTOShortStepfwdTOIdle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/HalfSteps2Idle_StrafeFwdFootOverTOIdle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/HalfSteps2Idle_StrafeFwdFootOverTOIdle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/IdleR_To_IdleL_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/IdleR_To_IdleL_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/IdleR_To_IdleL_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/IdleR_To_IdleL_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_IdleToIdlesR.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_IdleToIdlesR.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_JumpUpMedium_1Hand_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_JumpUpMedium_1Hand_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_NeutralTO45IdleTONeutralIdle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_NeutralTO45IdleTONeutralIdle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_Neutral_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_Neutral_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_Neutral_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_Neutral_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_Ready.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_Ready.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_ReadyToNeutral.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_ReadyToNeutral.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_SidesSteps_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Idle_SidesSteps_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/SmallStep.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/SmallStep.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/SmallStep_IdleToIdle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/SmallStep_IdleToIdle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Walk2Idle_Idle2WalkBackward.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Idle/Walk2Idle_Idle2WalkBackward.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle2Crouch_Neutral2Crouch2Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle2Crouch_Neutral2Crouch2Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/IdleGrab_FrontHigh.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/IdleGrab_FrontHigh.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/IdleGrab_LowFront.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/IdleGrab_LowFront.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/IdleGrab_Neutral.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/IdleGrab_Neutral.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/IdleTo_BackFlipDown_High_ToIdle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/IdleTo_BackFlipDown_High_ToIdle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_CannotDown_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_CannotDown_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_CannotUp_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_CannotUp_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownHigh_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownHigh_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownHigh_Roll_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownHigh_Roll_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_BackFlip_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_BackFlip_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_FlipOnHands_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_FlipOnHands_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_FrontFlip_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_FrontFlip_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_SideFlip_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_SideFlip_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_Stride_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownLow_Stride_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownMed_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpDownMed_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpHigh_StepBack_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpHigh_StepBack_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpLow_NoHands1Step_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpLow_NoHands1Step_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpLow_NoHands_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpLow_NoHands_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpMedium_2Hands_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpMedium_2Hands_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpMedium_NoHands1Step_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_JumpUpMedium_NoHands1Step_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_ToJumpUpHigh.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Idle_ToJumpUpHigh.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Roll_To_Run.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Interacting/Roll_To_Run.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Avoiding/JogAvoid_ToLeft_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Avoiding/JogAvoid_ToLeft_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Avoiding/RunAvoid_ToLeft_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Avoiding/RunAvoid_ToLeft_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Avoiding/RunAvoid_ToRight_Both_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Avoiding/RunAvoid_ToRight_Both_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Avoiding/RunAvoid_ToRight_Both_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Avoiding/RunAvoid_ToRight_Both_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/JogAvoid_ToRight_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/JogAvoid_ToRight_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/JogBackward_NtrlFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/JogBackward_NtrlFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/JogForward_NtrlFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/JogForward_NtrlFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/JogSlide_ToRight.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/JogSlide_ToRight.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jog_LedgeStop_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jog_LedgeStop_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/JogJump_ToLeft_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/JogJump_ToLeft_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/JogJump_ToLeft_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/JogJump_ToLeft_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/RunJump_ToLeft_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/RunJump_ToLeft_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/RunJump_ToLeft_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/RunJump_ToLeft_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/RunJump_ToLeft_3.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/RunJump_ToLeft_3.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/RunJump_ToLeft_4.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/RunJump_ToLeft_4.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownHigh_Roll_Run.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownHigh_Roll_Run.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownLow_Roll_Run.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownLow_Roll_Run.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownLow_Run.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpDownLow_Run.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpHigh_Run.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpHigh_Run.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpLow_Stride_Run.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpLow_Stride_Run.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpLow_Stride_Walk.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpLow_Stride_Walk.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpMedium_2Hands_Run.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_JumpUpMedium_2Hands_Run.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_wallPush.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Jumping/Run_wallPush.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/RunBackward_NtrlFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/RunBackward_NtrlFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/RunForward_NtrlFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/RunForward_NtrlFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/RunSlide_ToRight_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/RunSlide_ToRight_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/RunSlide_ToRight_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/RunSlide_ToRight_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Run_FastStop_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Run_FastStop_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Run_LedgeStop2_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Run_LedgeStop2_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Run_LedgeStop_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Run_LedgeStop_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Sprint_LedgeStop_Idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Sprint_LedgeStop_Idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/HalfSteps2Idle_PasingLongStepTOIdle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/HalfSteps2Idle_PasingLongStepTOIdle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogBackwardTurnRight_NtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogBackwardTurnRight_NtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogBackwardTurnRight_NtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogBackwardTurnRight_NtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogBackwardTurnRight_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogBackwardTurnRight_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogForwardTurnRight_NtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogForwardTurnRight_NtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogForwardTurnRight_NtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogForwardTurnRight_NtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogForwardTurnRight_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/JogForwardTurnRight_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn135_Run_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn135_Run_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn180_Run_R_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn180_Run_R_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn180_Run_R_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn180_Run_R_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn45_Run_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn45_Run_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn90_Run_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/PlantNTurn90_Run_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunBackwardTurnRight_NtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunBackwardTurnRight_NtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunBackwardTurnRight_NtrlShort_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunBackwardTurnRight_NtrlShort_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunBackwardTurnRight_NtrlShort_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunBackwardTurnRight_NtrlShort_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunBackwardTurnRight_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunBackwardTurnRight_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunForwardTurnRight_NtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunForwardTurnRight_NtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunForwardTurnRight_NtrlShort_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunForwardTurnRight_NtrlShort_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunForwardTurnRight_NtrlShort_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunForwardTurnRight_NtrlShort_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunForwardTurnRight_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Running/Turning/RunForwardTurnRight_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Run_Impulse.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Run_Impulse.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintAvoid_ToLeft_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintAvoid_ToLeft_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintAvoid_ToRight_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintAvoid_ToRight_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintForward_NtrlFaceFwd_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintForward_NtrlFaceFwd_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintForward_NtrlFaceFwd_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintForward_NtrlFaceFwd_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintForward_NtrlFaceFwd_3.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintForward_NtrlFaceFwd_3.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintJump_ToLeft_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintJump_ToLeft_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintSlide_ToRight_R_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintSlide_ToRight_R_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintSlide_ToRight_R_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintSlide_ToRight_R_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintSlide_ToRight_R_3.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/SprintSlide_ToRight_R_3.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/Idle2Sprint_right135.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/Idle2Sprint_right135.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/Idle2Sprint_right180.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/Idle2Sprint_right180.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/Idle2Sprint_right45.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/Idle2Sprint_right45.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/Idle2Sprint_right90.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/Idle2Sprint_right90.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/PlantNTurn135_Sprint_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/PlantNTurn135_Sprint_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/PlantNTurn180_Sprint_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/PlantNTurn180_Sprint_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/PlantNTurn45_Sprint_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/PlantNTurn45_Sprint_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/PlantNTurn90_Sprint_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/PlantNTurn90_Sprint_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/SprintForwardTurnRight_NtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/SprintForwardTurnRight_NtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/SprintForwardTurnRight_NtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/SprintForwardTurnRight_NtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/SprintForwardTurnRight_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Sprinting/Turning/SprintForwardTurnRight_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeAvoid_ToLeft.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeAvoid_ToLeft.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_BWDNtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_BWDNtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_BWDNtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_BWDNtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_BWDNtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_BWDNtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_FWDNtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_FWDNtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_FWDNtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_FWDNtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_FWDNtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeInRightTurn_FWDNtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeJump_ToLeft_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeJump_ToLeft_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_BWDNtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_BWDNtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_BWDNtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_BWDNtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_BWDNtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_BWDNtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_FWDNtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_FWDNtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_FWDNtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_FWDNtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_FWDNtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafeOutRightTurn_FWDNtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafe_90HipsLeftFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafe_90HipsLeftFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafe_90HipsRightFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafe_90HipsRightFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafe_90transitionLeftRightFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/RapidStrafe_90transitionLeftRightFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeAvoid_BWD2FWD_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeAvoid_BWD2FWD_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeAvoid_FWD2BWD_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeAvoid_FWD2BWD_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_BWDNtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_BWDNtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_BWDNtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_BWDNtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_BWDNtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_BWDNtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_FWDNtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_FWDNtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_FWDNtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_FWDNtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeInRightTurn_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeOutRightTurn_NtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeOutRightTurn_NtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeOutRightTurn_NtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeOutRightTurn_NtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeOutRightTurn_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/StrafeOutRightTurn_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/Strafe_90HipsLeftFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/Strafe_90HipsLeftFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/Strafe_90HipsLeftRightTransitionFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Strafing/Strafe_90HipsLeftRightTransitionFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/SmallSteps_NeutralFaceFwdALLAnglesFwdTOBack_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/SmallSteps_NeutralFaceFwdALLAnglesFwdTOBack_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/SmallSteps_NeutralFaceFwdALLAnglesFwdTOBack_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/SmallSteps_NeutralFaceFwdALLAnglesFwdTOBack_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/Idle2Run_AllAngles.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/Idle2Run_AllAngles.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/Idle2walk_AllAngles.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/Idle2walk_AllAngles.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/SmallStepForwardTurnRight_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/SmallStepForwardTurnRight_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/SmallStepStrafeOutRightTurn_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/SmallStepStrafeOutRightTurn_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkBackwardTurnRight_NtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkBackwardTurnRight_NtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkBackwardTurnRight_NtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkBackwardTurnRight_NtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkBackwardTurnRight_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkBackwardTurnRight_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkForwardTurnRight_NtrlMedium.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkForwardTurnRight_NtrlMedium.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkForwardTurnRight_NtrlShort.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkForwardTurnRight_NtrlShort.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkForwardTurnRight_NtrlWide.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/Turning/WalkForwardTurnRight_NtrlWide.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkAvoid_ToLeft_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkAvoid_ToLeft_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkAvoid_ToRight_Both.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkAvoid_ToRight_Both.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkFWD.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkFWD.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkForward_NtrlFaceFwd.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkForward_NtrlFaceFwd.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkJump_ToLeft_R_1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkJump_ToLeft_R_1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkJump_ToLeft_R_2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/Raw Mocap Data/Animations/Walking/WalkJump_ToLeft_R_2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_hello_friendly.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_hello_friendly.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_hit_01.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_hit_01.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_idle_01.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_idle_01.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_idle_to_sword_idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_idle_to_sword_idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_listening_friendly.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_listening_friendly.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_talk_friendly.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_talk_friendly.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_walk_backward.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_walk_backward.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_walk_forward.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/no_weapon/U_human_walk_forward.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_hit_01.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_hit_01.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_idle_to_human_idle.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_idle_to_human_idle.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_slash_01.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_slash_01.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_walk_backward.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_walk_backward.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_walk_forward.fbx.meta" afterPath="$PROJECT_DIR$/Assets/Tests/rpg animations/animations/sword/U_sword_walk_forward.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_ARpose1.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_ARpose1.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_ARpose2.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_ARpose2.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_DAMAGED00.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_DAMAGED00.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_DAMAGED01.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_DAMAGED01.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_HANDUP00_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_HANDUP00_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_JUMP00.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_JUMP00.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_JUMP00B.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_JUMP00B.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_JUMP01.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_JUMP01.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_JUMP01B.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_JUMP01B.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_LOSE00.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_LOSE00.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_REFLESH00.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_REFLESH00.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_RUN00_F.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_RUN00_F.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_RUN00_L.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_RUN00_L.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_RUN00_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_RUN00_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_SLIDE00.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_SLIDE00.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_UMATOBI00.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_UMATOBI00.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT00.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT00.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT01.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT01.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT02.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT02.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT03.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT03.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT04.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WAIT04.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WALK00_B.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WALK00_B.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WALK00_F.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WALK00_F.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WALK00_L.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WALK00_L.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WALK00_R.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WALK00_R.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WIN00.fbx.meta" afterPath="$PROJECT_DIR$/Assets/UnityChan/Animations/unitychan_WIN00.fbx.meta" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" />
-      <change beforePath="$PROJECT_DIR$/UnityPackageManager/manifest.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animator/PlayerAnimator.controller" afterPath="$PROJECT_DIR$/Assets/Animator/PlayerAnimator.controller" />
+      <change beforePath="$PROJECT_DIR$/Assets/Cube.prefab" afterPath="$PROJECT_DIR$/Assets/Cube.prefab" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stagekari.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Stagekari.unity" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyMotionSystem.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyMotionSystem.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyNotifySystem.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyNotifySystem.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyState.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyState.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyStateManager.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyStateManager.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerMovement.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerMovement.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/AimCursor.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/AimCursor.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -243,62 +24,159 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlayerMovement.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerMovement.cs">
+      <file leaf-file-name="ShootingSystem.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/roots/ShootingSystem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
               <folding>
-                <marker date="1532449747368" expanded="true" signature="6:78" ph="..." />
-                <marker date="1532449747368" expanded="true" signature="124:1338" ph="{...}" />
-                <marker date="1532449747368" expanded="true" signature="443:549" ph="{...}" />
-                <marker date="1532449747368" expanded="true" signature="609:901" ph="{...}" />
-                <marker date="1532449747368" expanded="true" signature="945:1035" ph="{...}" />
-                <marker date="1532449747368" expanded="true" signature="1068:1198" ph="{...}" />
-                <marker date="1532449747368" expanded="true" signature="1214:1336" ph="{...}" />
+                <marker date="1532698144386" expanded="true" signature="6:78" ph="..." />
+                <marker date="1532698144386" expanded="true" signature="133:1010" ph="{...}" />
+                <marker date="1532698144386" expanded="true" signature="227:303" ph="{...}" />
+                <marker date="1532698144386" expanded="true" signature="370:448" ph="{...}" />
+                <marker date="1532698144386" expanded="true" signature="494:1008" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnemyNotifySystem.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EnemyNotifySystem.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyNotifySystem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="116" column="31" lean-forward="false" selection-start-line="116" selection-start-column="31" selection-end-line="116" selection-end-column="31" />
+            <state relative-caret-position="12">
+              <caret line="64" column="42" lean-forward="false" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
               <folding>
-                <marker date="1532619774339" expanded="true" signature="6:136" ph="..." />
-                <marker date="1532619774339" expanded="true" signature="165:3948" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="218:3946" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="228:286" ph="/// ステートマネージャ ... " />
-                <marker date="1532619774339" expanded="true" signature="348:428" ph="/// プレイヤー ... " />
-                <marker date="1532619774339" expanded="true" signature="480:555" ph="/// アタッチされているEnemyMotionSystem ... " />
-                <marker date="1532619774339" expanded="true" signature="612:666" ph="/// 視界の距離 ... " />
-                <marker date="1532619774339" expanded="true" signature="721:796" ph="/// 隠密判定を行う間隔 ... " />
-                <marker date="1532619774339" expanded="true" signature="857:919" ph="/// 隠密判定を続けるかのフラグ ... " />
-                <marker date="1532619774339" expanded="true" signature="1029:1159" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="1169:1291" ph="/// プレイヤーが感知させる範囲に引っかかった時の処理 ... " />
-                <marker date="1532619774339" expanded="true" signature="1344:1761" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="1416:1751" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="1558:1609" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="1779:1895" ph="/// 感知させる範囲から抜け出した時の処理 ... " />
-                <marker date="1532619774339" expanded="true" signature="1947:2053" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="1993:2043" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="2071:2187" ph="/// このエネミーがプレイヤーを視認しているかの判定 ... " />
-                <marker date="1532619774339" expanded="true" signature="2231:2861" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="2370:2824" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="2427:2810" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="2553:2792" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="2702:2770" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="2871:2939" ph="/// エネミーがプレイヤーに気づいた時の処理 ... " />
-                <marker date="1532619774339" expanded="true" signature="2972:3222" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="3018:3088" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="3240:3301" ph="/// 隠密判定を行うコルーチン ... " />
-                <marker date="1532619774339" expanded="true" signature="3353:3667" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="3428:3657" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="3501:3579" ph="{...}" />
-                <marker date="1532619774339" expanded="true" signature="3685:3787" ph="/// 隠密判定の内容 ... " />
-                <marker date="1532619774339" expanded="true" signature="3823:3940" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="6:136" ph="..." />
+                <marker date="1532673542578" expanded="true" signature="165:4311" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="218:4309" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="228:286" ph="/// ステートマネージャ ... " />
+                <marker date="1532673542578" expanded="true" signature="348:423" ph="/// アタッチされているEnemyMotionSystem ... " />
+                <marker date="1532673542578" expanded="true" signature="480:534" ph="/// 視界の距離 ... " />
+                <marker date="1532673542578" expanded="true" signature="590:665" ph="/// 隠密判定を行う間隔 ... " />
+                <marker date="1532673542578" expanded="true" signature="726:788" ph="/// 隠密判定を続けるかのフラグ ... " />
+                <marker date="1532673542578" expanded="true" signature="988:1118" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="1150:1323" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="1224:1313" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="1333:1455" ph="/// プレイヤーが感知させる範囲に引っかかった時の処理 ... " />
+                <marker date="1532673542578" expanded="true" signature="1508:1946" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="1580:1936" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="1721:1783" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="1964:2080" ph="/// 感知させる範囲から抜け出した時の処理 ... " />
+                <marker date="1532673542578" expanded="true" signature="2132:2238" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="2178:2228" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="2256:2372" ph="/// このエネミーがプレイヤーを視認しているかの判定 ... " />
+                <marker date="1532673542578" expanded="true" signature="2432:3125" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="2613:3088" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="2670:3074" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="2796:3056" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="2966:3034" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="3135:3203" ph="/// エネミーがプレイヤーに気づいた時の処理 ... " />
+                <marker date="1532673542578" expanded="true" signature="3252:3496" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="3295:3362" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="3514:3575" ph="/// 隠密判定を行うコルーチン ... " />
+                <marker date="1532673542578" expanded="true" signature="3643:4030" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="3744:3979" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="3817:3901" ph="{...}" />
+                <marker date="1532673542578" expanded="true" signature="4048:4150" ph="/// 隠密判定の内容 ... " />
+                <marker date="1532673542578" expanded="true" signature="4186:4303" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyAttackSystem.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyAttackSystem.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+              <folding>
+                <marker date="1532603781147" expanded="true" signature="6:78" ph="..." />
+                <marker date="1532603781147" expanded="true" signature="127:278" ph="{...}" />
+                <marker date="1532603781147" expanded="true" signature="207:214" ph="{...}" />
+                <marker date="1532603781147" expanded="true" signature="269:276" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerShootingSystem.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="109" column="106" lean-forward="false" selection-start-line="109" selection-start-column="106" selection-end-line="109" selection-end-column="106" />
+              <folding>
+                <marker date="1532705707742" expanded="false" signature="6:104" ph="..." />
+                <marker date="1532705707742" expanded="true" signature="156:2741" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="159:233" ph="/// 射撃の触れる幅 ... " />
+                <marker date="1532705707742" expanded="true" signature="260:313" ph="/// 射程 ... " />
+                <marker date="1532705707742" expanded="true" signature="343:387" ph="/// 銃口のオブジェクト ... " />
+                <marker date="1532705707742" expanded="true" signature="421:470" ph="/// 銃弾オブジェクトのプレファブ ... " />
+                <marker date="1532705707742" expanded="true" signature="507:555" ph="/// TPSカメラのオブジェクト ... " />
+                <marker date="1532705707742" expanded="true" signature="579:619" ph="/// AimIK ... " />
+                <marker date="1532705707742" expanded="true" signature="642:688" ph="/// ロック中の物体への距離 ... " />
+                <marker date="1532705707742" expanded="true" signature="743:775" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="802:835" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="864:899" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="948:1011" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="1066:1157" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="1161:1238" ph="/// 銃口の向き（AimIKの位置）を修正します。 ... " />
+                <marker date="1532705707742" expanded="true" signature="1257:2033" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="1498:1637" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="1648:1679" ph="/* Rayの終端を計算 ... */" />
+                <marker date="1532705707742" expanded="true" signature="1856:1949" ph="/* vector += new Vector3(shootFrom.position.x - cam.transform.position.x,0); ... */" />
+                <marker date="1532705707742" expanded="true" signature="2036:2076" ph="/// 射撃します ... " />
+                <marker date="1532705707742" expanded="true" signature="2091:2739" ph="{...}" />
+                <marker date="1532705707742" expanded="true" signature="2602:2736" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyState.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyState.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+              <folding>
+                <marker date="1532659357797" expanded="false" signature="6:78" ph="..." />
+                <marker date="1532659357797" expanded="true" signature="107:208" ph="{...}" />
+                <marker date="1532659357797" expanded="true" signature="135:206" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeaponHide.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Tests/rpg animations/scripts/WeaponHide.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <marker date="1489509740000" expanded="false" signature="7:45" ph="..." />
+                <marker date="1489509740000" expanded="true" signature="86:689" ph="{...}" />
+                <marker date="1489509740000" expanded="true" signature="256:324" ph="{...}" />
+                <marker date="1489509740000" expanded="true" signature="365:443" ph="{...}" />
+                <marker date="1489509740000" expanded="true" signature="462:687" ph="{...}" />
+                <marker date="1489509740000" expanded="true" signature="561:618" ph="{...}" />
+                <marker date="1489509740000" expanded="true" signature="623:681" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyStateManager.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyStateManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding>
+                <marker date="1532659618485" expanded="true" signature="6:78" ph="..." />
+                <marker date="1532659618485" expanded="true" signature="107:644" ph="{...}" />
+                <marker date="1532659618485" expanded="true" signature="160:642" ph="{...}" />
+                <marker date="1532659618485" expanded="true" signature="170:231" ph="/// 現在のエネミーのステート ... " />
+                <marker date="1532659618485" expanded="true" signature="304:364" ph="/// 現在発見したプレイヤー ... " />
+                <marker date="1532659618485" expanded="true" signature="432:512" ph="{...}" />
+                <marker date="1532659618485" expanded="true" signature="554:636" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -331,18 +209,18 @@
       <file leaf-file-name="AimCursor.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Systems/AimCursor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="49" column="52" lean-forward="false" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+            <state relative-caret-position="540">
+              <caret line="49" column="46" lean-forward="false" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
               <folding>
-                <marker date="1532532629471" expanded="false" signature="6:114" ph="..." />
-                <marker date="1532532629471" expanded="true" signature="155:1514" ph="{...}" />
-                <marker date="1532532629471" expanded="true" signature="158:210" ph="/// 各カーソルのImageオブジェクト ... " />
-                <marker date="1532532629471" expanded="true" signature="316:366" ph="/// プレイヤのGameObject ... " />
-                <marker date="1532532629471" expanded="true" signature="395:433" ph="/// カメラ ... " />
-                <marker date="1532532629471" expanded="true" signature="455:518" ph="/// PlayerShootingSystemのコンポーネント ... " />
-                <marker date="1532532629471" expanded="true" signature="560:618" ph="/// 弾の最大射程で、カメラに映っている四角形の高さ ... " />
-                <marker date="1532532629471" expanded="true" signature="699:869" ph="{...}" />
-                <marker date="1532532629471" expanded="true" signature="924:1510" ph="{...}" />
+                <marker date="1532704901003" expanded="true" signature="6:114" ph="..." />
+                <marker date="1532704901003" expanded="true" signature="155:1545" ph="{...}" />
+                <marker date="1532704901003" expanded="true" signature="158:210" ph="/// 各カーソルのImageオブジェクト ... " />
+                <marker date="1532704901003" expanded="true" signature="316:366" ph="/// プレイヤのGameObject ... " />
+                <marker date="1532704901003" expanded="true" signature="395:433" ph="/// カメラ ... " />
+                <marker date="1532704901003" expanded="true" signature="455:518" ph="/// PlayerShootingSystemのコンポーネント ... " />
+                <marker date="1532704901003" expanded="true" signature="560:618" ph="/// 弾の最大射程で、カメラに映っている四角形の高さ ... " />
+                <marker date="1532704901003" expanded="true" signature="699:869" ph="{...}" />
+                <marker date="1532704901003" expanded="true" signature="924:1541" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -351,30 +229,33 @@
       <file leaf-file-name="EnemyMotionSystem.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyMotionSystem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="181">
+              <caret line="67" column="61" lean-forward="false" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
               <folding>
-                <marker date="1532619541260" expanded="true" signature="6:136" ph="..." />
-                <marker date="1532619541260" expanded="true" signature="165:4094" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="218:4092" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="228:286" ph="/// ステートマネージャ ... " />
-                <marker date="1532619541260" expanded="true" signature="605:687" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="697:789" ph="/// 武器の射程 ... " />
-                <marker date="1532619541260" expanded="true" signature="833:948" ph="/// 未発見最終接近距離 ... " />
-                <marker date="1532619541260" expanded="true" signature="1069:1407" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="1439:2136" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="1476:1830" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="2173:2197" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="2207:2351" ph="/// プレイヤーを発見した時の処理 ... " />
-                <marker date="1532619541260" expanded="true" signature="2385:3867" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="2575:3857" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="2963:3323" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="3024:3305" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="3393:3843" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="3451:3735" ph="{...}" />
-                <marker date="1532619541260" expanded="true" signature="3546:3650" ph="/* まだ最後に見かけた地点まで到達しておらず、stopDistanceが再設定されていなかったら0.15fまで ... */" />
-                <marker date="1532619541260" expanded="true" signature="3885:3990" ph="/// ナビゲーションの目的地を設定します ... " />
-                <marker date="1532619541260" expanded="true" signature="4038:4086" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="6:136" ph="..." />
+                <marker date="1532666832686" expanded="true" signature="165:4286" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="218:4284" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="228:286" ph="/// ステートマネージャ ... " />
+                <marker date="1532666832686" expanded="true" signature="348:416" ph="/// navMeshAgentコンポーネント ... " />
+                <marker date="1532666832686" expanded="true" signature="468:523" ph="/// アニメーター ... " />
+                <marker date="1532666832686" expanded="true" signature="564:656" ph="/// 武器の射程 ... " />
+                <marker date="1532666832686" expanded="true" signature="700:815" ph="/// 未発見最終接近距離 ... " />
+                <marker date="1532666832686" expanded="true" signature="874:972" ph="/// 視覚によって追う最大範囲 ... " />
+                <marker date="1532666832686" expanded="true" signature="1093:1372" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="1404:2301" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="1441:1795" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="2018:2291" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="2338:2362" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="2372:2516" ph="/// プレイヤーを発見した時の処理 ... " />
+                <marker date="1532666832686" expanded="true" signature="2550:4059" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="2749:4049" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="3146:3515" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="3207:3497" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="3585:4035" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="3643:3927" ph="{...}" />
+                <marker date="1532666832686" expanded="true" signature="3738:3842" ph="/* まだ最後に見かけた地点まで到達しておらず、stopDistanceが再設定されていなかったら0.15fまで ... */" />
+                <marker date="1532666832686" expanded="true" signature="4077:4182" ph="/// ナビゲーションの目的地を設定します ... " />
+                <marker date="1532666832686" expanded="true" signature="4230:4278" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -385,6 +266,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>_animator</find>
+      <find>player</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -392,6 +274,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyStateManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyMotionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../LineTraceSimuration/Assets/Sencer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Tests/BulTest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -410,6 +294,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/Scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DashAttackBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/TPVCamera.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Tests/rpg animations/scripts/WeaponHide.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/roots/ShootingSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Tests/rpg animations/scripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -441,17 +327,20 @@
         <option value="$PROJECT_DIR$/Assets/Characters/Player/PlayerMotionSystemTest.cs" />
         <option value="$PROJECT_DIR$/Assets/Characters/Player/PlayerEquipmentSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Characters/Player/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Tests/rpg animations/scripts/CameraController.cs" />
         <option value="$PROJECT_DIR$/Assets/Tests/FightingUnityChan_FreeAsset/FightingUnityChan_FreeAsset/Scripts/IdleChanger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerMeleeSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/TPVCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyAttackSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyMotionSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/roots/ShootingSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyNotifySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Systems/AimCursor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyAttackSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyMotionSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyNotifySystem.cs" />
       </list>
     </option>
   </component>
@@ -539,12 +428,12 @@
       <workItem from="1529553353609" duration="1139000" />
       <workItem from="1531100143200" duration="3105000" />
       <workItem from="1532254427599" duration="245000" />
-      <workItem from="1532445494286" duration="30599000" />
+      <workItem from="1532445494286" duration="44459000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110222000" />
+    <option name="totallyTimeSpent" value="124082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -596,36 +485,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Characters/Player/PlayerMotionSystem.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Characters/Enemy/EnemyState.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Characters/Player/PlayerMeleeSystem.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Characters/Player/PlayerEquipmentSystem.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="74" column="32" lean-forward="false" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/AttackBehavior.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -930,105 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerMovement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1532449747368" expanded="true" signature="6:78" ph="..." />
-            <marker date="1532449747368" expanded="true" signature="124:1338" ph="{...}" />
-            <marker date="1532449747368" expanded="true" signature="443:549" ph="{...}" />
-            <marker date="1532449747368" expanded="true" signature="609:901" ph="{...}" />
-            <marker date="1532449747368" expanded="true" signature="945:1035" ph="{...}" />
-            <marker date="1532449747368" expanded="true" signature="1068:1198" ph="{...}" />
-            <marker date="1532449747368" expanded="true" signature="1214:1336" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyAttackSystem.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding>
-            <marker date="1532603781147" expanded="false" signature="6:78" ph="..." />
-            <marker date="1532603781147" expanded="true" signature="127:278" ph="{...}" />
-            <marker date="1532603781147" expanded="true" signature="207:214" ph="{...}" />
-            <marker date="1532603781147" expanded="true" signature="269:276" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="74" column="18" lean-forward="false" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-          <folding>
-            <marker date="1532603501043" expanded="true" signature="6:104" ph="..." />
-            <marker date="1532603501043" expanded="true" signature="156:2655" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="159:233" ph="/// 射撃の触れる幅 ... " />
-            <marker date="1532603501043" expanded="true" signature="260:313" ph="/// 射程 ... " />
-            <marker date="1532603501043" expanded="true" signature="343:387" ph="/// 銃口のオブジェクト ... " />
-            <marker date="1532603501043" expanded="true" signature="421:470" ph="/// 銃弾オブジェクトのプレファブ ... " />
-            <marker date="1532603501043" expanded="true" signature="507:555" ph="/// TPSカメラのオブジェクト ... " />
-            <marker date="1532603501043" expanded="true" signature="579:619" ph="/// AimIK ... " />
-            <marker date="1532603501043" expanded="true" signature="642:688" ph="/// ロック中の物体への距離 ... " />
-            <marker date="1532603501043" expanded="true" signature="743:775" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="802:835" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="864:899" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="948:1011" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="1066:1157" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="1161:1238" ph="/// 銃口の向き（AimIKの位置）を修正します。 ... " />
-            <marker date="1532603501043" expanded="true" signature="1257:1957" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="1498:1637" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="1648:1679" ph="/* Rayの終端を計算 ... */" />
-            <marker date="1532603501043" expanded="true" signature="1960:2000" ph="/// 射撃します ... " />
-            <marker date="1532603501043" expanded="true" signature="2015:2653" ph="{...}" />
-            <marker date="1532603501043" expanded="true" signature="2645:2650" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Systems/AimCursor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="49" column="52" lean-forward="false" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
-          <folding>
-            <marker date="1532532629471" expanded="false" signature="6:114" ph="..." />
-            <marker date="1532532629471" expanded="true" signature="155:1514" ph="{...}" />
-            <marker date="1532532629471" expanded="true" signature="158:210" ph="/// 各カーソルのImageオブジェクト ... " />
-            <marker date="1532532629471" expanded="true" signature="316:366" ph="/// プレイヤのGameObject ... " />
-            <marker date="1532532629471" expanded="true" signature="395:433" ph="/// カメラ ... " />
-            <marker date="1532532629471" expanded="true" signature="455:518" ph="/// PlayerShootingSystemのコンポーネント ... " />
-            <marker date="1532532629471" expanded="true" signature="560:618" ph="/// 弾の最大射程で、カメラに映っている四角形の高さ ... " />
-            <marker date="1532532629471" expanded="true" signature="699:869" ph="{...}" />
-            <marker date="1532532629471" expanded="true" signature="924:1510" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/TPVCamera.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
-          <folding>
-            <marker date="1532525075050" expanded="true" signature="0:196" ph="/* BEGIN MIT LICENSE BLOCK ... */" />
-            <marker date="1532525075050" expanded="false" signature="204:230" ph="..." />
-            <marker date="1532525075050" expanded="true" signature="306:2261" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="618:759" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="641:706" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="782:1583" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="1008:1026" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="1073:1091" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="1260:1314" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="1621:2259" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="1816:2256" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="1930:2252" ph="{...}" />
-            <marker date="1532525075050" expanded="true" signature="2151:2247" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -1208,73 +968,235 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerMovement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="35" lean-forward="false" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+          <folding>
+            <marker date="1532655511567" expanded="true" signature="6:78" ph="..." />
+            <marker date="1532655511567" expanded="true" signature="124:1212" ph="{...}" />
+            <marker date="1532655511567" expanded="true" signature="382:488" ph="{...}" />
+            <marker date="1532655511567" expanded="true" signature="548:840" ph="{...}" />
+            <marker date="1532655511567" expanded="true" signature="884:974" ph="{...}" />
+            <marker date="1532655511567" expanded="true" signature="1007:1072" ph="{...}" />
+            <marker date="1532655511567" expanded="true" signature="1088:1210" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyMotionSystem.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="181">
+          <caret line="67" column="61" lean-forward="false" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
           <folding>
-            <marker date="1532619541260" expanded="true" signature="6:136" ph="..." />
-            <marker date="1532619541260" expanded="true" signature="165:4094" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="218:4092" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="228:286" ph="/// ステートマネージャ ... " />
-            <marker date="1532619541260" expanded="true" signature="605:687" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="697:789" ph="/// 武器の射程 ... " />
-            <marker date="1532619541260" expanded="true" signature="833:948" ph="/// 未発見最終接近距離 ... " />
-            <marker date="1532619541260" expanded="true" signature="1069:1407" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="1439:2136" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="1476:1830" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="2173:2197" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="2207:2351" ph="/// プレイヤーを発見した時の処理 ... " />
-            <marker date="1532619541260" expanded="true" signature="2385:3867" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="2575:3857" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="2963:3323" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="3024:3305" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="3393:3843" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="3451:3735" ph="{...}" />
-            <marker date="1532619541260" expanded="true" signature="3546:3650" ph="/* まだ最後に見かけた地点まで到達しておらず、stopDistanceが再設定されていなかったら0.15fまで ... */" />
-            <marker date="1532619541260" expanded="true" signature="3885:3990" ph="/// ナビゲーションの目的地を設定します ... " />
-            <marker date="1532619541260" expanded="true" signature="4038:4086" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="6:136" ph="..." />
+            <marker date="1532666832686" expanded="true" signature="165:4286" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="218:4284" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="228:286" ph="/// ステートマネージャ ... " />
+            <marker date="1532666832686" expanded="true" signature="348:416" ph="/// navMeshAgentコンポーネント ... " />
+            <marker date="1532666832686" expanded="true" signature="468:523" ph="/// アニメーター ... " />
+            <marker date="1532666832686" expanded="true" signature="564:656" ph="/// 武器の射程 ... " />
+            <marker date="1532666832686" expanded="true" signature="700:815" ph="/// 未発見最終接近距離 ... " />
+            <marker date="1532666832686" expanded="true" signature="874:972" ph="/// 視覚によって追う最大範囲 ... " />
+            <marker date="1532666832686" expanded="true" signature="1093:1372" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="1404:2301" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="1441:1795" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="2018:2291" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="2338:2362" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="2372:2516" ph="/// プレイヤーを発見した時の処理 ... " />
+            <marker date="1532666832686" expanded="true" signature="2550:4059" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="2749:4049" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="3146:3515" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="3207:3497" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="3585:4035" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="3643:3927" ph="{...}" />
+            <marker date="1532666832686" expanded="true" signature="3738:3842" ph="/* まだ最後に見かけた地点まで到達しておらず、stopDistanceが再設定されていなかったら0.15fまで ... */" />
+            <marker date="1532666832686" expanded="true" signature="4077:4182" ph="/// ナビゲーションの目的地を設定します ... " />
+            <marker date="1532666832686" expanded="true" signature="4230:4278" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/roots/ShootingSystem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <marker date="1532698144386" expanded="true" signature="6:78" ph="..." />
+            <marker date="1532698144386" expanded="true" signature="133:1010" ph="{...}" />
+            <marker date="1532698144386" expanded="true" signature="227:303" ph="{...}" />
+            <marker date="1532698144386" expanded="true" signature="370:448" ph="{...}" />
+            <marker date="1532698144386" expanded="true" signature="494:1008" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyAttackSystem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <marker date="1532603781147" expanded="true" signature="6:78" ph="..." />
+            <marker date="1532603781147" expanded="true" signature="127:278" ph="{...}" />
+            <marker date="1532603781147" expanded="true" signature="207:214" ph="{...}" />
+            <marker date="1532603781147" expanded="true" signature="269:276" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Tests/rpg animations/scripts/WeaponHide.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <marker date="1489509740000" expanded="false" signature="7:45" ph="..." />
+            <marker date="1489509740000" expanded="true" signature="86:689" ph="{...}" />
+            <marker date="1489509740000" expanded="true" signature="256:324" ph="{...}" />
+            <marker date="1489509740000" expanded="true" signature="365:443" ph="{...}" />
+            <marker date="1489509740000" expanded="true" signature="462:687" ph="{...}" />
+            <marker date="1489509740000" expanded="true" signature="561:618" ph="{...}" />
+            <marker date="1489509740000" expanded="true" signature="623:681" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyState.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <marker date="1532659357797" expanded="false" signature="6:78" ph="..." />
+            <marker date="1532659357797" expanded="true" signature="107:208" ph="{...}" />
+            <marker date="1532659357797" expanded="true" signature="135:206" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/TPVCamera.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="75" column="13" lean-forward="false" selection-start-line="75" selection-start-column="13" selection-end-line="75" selection-end-column="13" />
+          <folding>
+            <marker date="1532525075050" expanded="true" signature="0:196" ph="/* BEGIN MIT LICENSE BLOCK ... */" />
+            <marker date="1532525075050" expanded="false" signature="204:230" ph="..." />
+            <marker date="1532525075050" expanded="true" signature="306:2261" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="618:759" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="641:706" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="782:1583" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="1008:1026" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="1073:1091" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="1260:1314" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="1621:2259" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="1816:2256" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="1930:2252" ph="{...}" />
+            <marker date="1532525075050" expanded="true" signature="2151:2247" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyStateManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1532659618485" expanded="true" signature="6:78" ph="..." />
+            <marker date="1532659618485" expanded="true" signature="107:644" ph="{...}" />
+            <marker date="1532659618485" expanded="true" signature="160:642" ph="{...}" />
+            <marker date="1532659618485" expanded="true" signature="170:231" ph="/// 現在のエネミーのステート ... " />
+            <marker date="1532659618485" expanded="true" signature="304:364" ph="/// 現在発見したプレイヤー ... " />
+            <marker date="1532659618485" expanded="true" signature="432:512" ph="{...}" />
+            <marker date="1532659618485" expanded="true" signature="554:636" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Systems/AimCursor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="49" column="46" lean-forward="false" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
+          <folding>
+            <marker date="1532704901003" expanded="true" signature="6:114" ph="..." />
+            <marker date="1532704901003" expanded="true" signature="155:1545" ph="{...}" />
+            <marker date="1532704901003" expanded="true" signature="158:210" ph="/// 各カーソルのImageオブジェクト ... " />
+            <marker date="1532704901003" expanded="true" signature="316:366" ph="/// プレイヤのGameObject ... " />
+            <marker date="1532704901003" expanded="true" signature="395:433" ph="/// カメラ ... " />
+            <marker date="1532704901003" expanded="true" signature="455:518" ph="/// PlayerShootingSystemのコンポーネント ... " />
+            <marker date="1532704901003" expanded="true" signature="560:618" ph="/// 弾の最大射程で、カメラに映っている四角形の高さ ... " />
+            <marker date="1532704901003" expanded="true" signature="699:869" ph="{...}" />
+            <marker date="1532704901003" expanded="true" signature="924:1541" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyNotifySystem.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="116" column="31" lean-forward="false" selection-start-line="116" selection-start-column="31" selection-end-line="116" selection-end-column="31" />
+        <state relative-caret-position="12">
+          <caret line="64" column="42" lean-forward="false" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
           <folding>
-            <marker date="1532619774339" expanded="true" signature="6:136" ph="..." />
-            <marker date="1532619774339" expanded="true" signature="165:3948" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="218:3946" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="228:286" ph="/// ステートマネージャ ... " />
-            <marker date="1532619774339" expanded="true" signature="348:428" ph="/// プレイヤー ... " />
-            <marker date="1532619774339" expanded="true" signature="480:555" ph="/// アタッチされているEnemyMotionSystem ... " />
-            <marker date="1532619774339" expanded="true" signature="612:666" ph="/// 視界の距離 ... " />
-            <marker date="1532619774339" expanded="true" signature="721:796" ph="/// 隠密判定を行う間隔 ... " />
-            <marker date="1532619774339" expanded="true" signature="857:919" ph="/// 隠密判定を続けるかのフラグ ... " />
-            <marker date="1532619774339" expanded="true" signature="1029:1159" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="1169:1291" ph="/// プレイヤーが感知させる範囲に引っかかった時の処理 ... " />
-            <marker date="1532619774339" expanded="true" signature="1344:1761" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="1416:1751" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="1558:1609" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="1779:1895" ph="/// 感知させる範囲から抜け出した時の処理 ... " />
-            <marker date="1532619774339" expanded="true" signature="1947:2053" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="1993:2043" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="2071:2187" ph="/// このエネミーがプレイヤーを視認しているかの判定 ... " />
-            <marker date="1532619774339" expanded="true" signature="2231:2861" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="2370:2824" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="2427:2810" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="2553:2792" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="2702:2770" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="2871:2939" ph="/// エネミーがプレイヤーに気づいた時の処理 ... " />
-            <marker date="1532619774339" expanded="true" signature="2972:3222" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="3018:3088" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="3240:3301" ph="/// 隠密判定を行うコルーチン ... " />
-            <marker date="1532619774339" expanded="true" signature="3353:3667" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="3428:3657" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="3501:3579" ph="{...}" />
-            <marker date="1532619774339" expanded="true" signature="3685:3787" ph="/// 隠密判定の内容 ... " />
-            <marker date="1532619774339" expanded="true" signature="3823:3940" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="6:136" ph="..." />
+            <marker date="1532673542578" expanded="true" signature="165:4311" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="218:4309" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="228:286" ph="/// ステートマネージャ ... " />
+            <marker date="1532673542578" expanded="true" signature="348:423" ph="/// アタッチされているEnemyMotionSystem ... " />
+            <marker date="1532673542578" expanded="true" signature="480:534" ph="/// 視界の距離 ... " />
+            <marker date="1532673542578" expanded="true" signature="590:665" ph="/// 隠密判定を行う間隔 ... " />
+            <marker date="1532673542578" expanded="true" signature="726:788" ph="/// 隠密判定を続けるかのフラグ ... " />
+            <marker date="1532673542578" expanded="true" signature="988:1118" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="1150:1323" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="1224:1313" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="1333:1455" ph="/// プレイヤーが感知させる範囲に引っかかった時の処理 ... " />
+            <marker date="1532673542578" expanded="true" signature="1508:1946" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="1580:1936" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="1721:1783" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="1964:2080" ph="/// 感知させる範囲から抜け出した時の処理 ... " />
+            <marker date="1532673542578" expanded="true" signature="2132:2238" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="2178:2228" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="2256:2372" ph="/// このエネミーがプレイヤーを視認しているかの判定 ... " />
+            <marker date="1532673542578" expanded="true" signature="2432:3125" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="2613:3088" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="2670:3074" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="2796:3056" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="2966:3034" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="3135:3203" ph="/// エネミーがプレイヤーに気づいた時の処理 ... " />
+            <marker date="1532673542578" expanded="true" signature="3252:3496" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="3295:3362" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="3514:3575" ph="/// 隠密判定を行うコルーチン ... " />
+            <marker date="1532673542578" expanded="true" signature="3643:4030" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="3744:3979" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="3817:3901" ph="{...}" />
+            <marker date="1532673542578" expanded="true" signature="4048:4150" ph="/// 隠密判定の内容 ... " />
+            <marker date="1532673542578" expanded="true" signature="4186:4303" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="109" column="106" lean-forward="false" selection-start-line="109" selection-start-column="106" selection-end-line="109" selection-end-column="106" />
+          <folding>
+            <marker date="1532705707742" expanded="false" signature="6:104" ph="..." />
+            <marker date="1532705707742" expanded="true" signature="156:2741" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="159:233" ph="/// 射撃の触れる幅 ... " />
+            <marker date="1532705707742" expanded="true" signature="260:313" ph="/// 射程 ... " />
+            <marker date="1532705707742" expanded="true" signature="343:387" ph="/// 銃口のオブジェクト ... " />
+            <marker date="1532705707742" expanded="true" signature="421:470" ph="/// 銃弾オブジェクトのプレファブ ... " />
+            <marker date="1532705707742" expanded="true" signature="507:555" ph="/// TPSカメラのオブジェクト ... " />
+            <marker date="1532705707742" expanded="true" signature="579:619" ph="/// AimIK ... " />
+            <marker date="1532705707742" expanded="true" signature="642:688" ph="/// ロック中の物体への距離 ... " />
+            <marker date="1532705707742" expanded="true" signature="743:775" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="802:835" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="864:899" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="948:1011" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="1066:1157" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="1161:1238" ph="/// 銃口の向き（AimIKの位置）を修正します。 ... " />
+            <marker date="1532705707742" expanded="true" signature="1257:2033" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="1498:1637" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="1648:1679" ph="/* Rayの終端を計算 ... */" />
+            <marker date="1532705707742" expanded="true" signature="1856:1949" ph="/* vector += new Vector3(shootFrom.position.x - cam.transform.position.x,0); ... */" />
+            <marker date="1532705707742" expanded="true" signature="2036:2076" ph="/// 射撃します ... " />
+            <marker date="1532705707742" expanded="true" signature="2091:2739" ph="{...}" />
+            <marker date="1532705707742" expanded="true" signature="2602:2736" ph="{...}" />
           </folding>
         </state>
       </provider>

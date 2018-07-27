@@ -12,19 +12,15 @@ namespace Characters.Enemy {
         /// </summary>
         private EnemyStateManager stateMan;
         
-        private EnemyNotifySystem notifySys;
-        private int foundCount = 0;
-        private readonly int NOTIFIED_LIMIT = 10;
-
+        /// <summary>
+        /// navMeshAgentコンポーネント
+        /// </summary>
         private NavMeshAgent nav;
+        
+        /// <summary>
+        /// アニメーター
+        /// </summary>
         private Animator anim;
-
-        private Transform player;
-
-        public Transform Player {
-            get { return player; }
-            set { player = value; }
-        }
 
         /// <summary>
         /// 武器の射程
@@ -37,12 +33,17 @@ namespace Characters.Enemy {
         /// プレイヤーを見失った場合、最後にプレイヤーを見失った地点にこの値の分だけ近づこうとします
         /// </summary>
         public float searchNear = 0.15f;
-
+        
+        /// <summary>
+        /// 視覚によって追う最大範囲
+        /// この長さのRayがプレイヤーに命中すれば追います
+        /// </summary>
         public float searchRange = 100;
+
+        public float rotateSpeed = 100f;
         
         private void Start() {
             stateMan = GetComponent<EnemyStateManager>();
-            notifySys = GetComponent<EnemyNotifySystem>();
             nav = GetComponent<NavMeshAgent>();
             anim = GetComponent<Animator>();
             
@@ -66,10 +67,12 @@ namespace Characters.Enemy {
             float speed = nav.desiredVelocity.magnitude;
             anim.SetFloat("speed",speed,0.1f,Time.deltaTime);
             
-            
             //プレイヤーの方を向く
-            if(stateMan.State == EnemyState.FOUND)
-                transform.LookAt(player.transform.position);
+            if(stateMan.State == EnemyState.FOUND) {
+                var relativeVector = stateMan.Player.position - transform.position;
+                var plAngle = Quaternion.LookRotation(relativeVector);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation,plAngle,rotateSpeed);
+            }
         }
 
         private void findingFunc() {
@@ -83,13 +86,13 @@ namespace Characters.Enemy {
         /// <exception cref="Exception"></exception>
         private void foundFunc() {
             //プレイヤーが発見されていない時の例外
-            if (player == null)
+            if (stateMan.Player == null)
                 throw new Exception("this enemy hasn't found player yet.");
             
             if (!nav.pathPending) {
                 //プレイヤー方向にレイを飛ばす
                 var ray = new Ray(transform.position + new Vector3(0, 1, 0),
-                    player.transform.position - transform.position);
+                    stateMan.Player.transform.position - transform.position);
                 RaycastHit hit;
                 //プレイヤーを見つけたかどうか
                 bool foundPlayer = false;
@@ -99,7 +102,7 @@ namespace Characters.Enemy {
                         //プレイヤーが視界内にいるなら武器射程までで止まる
                         nav.stoppingDistance = weaponRange;
                         //目標地点を決定
-                        nav.destination = player.transform.position;
+                        nav.destination = stateMan.Player.transform.position;
                         foundPlayer = true;
                     }
                 }

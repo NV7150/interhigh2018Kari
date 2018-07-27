@@ -86,12 +86,12 @@ public class PlayerShootingSystem : MonoBehaviour {
 		} else {
 			//Rayの終端を計算//
 			//元となるベクトル（射程）
-			var vector = new Vector3(0,0,shootRange);
+			var vector = new Vector3(0, 0,shootRange);
 			//射程をカメラの回転度分回転
 			vector = cam.transform.rotation * vector;
 			//カメラのpositionを加算
 			vector = cam.transform.position + vector;
-			
+//			vector += new Vector3(shootFrom.position.x - cam.transform.position.x,0);
 			//Rayの終端を向く
 			ik.solver.IKPosition = vector;
 			//距離は最大距離
@@ -103,18 +103,18 @@ public class PlayerShootingSystem : MonoBehaviour {
 	/// 射撃します
 	/// </summary>
 	void shoot() {
-		//ワールド軸から見たマズルの角度
-		var forwardDirection = Quaternion.FromToRotation(Vector3.forward, shootFrom.forward);
 		
-		//(半径１の円周常にあるランダムなある一点の一般化)　* (0~shootRange * (rockdis * shootrange)によって中心〜円周までの割合を決定)
-		var randomCerclePoint = new Vector2(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f)).normalized * Random.Range(0f,shootWide * (rockDistance / shootRange));
+		//(半径１の円周常にあるランダムなある一点の一般化)　* (0~shootRange)によって中心〜円周までの割合を決定) 方向だけなのでrockdistanceは関係なし
+		var randomCerclePoint = new Vector2(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f)).normalized * Random.Range(0f,shootWide * shootRange / 10);
 		//上を三次元化：zにはrockdis
-		var vector = forwardDirection * new Vector3(randomCerclePoint.x,randomCerclePoint.y,rockDistance);
+		var vector = shootFrom.rotation * new Vector3(randomCerclePoint.x,randomCerclePoint.y,shootRange);
 		
 		//射撃
 		var shootRay = new Ray(shootFrom.position,vector);
 		var hit = new RaycastHit();
 		if (Physics.Raycast(shootRay,out hit,shootRange)) {
+			Debug.DrawLine(shootFrom.position,hit.point,Color.blue);
+			Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
 		}
 	}
 }
