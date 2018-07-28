@@ -3,30 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ShootingSystem : MonoBehaviour {
+    /// <summary>
+    /// 弾のばらけ具合
+    /// </summary>
+    public abstract float ShootWide { get; }
+    
+    /// <summary>
+    /// 射程
+    /// </summary>
+    public abstract float ShootRange { get; }
+
+    /// <summary>
+    /// 射撃を行う地点のTransform
+    /// </summary>
     public Transform shootFrom;
-
-    protected float shootWide;
-
-    public float ShootWide {
-        get { return shootWide; }
-        set { shootWide = value; }
-    }
-
-    protected float shootRange;
     
-    public float ShootRange {
-        get { return shootRange; }
-        set { shootRange = value; }
-    }
-    
+    /// <summary>
+    /// 弾が飛ぶベクトルを計算します
+    /// </summary>
+    /// <returns>弾が飛ぶベクトル</returns>
     protected Vector3 getBulletVector() {
-        //ワールド軸から見たマズルの角度
-        var forwardDirection = Quaternion.FromToRotation(Vector3.forward, shootFrom.forward);
+        //半径1の円の円周上のある一点をランダムに設定
+        //そこに0~shootWideをかけることでランダムな平面円の中にある一点を生成
+        //この時、射程によってshootWideを変化させることでshootWideとshootRangeのバランスが変わらない様にする
+        var randomCerclePoint = new Vector2(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f)).normalized * Random.Range(0f,ShootWide * ShootRange / 10);
 		
-        //(半径１の円周常にあるランダムなある一点の一般化)　* (0~shootRange)によって中心〜円周までの割合を決定) 方向だけなのでrockdistanceは関係なし
-        var randomCerclePoint = new Vector2(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f)).normalized * Random.Range(0f,shootWide);
-        //上を三次元化：zには射程
-        var vector = forwardDirection * new Vector3(randomCerclePoint.x,randomCerclePoint.y,shootRange);
+        //上を三次元化して回転
+        //rockDistanceじゃなくてshootRange分射撃するのでz軸はshootRange
+        var vector = shootFrom.rotation * new Vector3(randomCerclePoint.x,randomCerclePoint.y,ShootRange);
 
         return vector;
     }

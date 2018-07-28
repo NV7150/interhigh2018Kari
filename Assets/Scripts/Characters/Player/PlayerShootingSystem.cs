@@ -3,22 +3,27 @@ using System.Collections.Generic;
 using RootMotion.FinalIK;
 using UnityEngine;
 
-public class PlayerShootingSystem : MonoBehaviour {
+public class PlayerShootingSystem : ShootingSystem {
+	
 	/// <summary>
 	/// 射撃の触れる幅
 	/// 単位は割合（1でQuatanion1の範囲でブレる）
 	/// </summary>
 	public float shootWide;
+	
+	public override float ShootWide {
+		get { return shootWide; }
+	}
+	
 	/// <summary>
 	/// 射程
-	/// 単位はベクトルと同じ
+	/// 単位はVector3のと同じ
 	/// </summary>
 	public float shootRange;
 	
-	/// <summary>
-	/// 銃口のオブジェクト
-	/// </summary>
-	public Transform shootFrom; 
+	public override float ShootRange {
+		get { return shootRange; }
+	}
 	
 	/// <summary>
 	/// 銃弾オブジェクトのプレファブ
@@ -39,23 +44,17 @@ public class PlayerShootingSystem : MonoBehaviour {
 	/// ロック中の物体への距離
 	/// </summary>
 	private float rockDistance;
-
-	public float ShootWide {
-		get { return shootWide; }
-	}
-
-	public float ShootRange {
-		get { return shootRange; }
-	}
-
+	
 	public float RockDistance {
 		get { return rockDistance; }
 	}
+	
 
 	// Use this for initialization
 	void Start () {
 		ik = GetComponent<AimIK>();
 		rockDistance = shootRange;
+
 	}
 	
 	// Update is called once per frame
@@ -91,7 +90,6 @@ public class PlayerShootingSystem : MonoBehaviour {
 			vector = cam.transform.rotation * vector;
 			//カメラのpositionを加算
 			vector = cam.transform.position + vector;
-//			vector += new Vector3(shootFrom.position.x - cam.transform.position.x,0);
 			//Rayの終端を向く
 			ik.solver.IKPosition = vector;
 			//距離は最大距離
@@ -103,11 +101,7 @@ public class PlayerShootingSystem : MonoBehaviour {
 	/// 射撃します
 	/// </summary>
 	void shoot() {
-		
-		//(半径１の円周常にあるランダムなある一点の一般化)　* (0~shootRange)によって中心〜円周までの割合を決定) 方向だけなのでrockdistanceは関係なし
-		var randomCerclePoint = new Vector2(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f)).normalized * Random.Range(0f,shootWide * shootRange / 10);
-		//上を三次元化：zにはrockdis
-		var vector = shootFrom.rotation * new Vector3(randomCerclePoint.x,randomCerclePoint.y,shootRange);
+		var vector = getBulletVector();
 		
 		//射撃
 		var shootRay = new Ray(shootFrom.position,vector);

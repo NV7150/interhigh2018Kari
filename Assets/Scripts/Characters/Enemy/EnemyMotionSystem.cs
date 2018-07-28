@@ -68,7 +68,7 @@ namespace Characters.Enemy {
             anim.SetFloat("speed",speed,0.1f,Time.deltaTime);
             
             //プレイヤーの方を向く
-            if(stateMan.State == EnemyState.FOUND) {
+            if(stateMan.State == EnemyState.FOUND || stateMan.State == EnemyState.ATTACKING) {
                 var relativeVector = stateMan.Player.position - transform.position;
                 var plAngle = Quaternion.LookRotation(relativeVector);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation,plAngle,rotateSpeed);
@@ -94,8 +94,10 @@ namespace Characters.Enemy {
                 var ray = new Ray(transform.position + new Vector3(0, 1, 0),
                     stateMan.Player.transform.position - transform.position);
                 RaycastHit hit;
+                
                 //プレイヤーを見つけたかどうか
                 bool foundPlayer = false;
+                
                 //プレイヤーを発見できた方向に向かう
                 if (Physics.Raycast(ray, out hit, searchRange)) {
                     if (hit.collider.CompareTag("Player")) {
@@ -104,6 +106,19 @@ namespace Characters.Enemy {
                         //目標地点を決定
                         nav.destination = stateMan.Player.transform.position;
                         foundPlayer = true;
+                    }
+                    
+                    //攻撃中でないなら
+                    if (stateMan.State != EnemyState.ATTACKING) {
+                        //射程内に入った時点で攻撃中にステート変更
+                        if (nav.remainingDistance <= weaponRange) {
+                            stateMan.State = EnemyState.ATTACKING;
+                        }
+                    } else {
+                        //攻撃中なら、射程外に行くと攻撃中ステートを解除
+                        if (nav.remainingDistance >= weaponRange) {
+                            stateMan.State = EnemyState.FOUND;
+                        }
                     }
                 }
 
@@ -115,9 +130,12 @@ namespace Characters.Enemy {
                             //射程を踏み越えて見かけた地点まで行く
                             nav.stoppingDistance = searchNear;
                     } else {
+                        //万策尽きたら見失う
                         stateMan.State = EnemyState.FINDING;
                     }
                 }
+
+                
             }
         }
         
