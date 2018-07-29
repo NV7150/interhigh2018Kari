@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Characters.Player;
 using RootMotion.FinalIK;
 using UnityEngine;
 
@@ -34,6 +35,8 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// TPSカメラのオブジェクト
 	/// </summary>
 	public Camera cam;
+
+	private TPVCamera tpvCam;
 	
 	/// <summary>
 	/// AimIK
@@ -44,17 +47,22 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// ロック中の物体への距離
 	/// </summary>
 	private float rockDistance;
+
+	public float recoil;
 	
 	public float RockDistance {
 		get { return rockDistance; }
 	}
+
+	private PlayerStateManager stateMan;
 	
 
 	// Use this for initialization
 	void Start () {
 		ik = GetComponent<AimIK>();
 		rockDistance = shootRange;
-
+		tpvCam = cam.GetComponent<TPVCamera>();
+		stateMan = GetComponent<PlayerStateManager>();
 	}
 	
 	// Update is called once per frame
@@ -62,10 +70,14 @@ public class PlayerShootingSystem : ShootingSystem {
 		
 		searchAim();
 
-		float atk = Input.GetAxis("Fire1");
-		if(atk == 1)
+		bool atk = Input.GetButtonDown("Fire1");
+		if (atk) {
 			shoot();
-		
+			//反動
+			tpvCam.recoilCemera(recoil);
+		} else {
+			stateMan.IsShooting = false;
+		}
 	}
 	
 	/// <summary>
@@ -101,6 +113,7 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// 射撃します
 	/// </summary>
 	void shoot() {
+		stateMan.IsShooting = true;
 		var vector = getBulletVector();
 		
 		//射撃
@@ -108,7 +121,8 @@ public class PlayerShootingSystem : ShootingSystem {
 		var hit = new RaycastHit();
 		if (Physics.Raycast(shootRay,out hit,shootRange)) {
 			Debug.DrawLine(shootFrom.position,hit.point,Color.blue);
-			Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
+//			Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
 		}
+		
 	}
 }

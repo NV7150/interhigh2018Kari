@@ -13,6 +13,8 @@ namespace Characters.Player {
 	    /// 近接動作コンポーネント
 	    /// </summary>
 	    private PlayerMeleeSystem meleeSys;
+
+	    private PlayerStateManager stateMan;
 	    
 	    /// <summary>
 	    /// エイムカーソルのオブジェクト
@@ -39,8 +41,6 @@ namespace Characters.Player {
 	    /// AimIK
 	    /// </summary>
 	    private AimIK aimIk;
-
-	    private bool pressed = false;
 	    
         // Use this for initialization
         void Start () {
@@ -48,16 +48,14 @@ namespace Characters.Player {
 	        meleeSys = GetComponent<PlayerMeleeSystem>();
 	        animator = GetComponent<Animator>();
 	        aimIk = GetComponent<AimIK>();
+	        stateMan = GetComponent<PlayerStateManager>();
         }
 	
         // Update is called once per frame
         void Update () {
-	        float change = Input.GetAxis("ChangeWeapon");
-	        if (change == 1 && !pressed) {
+	        bool change = Input.GetButtonDown("ChangeWeapon");
+	        if (change) {
 		        switchWeapon();
-		        pressed = true;
-	        } else if(change == 0){
-		        pressed = false;
 	        }
         }
 
@@ -69,7 +67,10 @@ namespace Characters.Player {
 			    switchShoot();
 		    }
 	    }
-
+	    
+	    /// <summary>
+	    /// 射撃に切り替え
+	    /// </summary>
 	    private void switchShoot() {
 		    //武器の有効化
 		    meleeWp.SetActive(false);
@@ -88,7 +89,10 @@ namespace Characters.Player {
 		    //エイムカーソルの有効化
 		    aimCursor.SetActive(true);
 	    }
-
+	    
+	    /// <summary>
+	    /// 近接に切り替え
+	    /// </summary>
 	    private void switchMelee() {
 		    //武器の有効化
 		    meleeWp.SetActive(true);
@@ -103,6 +107,8 @@ namespace Characters.Player {
 		    animator.SetLayerWeight(1,0);
 		    //エイムカーソルの無効化
 		    aimCursor.SetActive(false);
+		    //射撃フラグの解消
+		    stateMan.IsShooting = false;
 	    }
     }
 }

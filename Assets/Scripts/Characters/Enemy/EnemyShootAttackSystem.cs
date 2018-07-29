@@ -48,7 +48,7 @@ public class EnemyShootAttackSystem : ShootingSystem{
 	}
 
 	void normalAim() {
-		aimIk.solver.IKPosition = shootFrom.forward * shootRange + shootFrom.position;
+		aimIk.solver.IKPosition = transform.forward * shootRange + shootFrom.position;
 	}
 	
 	void searchAim() {
@@ -65,7 +65,7 @@ public class EnemyShootAttackSystem : ShootingSystem{
 		if (Physics.Raycast(ray,out hit,shootRange)) {
 			Debug.DrawLine(shootFrom.position,hit.point,Color.green);
 			if (hit.collider.CompareTag("Player")) {
-				Debug.Log("hit!!!");
+//				Debug.Log("hit!!!");
 			}
 		}
 	}

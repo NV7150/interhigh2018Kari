@@ -488,6 +488,7 @@
               <e p="PlayerMovement.cs" t="Include" />
               <e p="PlayerNotifySystem.cs" t="Include" />
               <e p="PlayerShootingSystem.cs" t="Include" />
+              <e p="PlayerStateManager.cs" t="Include" />
               <e p="TPVCamera.cs" t="Include" />
             </e>
           </e>
