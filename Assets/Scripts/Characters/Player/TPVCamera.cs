@@ -49,18 +49,13 @@ public class TPVCamera : MonoBehaviour {
 	private float deltaAngle;
 	
 	/// <summary>
-	/// 銃撃による反動の影響がかかっているか
-	/// </summary>
-	private bool isRecoiling = false;
-
-	/// <summary>
 	/// 銃撃後と前の角度差が計算されているか
 	/// </summary>
 	private bool isDeltaAngleSetted = false;
 	
 	/// <summary>
-	/// リコイル持続時間
-	/// 現在の状態も表す
+	/// リコイル持続時間の残り
+	/// 単位は秒
 	/// </summary>
 	private float recoilTime = 0f;
 
@@ -89,7 +84,7 @@ public class TPVCamera : MonoBehaviour {
 		float recoilval = 0;
 		bool willMouseMove = true;
 		//反動影響下ならば
-		if (isRecoiling) {
+		if (stateMan.IsRecoiling) {
 			//反動値を計算
 			if (stateMan.IsShooting || recoilTime > 0f) {
 				//反動適用時間か射撃中なら反動適用
@@ -166,14 +161,14 @@ public class TPVCamera : MonoBehaviour {
 	/// <param name="recoil">反動値</param>
 	public void recoilCemera(float recoilMax) {
 		//反動制御フラグが初めてなら
-		if (!isRecoiling) {
+		if (!stateMan.IsRecoiling) {
 			//xz平面での向きを取得
 			var horizontalVector = new Vector3(transform.forward.x,0,transform.forward.z);
 			//y軸を含めた上下のみの角度を取得
 			originalAngle = Vector3.Angle(horizontalVector, transform.forward);
 			originalAngle *= (transform.forward.y > 0) ? 1 : -1;
 			//反動関係制御フラグをつける
-			isRecoiling = true;
+			stateMan.IsRecoiling = true;
 		}
 		//角度差計算済みフラグをリセット
 		isDeltaAngleSetted = false;
@@ -181,7 +176,7 @@ public class TPVCamera : MonoBehaviour {
 		this.recoilAcceleration = recoilMax / 10;
 		this.recoilMax = recoilMax;
 
-		recoilTime = 0.05f;
+		recoilTime = recoilTimeBase;
 	}
 	
 	/// <summary>
@@ -210,7 +205,7 @@ public class TPVCamera : MonoBehaviour {
 			return -recoilBack;
 		} else {
 			//上回ったら各種リセットをかけて完全に戻す
-			isRecoiling = false;
+			stateMan.IsRecoiling = false;
 			var angle = deltaAngle;
 			deltaAngle = 0;
 			return -angle;

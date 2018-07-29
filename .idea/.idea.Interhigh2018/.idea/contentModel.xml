@@ -483,6 +483,7 @@
               <e p="EnemyStateManager.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
+              <e p="AimForcusSystem.cs" t="Include" />
               <e p="PlayerEquipmentSystem.cs" t="Include" />
               <e p="PlayerMeleeSystem.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />

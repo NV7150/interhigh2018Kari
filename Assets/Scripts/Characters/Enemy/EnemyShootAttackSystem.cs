@@ -58,7 +58,7 @@ public class EnemyShootAttackSystem : ShootingSystem{
 	}
 
 	void shoot() {
-		var vector = getBulletVector();
+		var vector = getBulletVector(1.0f);
 		
 		var ray = new Ray(shootFrom.position,vector);
 		RaycastHit hit;

@@ -17,12 +17,25 @@ namespace Characters.Player {
             get { return isRockedShooting; }
             set { isRockedShooting = value; }
         }
-
+        
+        /// <summary>
+        /// 今が射撃中か否か
+        /// </summary>
         private bool isShooting = false;
 
         public bool IsShooting {
             get { return isShooting; }
             set { isShooting = value; }
+        }
+        
+        /// <summary>
+        /// カメラが今反動の影響を受けているか否か
+        /// </summary>
+        private bool isRecoiling = false;
+
+        public bool IsRecoiling {
+            get { return isRecoiling; }
+            set { isRecoiling = value; }
         }
     }
 }

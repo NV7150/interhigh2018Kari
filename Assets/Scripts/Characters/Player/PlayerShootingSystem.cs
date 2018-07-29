@@ -47,15 +47,24 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// ロック中の物体への距離
 	/// </summary>
 	private float rockDistance;
-
-	public float recoil;
 	
 	public float RockDistance {
 		get { return rockDistance; }
 	}
-
+	
+	/// <summary>
+	/// リコイルする値
+	/// 単位は度/秒の最高速度
+	/// 加速度はこれの1/10
+	/// </summary>
+	public float recoil;
+	
+	/// <summary>
+	/// ステートマネージャ
+	/// </summary>
 	private PlayerStateManager stateMan;
 	
+	private AimForcusSystem aimForcusSys;
 
 	// Use this for initialization
 	void Start () {
@@ -63,6 +72,7 @@ public class PlayerShootingSystem : ShootingSystem {
 		rockDistance = shootRange;
 		tpvCam = cam.GetComponent<TPVCamera>();
 		stateMan = GetComponent<PlayerStateManager>();
+		aimForcusSys = GetComponent<AimForcusSystem>();
 	}
 	
 	// Update is called once per frame
@@ -114,14 +124,14 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// </summary>
 	void shoot() {
 		stateMan.IsShooting = true;
-		var vector = getBulletVector();
+		var vector = getBulletVector(aimForcusSys.CurrentForcusRate);
 		
 		//射撃
 		var shootRay = new Ray(shootFrom.position,vector);
 		var hit = new RaycastHit();
 		if (Physics.Raycast(shootRay,out hit,shootRange)) {
 			Debug.DrawLine(shootFrom.position,hit.point,Color.blue);
-//			Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
+			Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
 		}
 		
 	}

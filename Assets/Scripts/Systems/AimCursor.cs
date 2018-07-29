@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Characters.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,14 +18,20 @@ public class AimCursor : MonoBehaviour {
 	/// プレイヤのGameObject
 	/// </summary>
 	public GameObject player;
+	
+	
 	/// <summary>
 	/// カメラ
 	/// </summary>
 	public Camera cam;
+	
 	/// <summary>
 	/// PlayerShootingSystemのコンポーネント
 	/// </summary>
 	private PlayerShootingSystem shootSys;
+
+	private AimForcusSystem aimForcusSys;
+	
 	/// <summary>
 	/// 弾の最大射程で、カメラに映っている四角形の高さ
 	/// </summary>
@@ -34,6 +41,7 @@ public class AimCursor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		shootSys = player.GetComponent<PlayerShootingSystem>();
+		aimForcusSys = player.GetComponent<AimForcusSystem>();
 		//各種値を計算
 		hitSclHeight = shootSys.ShootRange * 2.0f * Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad);
 	}
@@ -41,7 +49,7 @@ public class AimCursor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//最大射程時の命中円の半径 / 最大射程でのカメラに映る範囲の高さ * UIスクリーンの高さ ＝ UIスクリーンの高さに対する命中円の半径の大きさ
-		var radius = (shootSys.ShootWide * shootSys.RockDistance / 10) / hitSclHeight * Screen.height;
+		var radius = (shootSys.ShootWide * shootSys.RockDistance / 10 * aimForcusSys.CurrentForcusRate) / hitSclHeight * Screen.height;
 		
 		//ロックしてる部分による補正値
 		var distRate = shootSys.RockDistance / shootSys.ShootRange;
