@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cf78f5b-3170-4d16-9ecd-3e227e942f9c" name="デフォルト" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Interhigh2018/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Interhigh2018/.idea/contentModel.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Interhigh2018/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Interhigh2018/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animator/EnemyAnimator.controller" afterPath="$PROJECT_DIR$/Assets/Animator/EnemyAnimator.controller" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stagekari.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/Stagekari.unity" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyShootAttackSystem.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyShootAttackSystem.cs" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/TPVCamera.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Characters/Player/TPVCamera.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -116,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnemyShootAttackSystem.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EnemyShootAttackSystem.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyShootAttackSystem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            <state relative-caret-position="163">
+              <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
               <folding>
                 <marker date="1532879183944" expanded="true" signature="6:128" ph="..." />
                 <marker date="1532879183944" expanded="true" signature="182:1657" ph="{...}" />
@@ -276,31 +270,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerEquipmentSystem.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayerEquipmentSystem.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+            <state relative-caret-position="306">
+              <caret line="83" column="37" lean-forward="false" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
               <folding>
-                <marker date="1532859564446" expanded="true" signature="6:104" ph="..." />
-                <marker date="1532859564446" expanded="true" signature="134:2803" ph="{...}" />
-                <marker date="1532859564446" expanded="true" signature="191:2801" ph="{...}" />
-                <marker date="1532859564446" expanded="true" signature="198:252" ph="/// 射撃動作コンポーネント ... " />
-                <marker date="1532859564446" expanded="true" signature="302:356" ph="/// 近接動作コンポーネント ... " />
-                <marker date="1532859564446" expanded="true" signature="452:509" ph="/// エイムカーソルのオブジェクト ... " />
-                <marker date="1532859564446" expanded="true" signature="555:609" ph="/// 射撃武器のオブジェクト ... " />
-                <marker date="1532859564446" expanded="true" signature="647:701" ph="/// 近接武器のオブジェクト ... " />
-                <marker date="1532859564446" expanded="true" signature="810:859" ph="/// アニメーター ... " />
-                <marker date="1532859564446" expanded="true" signature="897:945" ph="/// AimIK ... " />
-                <marker date="1532859564446" expanded="true" signature="1039:1305" ph="{...}" />
-                <marker date="1532859564446" expanded="true" signature="1374:1505" ph="{...}" />
-                <marker date="1532859564446" expanded="true" signature="1457:1495" ph="{...}" />
-                <marker date="1532859564446" expanded="true" signature="1540:1672" ph="{...}" />
-                <marker date="1532859564446" expanded="true" signature="1597:1628" ph="{...}" />
-                <marker date="1532859564446" expanded="true" signature="1684:1734" ph="/// 射撃に切り替え ... " />
-                <marker date="1532859564446" expanded="true" signature="1767:2272" ph="{...}" />
-                <marker date="1532859564446" expanded="true" signature="2284:2334" ph="/// 近接に切り替え ... " />
-                <marker date="1532859564446" expanded="true" signature="2367:2795" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="6:104" ph="..." />
+                <marker date="1532879600841" expanded="true" signature="134:2803" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="191:2801" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="198:252" ph="/// 射撃動作コンポーネント ... " />
+                <marker date="1532879600841" expanded="true" signature="302:356" ph="/// 近接動作コンポーネント ... " />
+                <marker date="1532879600841" expanded="true" signature="452:509" ph="/// エイムカーソルのオブジェクト ... " />
+                <marker date="1532879600841" expanded="true" signature="555:609" ph="/// 射撃武器のオブジェクト ... " />
+                <marker date="1532879600841" expanded="true" signature="647:701" ph="/// 近接武器のオブジェクト ... " />
+                <marker date="1532879600841" expanded="true" signature="810:859" ph="/// アニメーター ... " />
+                <marker date="1532879600841" expanded="true" signature="897:945" ph="/// AimIK ... " />
+                <marker date="1532879600841" expanded="true" signature="1039:1305" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="1374:1505" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="1457:1495" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="1540:1672" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="1597:1628" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="1684:1734" ph="/// 射撃に切り替え ... " />
+                <marker date="1532879600841" expanded="true" signature="1767:2272" ph="{...}" />
+                <marker date="1532879600841" expanded="true" signature="2284:2334" ph="/// 近接に切り替え ... " />
+                <marker date="1532879600841" expanded="true" signature="2367:2795" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -385,10 +379,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/roots/ShootingSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyMotionSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerStateManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerShootingSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/TPVCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyShootAttackSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs" />
       </list>
     </option>
   </component>
@@ -476,12 +470,12 @@
       <workItem from="1529553353609" duration="1139000" />
       <workItem from="1531100143200" duration="3105000" />
       <workItem from="1532254427599" duration="245000" />
-      <workItem from="1532445494286" duration="69121000" />
+      <workItem from="1532445494286" duration="69465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148744000" />
+    <option name="totallyTimeSpent" value="149088000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -494,7 +488,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-23" y="31" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -504,7 +497,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114583336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.114583336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1075,34 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-          <folding>
-            <marker date="1532859564446" expanded="true" signature="6:104" ph="..." />
-            <marker date="1532859564446" expanded="true" signature="134:2803" ph="{...}" />
-            <marker date="1532859564446" expanded="true" signature="191:2801" ph="{...}" />
-            <marker date="1532859564446" expanded="true" signature="198:252" ph="/// 射撃動作コンポーネント ... " />
-            <marker date="1532859564446" expanded="true" signature="302:356" ph="/// 近接動作コンポーネント ... " />
-            <marker date="1532859564446" expanded="true" signature="452:509" ph="/// エイムカーソルのオブジェクト ... " />
-            <marker date="1532859564446" expanded="true" signature="555:609" ph="/// 射撃武器のオブジェクト ... " />
-            <marker date="1532859564446" expanded="true" signature="647:701" ph="/// 近接武器のオブジェクト ... " />
-            <marker date="1532859564446" expanded="true" signature="810:859" ph="/// アニメーター ... " />
-            <marker date="1532859564446" expanded="true" signature="897:945" ph="/// AimIK ... " />
-            <marker date="1532859564446" expanded="true" signature="1039:1305" ph="{...}" />
-            <marker date="1532859564446" expanded="true" signature="1374:1505" ph="{...}" />
-            <marker date="1532859564446" expanded="true" signature="1457:1495" ph="{...}" />
-            <marker date="1532859564446" expanded="true" signature="1540:1672" ph="{...}" />
-            <marker date="1532859564446" expanded="true" signature="1597:1628" ph="{...}" />
-            <marker date="1532859564446" expanded="true" signature="1684:1734" ph="/// 射撃に切り替え ... " />
-            <marker date="1532859564446" expanded="true" signature="1767:2272" ph="{...}" />
-            <marker date="1532859564446" expanded="true" signature="2284:2334" ph="/// 近接に切り替え ... " />
-            <marker date="1532859564446" expanded="true" signature="2367:2795" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerStateManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1277,8 +1242,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Enemy/EnemyShootAttackSystem.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="163">
+          <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
           <folding>
             <marker date="1532879183944" expanded="true" signature="6:128" ph="..." />
             <marker date="1532879183944" expanded="true" signature="182:1657" ph="{...}" />
@@ -1295,6 +1260,34 @@
             <marker date="1532879183944" expanded="true" signature="1358:1655" ph="{...}" />
             <marker date="1532879183944" expanded="true" signature="1510:1652" ph="{...}" />
             <marker date="1532879183944" expanded="true" signature="1615:1648" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Characters/Player/PlayerEquipmentSystem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="83" column="37" lean-forward="false" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+          <folding>
+            <marker date="1532879600841" expanded="true" signature="6:104" ph="..." />
+            <marker date="1532879600841" expanded="true" signature="134:2803" ph="{...}" />
+            <marker date="1532879600841" expanded="true" signature="191:2801" ph="{...}" />
+            <marker date="1532879600841" expanded="true" signature="198:252" ph="/// 射撃動作コンポーネント ... " />
+            <marker date="1532879600841" expanded="true" signature="302:356" ph="/// 近接動作コンポーネント ... " />
+            <marker date="1532879600841" expanded="true" signature="452:509" ph="/// エイムカーソルのオブジェクト ... " />
+            <marker date="1532879600841" expanded="true" signature="555:609" ph="/// 射撃武器のオブジェクト ... " />
+            <marker date="1532879600841" expanded="true" signature="647:701" ph="/// 近接武器のオブジェクト ... " />
+            <marker date="1532879600841" expanded="true" signature="810:859" ph="/// アニメーター ... " />
+            <marker date="1532879600841" expanded="true" signature="897:945" ph="/// AimIK ... " />
+            <marker date="1532879600841" expanded="true" signature="1039:1305" ph="{...}" />
+            <marker date="1532879600841" expanded="true" signature="1374:1505" ph="{...}" />
+            <marker date="1532879600841" expanded="true" signature="1457:1495" ph="{...}" />
+            <marker date="1532879600841" expanded="true" signature="1540:1672" ph="{...}" />
+            <marker date="1532879600841" expanded="true" signature="1597:1628" ph="{...}" />
+            <marker date="1532879600841" expanded="true" signature="1684:1734" ph="/// 射撃に切り替え ... " />
+            <marker date="1532879600841" expanded="true" signature="1767:2272" ph="{...}" />
+            <marker date="1532879600841" expanded="true" signature="2284:2334" ph="/// 近接に切り替え ... " />
+            <marker date="1532879600841" expanded="true" signature="2367:2795" ph="{...}" />
           </folding>
         </state>
       </provider>

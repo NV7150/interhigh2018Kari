@@ -77,7 +77,7 @@ namespace Characters.Player {
 		    shootWp.SetActive(true);
 		    //aimIKの対象を射撃武器に変更
 		    aimIk.enabled = true;
-		    aimIk.solver.axis = new Vector3(1,0,0);
+		    aimIk.solver.axis = new Vector3(0,0,1);
 		    aimIk.solver.transform = shootAim.transform;
 		    aimIk.solver.target = null;
 		    //各武器システムの有効化
