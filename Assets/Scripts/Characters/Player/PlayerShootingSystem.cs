@@ -80,7 +80,7 @@ public class PlayerShootingSystem : ShootingSystem {
 		
 		searchAim();
 
-		bool atk = Input.GetButtonDown("Fire1");
+		bool atk = Input.GetButton("Fire1");
 		if (atk) {
 			shoot();
 			//反動
@@ -124,6 +124,7 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// </summary>
 	void shoot() {
 		stateMan.IsShooting = true;
+		//射撃の方向を取得
 		var vector = getBulletVector(aimForcusSys.CurrentForcusRate);
 		
 		//射撃
@@ -131,6 +132,7 @@ public class PlayerShootingSystem : ShootingSystem {
 		var hit = new RaycastHit();
 		if (Physics.Raycast(shootRay,out hit,shootRange)) {
 			Debug.DrawLine(shootFrom.position,hit.point,Color.blue);
+			
 			Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
 		}
 		
