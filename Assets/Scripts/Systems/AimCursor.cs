@@ -23,45 +23,81 @@ public class AimCursor : MonoBehaviour {
 	/// カメラ
 	/// </summary>
 	public Camera cam;
+
+	public CameraAimer aimer;
 	
 	/// <summary>
 	/// PlayerShootingSystemのコンポーネント
 	/// </summary>
 	private PlayerShootingSystem shootSys;
-
+	
+	/// <summary>
+	/// エイムフォーカスコンポーネント
+	/// </summary>
 	private AimForcusSystem aimForcusSys;
 	
 	/// <summary>
-	/// 弾の最大射程で、カメラに映っている四角形の高さ
+	/// 通常時の画面命中半径
 	/// </summary>
-	private float hitSclHeight;
-
 	private float radius;
 	
+	/// <summary>
+	/// 通常時の最大射程命中円の半径
+	/// </summary>
+	private float shootRadius;
+
+	/// <summary>
+	/// 通常時の最大射程スクリーンの高さ
+	/// </summary>
+	private float hitScrHeight;
 	
+	/// <summary>
+	/// エイム時の最大射程スクリーンの高さ
+	/// </summary>
+	private float aimIngHitScrHeight;
+	
+	/// <summary>
+	/// エイム時の画面命中円の半径
+	/// </summary>
+	private float aimIngRadius;
+
+	private PlayerStateManager stateMan;
+
 	// Use this for initialization
 	void Start () {
 		shootSys = player.GetComponent<PlayerShootingSystem>();
 		aimForcusSys = player.GetComponent<AimForcusSystem>();
+		stateMan = player.GetComponent<PlayerStateManager>();
 		
 		//各種値を計算
-		hitSclHeight = shootSys.ShootRange * 2.0f * Mathf.Tan(cam.fieldOfView * 0.5f * Mathf.Deg2Rad);
-		var shootRadius = shootSys.ShootWide * shootSys.ShootRange / 10;
-		radius = shootRadius / hitSclHeight * Screen.height;
+		//通常時の最大射程スクリーンの高さ
+		hitScrHeight = shootSys.shootRange * 2.0f * Mathf.Tan(aimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
+		//通常時の最大射程命中円の半径
+		shootRadius = shootSys.ShootWide + shootSys.ShootRange / 10;
+		//通常時の画面命中円の半径
+		radius = shootRadius / hitScrHeight * Screen.height;
+		
+		//エイム時の最大射程スクリーンの高さ
+		aimIngHitScrHeight = shootSys.ShootRange * 2.0f * Mathf.Tan(aimer.AimZoomFov * 0.5f * Mathf.Deg2Rad);
+		//エイム時の画面命中円半径
+		aimIngRadius = shootRadius / aimIngHitScrHeight * Screen.height;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//最大射程時の命中円の半径 / 最大射程でのカメラに映る範囲の高さ * UIスクリーンの高さ ＝ UIスクリーンの高さに対する命中円の半径の大きさ
-//		var shootRadius = shootSys.ShootWide * shootSys.ShootRange / 10 * 1.0f/*aimForcusSys.CurrentForcusRate*/;
-//		var radius = (shootRadius) / hitSclHeight * Screen.height;
 		
-		
-		//ロックしてる部分による補正値
-//		var distRate = shootSys.RockDistance / shootSys.ShootRange
-		
-		//最終計算
-		float screenRad = radius  * aimForcusSys.CurrentForcusRate + 6.25f;
+		float screenRad;
+		if (shootSys.IsAimCap) {
+			//エイム制限にかかった場合はその分補正して半径を計算
+			var aimCapShootRadius = shootRadius * shootSys.RealAimDistanceToObject / shootSys.RockDistance;
+			var scrHeight = ((stateMan.IsAiming) ? aimIngHitScrHeight : hitScrHeight);
+			screenRad = aimCapShootRadius / scrHeight  * Screen.height * shootSys.CurrentAimCorrection + 6.25f;
+		} else {
+			screenRad = (stateMan.IsAiming) ?  aimIngRadius : radius;
+			//最終計算
+			screenRad *= shootSys.CurrentAimCorrection;
+			screenRad += 6.25f;
+		}
 		
 		//各オブジェクトに反映
 		cursorUp.rectTransform.localPosition = new Vector3(0,screenRad);

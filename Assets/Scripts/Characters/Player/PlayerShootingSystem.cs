@@ -35,8 +35,6 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// TPSカメラのオブジェクト
 	/// </summary>
 	public Camera cam;
-
-	private TPVCamera tpvCam;
 	
 	/// <summary>
 	/// AimIK
@@ -65,14 +63,54 @@ public class PlayerShootingSystem : ShootingSystem {
 	private PlayerStateManager stateMan;
 	
 	private AimForcusSystem aimForcusSys;
+	
+	/// <summary>
+	/// エイムを行う最大近接距離
+	/// </summary>
+	public float aimCapDistance = 0f;
+	
+	/// <summary>
+	/// aimcapに達しているか
+	/// </summary>
+	private bool isAimCap = false;
+
+	public bool IsAimCap {
+		get { return isAimCap; }
+	}
+	
+	/// <summary>
+	/// aimCapに達している時、実際のshootFromから物体への距離が格納される
+	/// </summary>
+	private float realAimDistanceToObject = 0f;
+
+	public float RealAimDistanceToObject {
+		get { return realAimDistanceToObject; }
+	}
+
+	private int bgLayerMask = 0;
+	
+	/// <summary>
+	/// カメラリコイラー
+	/// </summary>
+	private CameraRecoiler recoiler;
+
+	public float aimMomentryForcusDegree = 0.2f;
+
+	private float currentAimCorrection = 1.0f;
+
+	public float CurrentAimCorrection {
+		get { return currentAimCorrection; }
+	}
 
 	// Use this for initialization
 	void Start () {
 		ik = GetComponent<AimIK>();
 		rockDistance = shootRange;
-		tpvCam = cam.GetComponent<TPVCamera>();
 		stateMan = GetComponent<PlayerStateManager>();
 		aimForcusSys = GetComponent<AimForcusSystem>();
+		recoiler = cam.GetComponentInChildren<CameraRecoiler>();
+		
+		bgLayerMask = LayerMask.GetMask("BackGround");
 	}
 	
 	// Update is called once per frame
@@ -84,10 +122,11 @@ public class PlayerShootingSystem : ShootingSystem {
 		if (atk) {
 			shoot();
 			//反動
-			tpvCam.recoilCemera(recoil);
+			recoiler.recoilCemera(recoil);
 		} else {
 			stateMan.IsShooting = false;
 		}
+		forcusAim();
 	}
 	
 	/// <summary>
@@ -100,10 +139,21 @@ public class PlayerShootingSystem : ShootingSystem {
 		RaycastHit hit;
 		//とりあえずPlayer以外なら命中判定
 		if (Physics.Raycast(ray, out hit,shootRange) && !hit.collider.gameObject.CompareTag("Player")) {
+			var aimpoint = hit.point;
+			var dist = Vector3.Distance(shootFrom.transform.position, aimpoint);
+			
+			if(dist <= aimCapDistance) {
+				realAimDistanceToObject = dist;
+				aimpoint += cam.transform.forward * aimCapDistance;
+				dist = aimCapDistance;
+				isAimCap = true;
+			} else {
+				isAimCap = false;
+			}
 			//物体に当たればそっちを向く
-			ik.solver.IKPosition = hit.point;
+			ik.solver.IKPosition = aimpoint;
 			//距離を更新
-			rockDistance = Vector3.Distance(transform.position, hit.point);
+			rockDistance = dist;
 		} else {
 			//Rayの終端を計算//
 			//元となるベクトル（射程）
@@ -119,18 +169,28 @@ public class PlayerShootingSystem : ShootingSystem {
 		}
 	}
 
+	void forcusAim() {
+		
+		//エイム動作
+		stateMan.IsAiming = Input.GetButton("Aim");
+		
+		currentAimCorrection = (stateMan.IsAiming) ? aimForcusSys.CurrentForcusRate - aimMomentryForcusDegree : 1.0f;
+		currentAimCorrection = (currentAimCorrection > 0) ? currentAimCorrection : 0f;
+	}
+	
 	/// <summary>
 	/// 射撃します
 	/// </summary>
 	void shoot() {
 		stateMan.IsShooting = true;
+		
 		//射撃の方向を取得
-		var vector = getBulletVector(aimForcusSys.CurrentForcusRate);
+		var vector = getBulletVector(currentAimCorrection);
 		
 		//射撃
 		var shootRay = new Ray(shootFrom.position,vector);
 		var hit = new RaycastHit();
-		if (Physics.Raycast(shootRay,out hit,shootRange)) {
+		if (Physics.Raycast(shootRay,out hit,shootRange,bgLayerMask)) {
 			Debug.DrawLine(shootFrom.position,hit.point,Color.blue);
 			
 			Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));

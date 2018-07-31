@@ -9,16 +9,6 @@ namespace Characters.Player {
     /// </summary>
     public class PlayerStateManager : MonoBehaviour {
         /// <summary>
-        /// 反動が一定以上あるなどで射撃が封じられている場合はtrue
-        /// </summary>
-        private bool isRockedShooting = false;
-
-        public bool IsRockedShooting {
-            get { return isRockedShooting; }
-            set { isRockedShooting = value; }
-        }
-        
-        /// <summary>
         /// 今が射撃中か否か
         /// </summary>
         private bool isShooting = false;
@@ -37,6 +27,17 @@ namespace Characters.Player {
             get { return isRecoiling; }
             set { isRecoiling = value; }
         }
+        
+        /// <summary>
+        /// 現在エイムしているか
+        /// </summary>
+        private bool isAiming = false;
+
+        public bool IsAiming {
+            get { return isAiming; }
+            set { isAiming = value; }
+        }
+        
     }
 }
 

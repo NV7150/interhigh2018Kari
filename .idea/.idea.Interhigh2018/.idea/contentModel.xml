@@ -490,7 +490,6 @@
               <e p="PlayerNotifySystem.cs" t="Include" />
               <e p="PlayerShootingSystem.cs" t="Include" />
               <e p="PlayerStateManager.cs" t="Include" />
-              <e p="TPVCamera.cs" t="Include" />
             </e>
           </e>
           <e p="roots" t="Include">
@@ -498,6 +497,11 @@
           </e>
           <e p="Systems" t="Include">
             <e p="AimCursor.cs" t="Include" />
+            <e p="Cameras" t="Include">
+              <e p="CameraAimer.cs" t="Include" />
+              <e p="CameraRecoiler.cs" t="Include" />
+              <e p="TPVCamera.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Standard Assets" t="Include">

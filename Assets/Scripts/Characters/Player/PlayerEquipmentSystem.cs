@@ -13,7 +13,10 @@ namespace Characters.Player {
 	    /// 近接動作コンポーネント
 	    /// </summary>
 	    private PlayerMeleeSystem meleeSys;
-
+	    
+	    /// <summary>
+	    /// ステートマネージャ
+	    /// </summary>
 	    private PlayerStateManager stateMan;
 	    
 	    /// <summary>
