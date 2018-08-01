@@ -102,6 +102,8 @@ public class PlayerShootingSystem : ShootingSystem {
 		get { return currentAimCorrection; }
 	}
 
+//	private PlayerInputManager inputMan;
+
 	// Use this for initialization
 	void Start () {
 		ik = GetComponent<AimIK>();
@@ -170,10 +172,14 @@ public class PlayerShootingSystem : ShootingSystem {
 	}
 
 	void forcusAim() {
-		
-		//エイム動作
-		stateMan.IsAiming = Input.GetButton("Aim");
-		
+		if (Input.GetButtonDown("Aim")) {
+			stateMan.IsAiming = true;
+		}
+
+		if (Input.GetButtonUp("Aim")) {
+			stateMan.IsAiming = false;
+		}
+
 		currentAimCorrection = (stateMan.IsAiming) ? aimForcusSys.CurrentForcusRate - aimMomentryForcusDegree : 1.0f;
 		currentAimCorrection = (currentAimCorrection > 0) ? currentAimCorrection : 0f;
 	}

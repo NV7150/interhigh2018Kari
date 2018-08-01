@@ -4229,6 +4229,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4081129071478060, guid: ffa08167d28cfd24dba0151a4c80f384,
     type: 2}
   m_PrefabInternal: {fileID: 1061885690}
+--- !u!135 &601229988
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 601229976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &601229989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 601229976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67431a7f77c8456694ed6eeb486fb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalStaySoundRange: 3
+  normalMoveSoundMag: 2
+  sneakMag: 0.8
 --- !u!1 &625970675
 GameObject:
   m_ObjectHideFlags: 0

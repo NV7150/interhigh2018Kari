@@ -19,8 +19,8 @@ namespace Characters.Player{
 	
         // Update is called once per frame
         void Update () {
-            float atk = Input.GetAxis("Fire1");
-            if(atk == 1f)
+            bool atk = Input.GetButton("Fire1");
+            if(atk)
                 Attack();
             searchAim();
         }

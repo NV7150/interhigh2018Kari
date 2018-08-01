@@ -489,6 +489,7 @@
               <e p="PlayerMovement.cs" t="Include" />
               <e p="PlayerNotifySystem.cs" t="Include" />
               <e p="PlayerShootingSystem.cs" t="Include" />
+              <e p="PlayerSneakSystem.cs" t="Include" />
               <e p="PlayerStateManager.cs" t="Include" />
             </e>
           </e>
@@ -501,6 +502,9 @@
               <e p="CameraAimer.cs" t="Include" />
               <e p="CameraRecoiler.cs" t="Include" />
               <e p="TPVCamera.cs" t="Include" />
+            </e>
+            <e p="Inputs" t="Include">
+              <e p="InputInfo.cs" t="Include" />
             </e>
           </e>
         </e>

@@ -27,17 +27,27 @@ namespace Characters.Player {
             get { return isRecoiling; }
             set { isRecoiling = value; }
         }
-        
-        /// <summary>
-        /// 現在エイムしているか
-        /// </summary>
+
         private bool isAiming = false;
 
         public bool IsAiming {
             get { return isAiming; }
             set { isAiming = value; }
         }
-        
+
+        private bool isSneaking = false;
+
+        public bool IsSneaking {
+            get { return isSneaking; }
+            set { isSneaking = value; }
+        }
+
+        private bool isMoving = false;
+
+        public bool IsMoving {
+            get { return isMoving; }
+            set { isMoving = value; }
+        }
     }
 }
 

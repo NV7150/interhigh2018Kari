@@ -27,6 +27,7 @@ namespace Characters.Player{
         /// </summary>
         private PlayerStateManager stateMan;
 
+        
         private void Start() {
             stateMan = GetComponent<PlayerStateManager>();
         }

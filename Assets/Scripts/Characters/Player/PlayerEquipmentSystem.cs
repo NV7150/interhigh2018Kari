@@ -44,6 +44,8 @@ namespace Characters.Player {
 	    /// AimIK
 	    /// </summary>
 	    private AimIK aimIk;
+
+//	    private PlayerInputManager inputMan;
 	    
         // Use this for initialization
         void Start () {
@@ -56,8 +58,7 @@ namespace Characters.Player {
 	
         // Update is called once per frame
         void Update () {
-	        bool change = Input.GetButtonDown("ChangeWeapon");
-	        if (change) {
+	        if (Input.GetButtonDown("ChangeWeapon")) {
 		        switchWeapon();
 	        }
         }
