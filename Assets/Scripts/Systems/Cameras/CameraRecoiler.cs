@@ -53,7 +53,7 @@ public class CameraRecoiler : MonoBehaviour {
 	/// <summary>
 	/// ステートマネージャ
 	/// </summary>
-	public PlayerStateManager stateMan;
+	public PlayerStateManager StateMan;
 
 	private TPVCamera tpvCam;
 
@@ -69,11 +69,14 @@ public class CameraRecoiler : MonoBehaviour {
 	float updateRecoilVal() {
 		float recoilval = 0;
 		//反動影響下ならば
-		if (stateMan.IsRecoiling) {
+		if (StateMan.IsRecoilEffecting) {
 			//反動値を計算
-			if (stateMan.IsShooting || recoilTime > 0f) {
-				//反動適用時間か射撃中なら反動適用
-				recoilval = recoiling();
+			if (StateMan.IsShooting || recoilTime > 0f) {
+				if (recoilTime < recoilTimeBase) {
+					//反動適用時間か射撃中なら反動適用
+					recoilval = recoiling();
+				}
+
 				recoilTime -= Time.deltaTime;
 			} else {
 				//そうでないなら反動制御
@@ -93,14 +96,14 @@ public class CameraRecoiler : MonoBehaviour {
 	/// <param name="recoil">反動値</param>
 	public void recoilCemera(float recoilMax) {
 		//反動制御フラグが初めてなら
-		if (!stateMan.IsRecoiling) {
+		if (!StateMan.IsRecoilEffecting) {
 			//xz平面での向きを取得
 			var horizontalVector = new Vector3(transform.forward.x,0,transform.forward.z);
 			//y軸を含めた上下のみの角度を取得
 			originalAngle = Vector3.Angle(horizontalVector, transform.forward);
 			originalAngle *= (transform.forward.y > 0) ? 1 : -1;
 			//反動関係制御フラグをつける
-			stateMan.IsRecoiling = true;
+			StateMan.IsRecoilEffecting = true;
 		}
 		//角度差計算済みフラグをリセット
 		isDeltaAngleSetted = false;
@@ -108,7 +111,7 @@ public class CameraRecoiler : MonoBehaviour {
 		this.recoilAcceleration = recoilMax / 10;
 		this.recoilMax = recoilMax;
 
-		recoilTime = recoilTimeBase;
+		recoilTime = recoilTimeBase + 0.001f;
 	}
 	
 	/// <summary>
@@ -137,7 +140,7 @@ public class CameraRecoiler : MonoBehaviour {
 			return -recoilBack;
 		} else {
 			//上回ったら各種リセットをかけて完全に戻す
-			stateMan.IsRecoiling = false;
+			StateMan.IsRecoilEffecting = false;
 			var angle = deltaAngle;
 			deltaAngle = 0;
 			return -angle;

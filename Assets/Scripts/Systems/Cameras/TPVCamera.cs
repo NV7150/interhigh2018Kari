@@ -16,7 +16,6 @@ public class TPVCamera : MonoBehaviour {
 	public float DistanceToPlayerM = 2f;    // カメラとプレイヤーとの距離[m]
 	public float SlideDistanceM = 0f;       // カメラを横にスライドさせる；プラスの時右へ，マイナスの時左へ[m]
 	public float HeightM = 1.2f;            // 注視点の高さ[m]
-	public float RotationSensitivity = 300f;// 感度
 
 	/// <summary>
 	/// 背景のレイヤーマスク
@@ -26,7 +25,7 @@ public class TPVCamera : MonoBehaviour {
 	/// <summary>
 	/// 注目しているプレイヤーのステートマネージャ
 	/// </summary>
-	public PlayerStateManager stateMan;
+	public PlayerStateManager StateMan;
 
 	/// <summary>
 	/// rotYの補正値
@@ -41,13 +40,13 @@ public class TPVCamera : MonoBehaviour {
 	/// <summary>
 	/// マウス入力を有効にするか
 	/// </summary>
-	private bool mouseActivated;
+	private bool mouseActivated = true;
 
 	public bool MouseActivated {
 		get { return mouseActivated; }
 		set { mouseActivated = value; }
 	}
-
+	
 	private float heightCorrectVal;
 
 	public float HeightCorrectVal {
@@ -55,6 +54,7 @@ public class TPVCamera : MonoBehaviour {
 		set { heightCorrectVal = value; }
 	}
 
+	public PlayerConfigs configs;
 
 	void Start () {
 		if(Target == null) {
@@ -90,11 +90,10 @@ public class TPVCamera : MonoBehaviour {
 	/// <param name="mouseActivated">マウスによる回転を適用するならtrue</param>
 	/// <returns>注視点</returns>
 	void tpvCamChanging(Vector3 lookAt) {
-		float mouseMoveVal = (mouseActivated) ? Input.GetAxis("Mouse Y")  * RotationSensitivity : 0;
+		float mouseMoveVal = (StateMan.isMouseActivated) ? Input.GetAxis("Mouse Y")  * configs.MouseRotationSensability : 0;
 		
 		//correctionValはangle指定することがあるので自前でdeltaTimeをかける
 		var rotY = mouseMoveVal * Time.deltaTime - CorrectYRotVal;
-		
 		
 		// カメラがプレイヤーの真上や真下にあるときにそれ以上回転させないようにする
 		if(transform.forward.y > 0.5f && (rotY < 0 || rotY > 90)) {

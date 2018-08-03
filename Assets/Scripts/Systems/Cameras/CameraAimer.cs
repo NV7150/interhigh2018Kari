@@ -41,7 +41,7 @@ public class CameraAimer : MonoBehaviour {
 
 	private TPVCamera tpvCam;
 
-	public PlayerStateManager stateMan;
+	public PlayerStateManager StateMan;
 	// Use this for initialization
 	void Start () {
 		cam = GetComponent<Camera>();
@@ -50,7 +50,7 @@ public class CameraAimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (stateMan.IsAiming) {
+		if (StateMan.IsAiming) {
 			aimZoom();
 		} else {
 			releaseAimZoom();

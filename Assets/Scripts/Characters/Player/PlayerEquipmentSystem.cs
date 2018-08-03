@@ -17,7 +17,7 @@ namespace Characters.Player {
 	    /// <summary>
 	    /// ステートマネージャ
 	    /// </summary>
-	    private PlayerStateManager stateMan;
+	    private PlayerStateManager _stateMan;
 	    
 	    /// <summary>
 	    /// エイムカーソルのオブジェクト
@@ -53,7 +53,7 @@ namespace Characters.Player {
 	        meleeSys = GetComponent<PlayerMeleeSystem>();
 	        animator = GetComponent<Animator>();
 	        aimIk = GetComponent<AimIK>();
-	        stateMan = GetComponent<PlayerStateManager>();
+	        _stateMan = GetComponent<PlayerStateManager>();
         }
 	
         // Update is called once per frame
@@ -112,7 +112,7 @@ namespace Characters.Player {
 		    //エイムカーソルの無効化
 		    aimCursor.SetActive(false);
 		    //射撃フラグの解消
-		    stateMan.IsShooting = false;
+		    _stateMan.IsShooting = false;
 	    }
     }
 }

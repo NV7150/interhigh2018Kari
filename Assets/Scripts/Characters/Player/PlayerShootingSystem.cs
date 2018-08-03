@@ -60,7 +60,7 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// <summary>
 	/// ステートマネージャ
 	/// </summary>
-	private PlayerStateManager stateMan;
+	private PlayerStateManager _stateMan;
 	
 	private AimForcusSystem aimForcusSys;
 	
@@ -88,11 +88,8 @@ public class PlayerShootingSystem : ShootingSystem {
 	}
 
 	private int bgLayerMask = 0;
-	
-	/// <summary>
-	/// カメラリコイラー
-	/// </summary>
-	private CameraRecoiler recoiler;
+
+	private int rockAbleLayerMask = 0;
 
 	public float aimMomentryForcusDegree = 0.2f;
 
@@ -102,32 +99,45 @@ public class PlayerShootingSystem : ShootingSystem {
 		get { return currentAimCorrection; }
 	}
 
+	public float burstSeconds = 0.1f;
+
+	private float burstTimer = 0.0f;
+
+	public PlayerRecoilManager recoilMan;
+
+	public AimObject aimObj;
+
 //	private PlayerInputManager inputMan;
 
 	// Use this for initialization
 	void Start () {
 		ik = GetComponent<AimIK>();
 		rockDistance = shootRange;
-		stateMan = GetComponent<PlayerStateManager>();
+		_stateMan = GetComponent<PlayerStateManager>();
 		aimForcusSys = GetComponent<AimForcusSystem>();
-		recoiler = cam.GetComponentInChildren<CameraRecoiler>();
 		
 		bgLayerMask = LayerMask.GetMask("BackGround");
+		rockAbleLayerMask = ~(1 << 9);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 		searchAim();
-
-		bool atk = Input.GetButton("Fire1");
-		if (atk) {
-			shoot();
-			//反動
-			recoiler.recoilCemera(recoil);
+		if (burstTimer <= 0f) {
+			bool atk = Input.GetButtonDown("Fire1");
+			if (atk) {
+				shoot();
+				//反動
+//				recoiler.recoilCemera(recoil);
+				recoilMan.recoil(recoil);
+				burstTimer = burstSeconds;
+			}
 		} else {
-			stateMan.IsShooting = false;
+			burstTimer -= Time.deltaTime;
+			_stateMan.IsShooting = false;
 		}
+
 		forcusAim();
 	}
 	
@@ -136,51 +146,50 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// update毎に呼ばれます。
 	/// </summary>
 	void searchAim() {
-		//カメラからRayを発信
-		var ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
+		//エイムオブジェクトからRayを発信
+		var ray = aimObj.getFrontRay();
+		
 		RaycastHit hit;
 		//とりあえずPlayer以外なら命中判定
-		if (Physics.Raycast(ray, out hit,shootRange) && !hit.collider.gameObject.CompareTag("Player")) {
+		if (Physics.Raycast(ray, out hit,shootRange * 10) && !hit.collider.CompareTag("Player")) {
 			var aimpoint = hit.point;
 			var dist = Vector3.Distance(shootFrom.transform.position, aimpoint);
-			
-			if(dist <= aimCapDistance) {
-				realAimDistanceToObject = dist;
-				aimpoint += cam.transform.forward * aimCapDistance;
-				dist = aimCapDistance;
-				isAimCap = true;
-			} else {
-				isAimCap = false;
+			//当たったところが射程圏内ならそこをロック
+			if (dist < shootRange) {
+				//エイムキャップ圏内なら壁にめりこむ
+				if (dist <= aimCapDistance) {
+					//実距離を保存
+					realAimDistanceToObject = dist;
+					//aimCapになるまでaimpointを調節
+					aimpoint += cam.transform.forward * (aimCapDistance - realAimDistanceToObject);
+					dist = aimCapDistance;
+					isAimCap = true;
+				} else {
+					isAimCap = false;
+				}
+
+				//物体に当たればそっちを向く
+				ik.solver.IKPosition = aimpoint;
+				//距離を更新
+				rockDistance = Vector3.Distance(cam.transform.position,hit.point);
 			}
-			//物体に当たればそっちを向く
-			ik.solver.IKPosition = aimpoint;
-			//距離を更新
-			rockDistance = dist;
 		} else {
-			//Rayの終端を計算//
-			//元となるベクトル（射程）
-			var vector = new Vector3(0, 0,shootRange);
-			//射程をカメラの回転度分回転
-			vector = cam.transform.rotation * vector;
-			//カメラのpositionを加算
-			vector = cam.transform.position + vector;
-			//Rayの終端を向く
-			ik.solver.IKPosition = vector;
+			ik.solver.IKPosition = ray.direction * shootRange + cam.transform.position;
 			//距離は最大距離
-			rockDistance = shootRange;
+			rockDistance = Vector3.Distance(cam.transform.position,ik.solver.IKPosition);
 		}
 	}
 
 	void forcusAim() {
 		if (Input.GetButtonDown("Aim")) {
-			stateMan.IsAiming = true;
+			_stateMan.IsAiming = true;
 		}
 
 		if (Input.GetButtonUp("Aim")) {
-			stateMan.IsAiming = false;
+			_stateMan.IsAiming = false;
 		}
 
-		currentAimCorrection = (stateMan.IsAiming) ? aimForcusSys.CurrentForcusRate - aimMomentryForcusDegree : 1.0f;
+		currentAimCorrection = (_stateMan.IsAiming) ? aimForcusSys.CurrentForcusRate - aimMomentryForcusDegree : 1.0f;
 		currentAimCorrection = (currentAimCorrection > 0) ? currentAimCorrection : 0f;
 	}
 	
@@ -188,7 +197,7 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// 射撃します
 	/// </summary>
 	void shoot() {
-		stateMan.IsShooting = true;
+		_stateMan.IsShooting = true;
 		
 		//射撃の方向を取得
 		var vector = getBulletVector(currentAimCorrection);

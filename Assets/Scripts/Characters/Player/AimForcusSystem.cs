@@ -25,11 +25,11 @@ namespace Characters.Player{
         /// <summary>
         /// ステートマネージャ
         /// </summary>
-        private PlayerStateManager stateMan;
+        private PlayerStateManager _stateMan;
 
         
         private void Start() {
-            stateMan = GetComponent<PlayerStateManager>();
+            _stateMan = GetComponent<PlayerStateManager>();
         }
 
         // Update is called once per frame
@@ -88,7 +88,7 @@ namespace Characters.Player{
         /// </summary>
         /// <returns>この時点までのjudgeForcussingの結果</returns>
         bool isntRecoiling() {
-            if (stateMan.IsRecoiling)
+            if (_stateMan.IsRecoilEffecting)
                 return false;
             return isAiming();
         }
@@ -100,7 +100,7 @@ namespace Characters.Player{
         /// <returns>この時点までのjudgeForcussingの結果</returns>
         bool isAiming() {
             //注：フォーカスはエイム中のみ
-            if (!stateMan.IsAiming)
+            if (!_stateMan.IsAiming)
                 return false;
             return true;
         }

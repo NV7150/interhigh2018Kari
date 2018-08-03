@@ -484,21 +484,26 @@
             </e>
             <e p="Player" t="Include">
               <e p="AimForcusSystem.cs" t="Include" />
+              <e p="PlayerAbilities.cs" t="Include" />
+              <e p="PlayerConfigs.cs" t="Include" />
               <e p="PlayerEquipmentSystem.cs" t="Include" />
               <e p="PlayerMeleeSystem.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
-              <e p="PlayerNotifySystem.cs" t="Include" />
+              <e p="PlayerRecoilManager.cs" t="Include" />
               <e p="PlayerShootingSystem.cs" t="Include" />
               <e p="PlayerSneakSystem.cs" t="Include" />
               <e p="PlayerStateManager.cs" t="Include" />
             </e>
           </e>
           <e p="roots" t="Include">
+            <e p="CharacterStateManager.cs" t="Include" />
+            <e p="RecoilManager.cs" t="Include" />
             <e p="ShootingSystem.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
             <e p="AimCursor.cs" t="Include" />
             <e p="Cameras" t="Include">
+              <e p="AimObject.cs" t="Include" />
               <e p="CameraAimer.cs" t="Include" />
               <e p="CameraRecoiler.cs" t="Include" />
               <e p="TPVCamera.cs" t="Include" />
@@ -506,6 +511,7 @@
             <e p="Inputs" t="Include">
               <e p="InputInfo.cs" t="Include" />
             </e>
+            <e p="ShootRangeTrigger.cs" t="Include" />
           </e>
         </e>
         <e p="Standard Assets" t="Include">

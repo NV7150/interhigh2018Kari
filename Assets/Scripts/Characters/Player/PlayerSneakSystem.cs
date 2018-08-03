@@ -24,13 +24,13 @@ public class PlayerSneakSystem : MonoBehaviour {
 	/// </summary>
 	public float sneakMag = 0.8f;
 
-	private PlayerStateManager stateMan;
+	private PlayerStateManager _stateMan;
 	
 	// Use this for initialization
 	void Start () {
 		soundCol = GetComponent<SphereCollider>();
 		soundCol.radius = normalStaySoundRange;
-		stateMan = GetComponent<PlayerStateManager>();
+		_stateMan = GetComponent<PlayerStateManager>();
 	}
 	
 	// Update is called once per frame
@@ -40,12 +40,12 @@ public class PlayerSneakSystem : MonoBehaviour {
 		if (Input.GetButton("Sneak")) {
 			//隠密状態にする
 			radius *= sneakMag;
-			stateMan.IsSneaking = true;
+			_stateMan.IsSneaking = true;
 		} else {
-			stateMan.IsSneaking = false;
+			_stateMan.IsSneaking = false;
 		}
 
-		if (stateMan.IsMoving) {
+		if (_stateMan.IsMoving) {
 			radius *= normalMoveSoundMag;
 		}
 

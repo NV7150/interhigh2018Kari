@@ -14,14 +14,14 @@ public class PlayerMovement : MonoBehaviour {
 	public float sneakSpeedRedRate = 0.8f;
 	public float aimingSpeedRedRate = 0.8f;
 
-	private PlayerStateManager stateMan;
+	private PlayerStateManager _stateMan;
 	
 	// Use this for initialization
 	void Start () {
 		_characterController = GetComponent<CharacterController>();
 		_animator = GetComponent<Animator>();
 
-		stateMan = GetComponent<PlayerStateManager>();
+		_stateMan = GetComponent<PlayerStateManager>();
 	}
 	
 	// Update is called once per frame
@@ -43,8 +43,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	float speedCorrectionRate() {
 		float rate = 1.0f;
-		rate *= (stateMan.IsAiming) ? aimingSpeedRedRate : 1.0f;
-		rate *= (stateMan.IsSneaking) ? sneakSpeedRedRate : 1.0f;
+		rate *= (_stateMan.IsAiming) ? aimingSpeedRedRate : 1.0f;
+		rate *= (_stateMan.IsSneaking) ? sneakSpeedRedRate : 1.0f;
 		return rate;
 	}
 
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour {
 		_characterController.SimpleMove(vSpeed);
 		
 		//hspeedかvspeedが0.1を超えているなら動いていると判断
-		stateMan.IsMoving = hSpeed.magnitude > 0.1f || vSpeed.magnitude > 0.1f;
+		_stateMan.IsMoving = hSpeed.magnitude > 0.1f || vSpeed.magnitude > 0.1f;
 	}
 
 	void Animate(float h,float v) {

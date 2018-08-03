@@ -7,7 +7,7 @@ namespace Characters.Player {
     /// プレイヤーの能力値ではない部分のステート管理します
     /// 現在HPとかもここ（現状）
     /// </summary>
-    public class PlayerStateManager : MonoBehaviour {
+    public class PlayerStateManager : CharacterStateManager {
         /// <summary>
         /// 今が射撃中か否か
         /// </summary>
@@ -16,16 +16,6 @@ namespace Characters.Player {
         public bool IsShooting {
             get { return isShooting; }
             set { isShooting = value; }
-        }
-        
-        /// <summary>
-        /// カメラが今反動の影響を受けているか否か
-        /// </summary>
-        private bool isRecoiling = false;
-
-        public bool IsRecoiling {
-            get { return isRecoiling; }
-            set { isRecoiling = value; }
         }
 
         private bool isAiming = false;
@@ -47,6 +37,13 @@ namespace Characters.Player {
         public bool IsMoving {
             get { return isMoving; }
             set { isMoving = value; }
+        }
+
+        public bool isMouseActivated = true;
+
+        public bool IsMouseActivated {
+            get { return isMouseActivated; }
+            set { isMouseActivated = value; }
         }
     }
 }

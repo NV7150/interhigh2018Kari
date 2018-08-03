@@ -61,13 +61,18 @@ public class AimCursor : MonoBehaviour {
 	/// </summary>
 	private float aimIngRadius;
 
-	private PlayerStateManager stateMan;
+	private RectTransform rect;
+
+	private PlayerStateManager _stateMan;
+
+	public PlayerRecoilManager recoilMan;
 
 	// Use this for initialization
 	void Start () {
+		rect = GetComponent<RectTransform>();
 		shootSys = player.GetComponent<PlayerShootingSystem>();
 		aimForcusSys = player.GetComponent<AimForcusSystem>();
-		stateMan = player.GetComponent<PlayerStateManager>();
+		_stateMan = player.GetComponent<PlayerStateManager>();
 		
 		//各種値を計算
 		//通常時の最大射程スクリーンの高さ
@@ -90,10 +95,10 @@ public class AimCursor : MonoBehaviour {
 		if (shootSys.IsAimCap) {
 			//エイム制限にかかった場合はその分補正して半径を計算
 			var aimCapShootRadius = shootRadius * shootSys.RealAimDistanceToObject / shootSys.RockDistance;
-			var scrHeight = ((stateMan.IsAiming) ? aimIngHitScrHeight : hitScrHeight);
+			var scrHeight = ((_stateMan.IsAiming) ? aimIngHitScrHeight : hitScrHeight);
 			screenRad = aimCapShootRadius / scrHeight  * Screen.height * shootSys.CurrentAimCorrection + 6.25f;
 		} else {
-			screenRad = (stateMan.IsAiming) ?  aimIngRadius : radius;
+			screenRad = (_stateMan.IsAiming) ?  aimIngRadius : radius;
 			//最終計算
 			screenRad *= shootSys.CurrentAimCorrection;
 			screenRad += 6.25f;
@@ -104,6 +109,19 @@ public class AimCursor : MonoBehaviour {
 		cursorDown.rectTransform.localPosition = new Vector3(0,-screenRad);
 		cursorRight.rectTransform.localPosition = new Vector3(screenRad,0);
 		cursorLeft.rectTransform.localPosition = new  Vector3(-screenRad,0);
+
+		if (_stateMan.IsRecoilEffecting) {
+			rect.localPosition = new Vector3(0,computeRecoilOffset());
+		} else {
+			rect.localPosition = new Vector3(0,0);
+		}
 	}
-	
+
+
+	float computeRecoilOffset() {
+		var worldSin = Mathf.Sin(recoilMan.Recoiled * Mathf.PI / 180) * shootSys.RockDistance;
+		var fov = (_stateMan.IsAiming) ? aimer.AimZoomFov : aimer.NonAimZoomFov;
+		var sinHeight = shootSys.RockDistance * 2.0f * Mathf.Tan(fov * 0.5f * Mathf.Deg2Rad);
+		return worldSin / sinHeight * Screen.height;
+	}
 }
