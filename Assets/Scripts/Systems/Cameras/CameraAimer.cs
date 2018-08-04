@@ -8,7 +8,10 @@ public class CameraAimer : MonoBehaviour {
 	/// エイムズームする速度
 	/// </summary>
 	public float aimZoomSpeed = 10.0f;
-
+	
+	/// <summary>
+	/// エイムズームによる高さ補正の速さ
+	/// </summary>
 	public float aimHeightCorrectSpeed = 0.001f;
 	
 	/// <summary>
@@ -38,10 +41,17 @@ public class CameraAimer : MonoBehaviour {
 	/// カメラコンポーネント
 	/// </summary>
 	private Camera cam;
-
+	
+	/// <summary>
+	/// カメラのTPVCameraコンポーネント
+	/// </summary>
 	private TPVCamera tpvCam;
 
+	/// <summary>
+	/// プレイヤーのステートマネージャ
+	/// </summary>
 	public PlayerStateManager StateMan;
+	
 	// Use this for initialization
 	void Start () {
 		cam = GetComponent<Camera>();

@@ -20,21 +20,14 @@ public class AimCursor : MonoBehaviour {
 	public GameObject player;
 	
 	/// <summary>
-	/// カメラ
+	/// カメラのエイムズームコンポーネント
 	/// </summary>
-	public Camera cam;
-
 	public CameraAimer aimer;
 	
 	/// <summary>
 	/// PlayerShootingSystemのコンポーネント
 	/// </summary>
 	private PlayerShootingSystem shootSys;
-	
-	/// <summary>
-	/// エイムフォーカスコンポーネント
-	/// </summary>
-	private AimForcusSystem aimForcusSys;
 	
 	/// <summary>
 	/// 通常時の画面命中半径
@@ -61,17 +54,25 @@ public class AimCursor : MonoBehaviour {
 	/// </summary>
 	private float aimIngRadius;
 
+	/// <summary>
+	/// このエイムカーソルのRectTransform
+	/// </summary>
 	private RectTransform rect;
-
+	
+	/// <summary>
+	/// プレイヤーのステートマネージャ
+	/// </summary>
 	private PlayerStateManager _stateMan;
 
-	public PlayerRecoilManager recoilMan;
+	/// <summary>
+	/// リコイルマネージャ
+	/// </summary>
+	public AimObjectRecoiler recoilMan;
 
 	// Use this for initialization
 	void Start () {
 		rect = GetComponent<RectTransform>();
 		shootSys = player.GetComponent<PlayerShootingSystem>();
-		aimForcusSys = player.GetComponent<AimForcusSystem>();
 		_stateMan = player.GetComponent<PlayerStateManager>();
 		
 		//各種値を計算
@@ -90,7 +91,6 @@ public class AimCursor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 		float screenRad;
 		if (shootSys.IsAimCap) {
 			//エイム制限にかかった場合はその分補正して半径を計算
@@ -98,6 +98,7 @@ public class AimCursor : MonoBehaviour {
 			var scrHeight = ((_stateMan.IsAiming) ? aimIngHitScrHeight : hitScrHeight);
 			screenRad = aimCapShootRadius / scrHeight  * Screen.height * shootSys.CurrentAimCorrection + 6.25f;
 		} else {
+			//それ以外は事前計算分を使用
 			screenRad = (_stateMan.IsAiming) ?  aimIngRadius : radius;
 			//最終計算
 			screenRad *= shootSys.CurrentAimCorrection;
@@ -109,7 +110,8 @@ public class AimCursor : MonoBehaviour {
 		cursorDown.rectTransform.localPosition = new Vector3(0,-screenRad);
 		cursorRight.rectTransform.localPosition = new Vector3(screenRad,0);
 		cursorLeft.rectTransform.localPosition = new  Vector3(-screenRad,0);
-
+		
+		//反動分エイムカーソルを上下
 		if (_stateMan.IsRecoilEffecting) {
 			rect.localPosition = new Vector3(0,computeRecoilOffset());
 		} else {

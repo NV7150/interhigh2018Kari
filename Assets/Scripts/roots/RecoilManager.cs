@@ -19,10 +19,6 @@ public abstract class RecoilManager : MonoBehaviour {
     /// </summary>
     private float recoilCurrentVelocity;
 
-    protected float RecoilCurrentVelocity {
-        get { return recoilCurrentVelocity; }
-    }
-
     /// <summary>
     /// 現在のリコイルによる補正合計角度
     /// 単位は角度
@@ -69,20 +65,20 @@ public abstract class RecoilManager : MonoBehaviour {
     /// <returns>反動の量</returns>
     float recoiling() {
         //recoilVelocity(recoil()の引数)が初速度、recoilControllが加速度の加速度運動として処理
+        //反動仕切ったところから戻る時は2倍速
         if (recoilCurrentVelocity > 0) {
             recoilCurrentVelocity -= recoilControll * Time.deltaTime;
         } else {
             recoilCurrentVelocity -= recoilControll * 2 * Time.deltaTime;
         }
-
-        Debug.Log("v = " + recoilCurrentVelocity);
+        
         return recoilCurrentVelocity * Time.deltaTime;
     }
     
     /// <summary>
     /// 反動を設定します
     /// </summary>
-    /// <param name="maxVelocity">リコイル最大速度、単位は角度/秒</param>
+    /// <param name="maxVelocity">リコイル開始速度、単位は角度/秒</param>
     public virtual void recoil(float recoilVelocity) {
         recoilCurrentVelocity = recoilVelocity;
         isRecoiling = true;

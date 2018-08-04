@@ -7,14 +7,10 @@ using UnityEngine;
 public class PlayerShootingSystem : ShootingSystem {
 	
 	/// <summary>
-	/// 射撃の触れる幅
-	/// 単位は割合（1でQuatanion1の範囲でブレる）
+	/// 射撃の振れる幅
+	/// 単位は割合（1でVecotor3の長さでの半径1の円一つ分ぶれる）
 	/// </summary>
 	public float shootWide;
-	
-	public override float ShootWide {
-		get { return shootWide; }
-	}
 	
 	/// <summary>
 	/// 射程
@@ -22,19 +18,56 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// </summary>
 	public float shootRange;
 	
-	public override float ShootRange {
-		get { return shootRange; }
-	}
+	/// <summary>
+	/// エイムを行う最大近接距離
+	/// </summary>
+	public float aimCapDistance = 0f;
 	
 	/// <summary>
-	/// 銃弾オブジェクトのプレファブ
+	/// リコイルする値
+	/// 単位は度/秒の速度
 	/// </summary>
-	public GameObject bulletPrefab;
+	public float recoil;
 	
 	/// <summary>
-	/// TPSカメラのオブジェクト
+	/// エイム開始時に瞬時にズームする値
 	/// </summary>
-	public Camera cam;
+	public float aimMomentryForcusDegree = 0.2f;
+	
+	/// <summary>
+	/// 発砲間隔
+	/// </summary>
+	public float burstSeconds = 0.1f;
+	
+	
+	
+	/// <summary>
+	/// ロック中の物体からカメラへの距離
+	/// </summary>
+	private float rockDistance;
+	
+	/// <summary>
+	/// aimcapに達しているか
+	/// </summary>
+	private bool isAimCap = false;
+
+	/// <summary>
+	/// aimCapに達している時、実際のshootFromから物体への距離が格納される
+	/// </summary>
+	private float realAimDistanceToObject = 0f;
+
+	/// <summary>
+	/// 現在のエイムフォーカス値
+	/// 単位は割合
+	/// </summary>
+	private float currentAimCorrection = 1.0f;
+	
+	/// <summary>
+	/// 発砲間隔を計測する変数
+	/// </summary>
+	private float burstTimer = 0.0f;
+	
+	
 	
 	/// <summary>
 	/// AimIK
@@ -42,78 +75,80 @@ public class PlayerShootingSystem : ShootingSystem {
 	private AimIK ik;
 	
 	/// <summary>
-	/// ロック中の物体への距離
+	/// ステートマネージャ
 	/// </summary>
-	private float rockDistance;
+	private PlayerStateManager stateMan;
+	
+	/// <summary>
+	/// エイムズームを行うコンポーネント
+	/// </summary>
+	private AimForcusSystem aimForcusSys;
+	
+	
+	
+	/// <summary>
+	/// TPSカメラのオブジェクト
+	/// </summary>
+	public Camera cam;
+	
+	/// <summary>
+	/// 銃弾オブジェクトのプレファブ
+	/// </summary>
+	public GameObject bulletPrefab;
+	
+	/// <summary>
+	/// エイムオブジェクトをリコイルするもの
+	/// </summary>
+	public AimObjectRecoiler recoilMan;
+	
+	/// <summary>
+	/// カメラから独立してエイムの補助を行うオブジェクト
+	/// </summary>
+	public AimObject aimObj;
+	
+	
+	
+	/// <summary>
+	/// 背景データのマスク
+	/// </summary>
+	private int bgLayerMask = 0;
+	
+	/// <summary>
+	/// unrockable以外のもののマスク
+	/// プレイヤーにめっちゃ近いところをロックする不具合が生じているので今は不使用
+	/// </summary>
+	private int rockAbleLayerMask = 0;
+	
+
+	public override float ShootWide {
+		get { return shootWide; }
+	}
+	
+	public override float ShootRange {
+		get { return shootRange; }
+	}
 	
 	public float RockDistance {
 		get { return rockDistance; }
 	}
 	
-	/// <summary>
-	/// リコイルする値
-	/// 単位は度/秒の最高速度
-	/// 加速度はこれの1/10
-	/// </summary>
-	public float recoil;
-	
-	/// <summary>
-	/// ステートマネージャ
-	/// </summary>
-	private PlayerStateManager _stateMan;
-	
-	private AimForcusSystem aimForcusSys;
-	
-	/// <summary>
-	/// エイムを行う最大近接距離
-	/// </summary>
-	public float aimCapDistance = 0f;
-	
-	/// <summary>
-	/// aimcapに達しているか
-	/// </summary>
-	private bool isAimCap = false;
-
 	public bool IsAimCap {
 		get { return isAimCap; }
 	}
 	
-	/// <summary>
-	/// aimCapに達している時、実際のshootFromから物体への距離が格納される
-	/// </summary>
-	private float realAimDistanceToObject = 0f;
-
 	public float RealAimDistanceToObject {
 		get { return realAimDistanceToObject; }
 	}
-
-	private int bgLayerMask = 0;
-
-	private int rockAbleLayerMask = 0;
-
-	public float aimMomentryForcusDegree = 0.2f;
-
-	private float currentAimCorrection = 1.0f;
-
+	
 	public float CurrentAimCorrection {
 		get { return currentAimCorrection; }
 	}
-
-	public float burstSeconds = 0.1f;
-
-	private float burstTimer = 0.0f;
-
-	public PlayerRecoilManager recoilMan;
-
-	public AimObject aimObj;
-
-//	private PlayerInputManager inputMan;
-
+	
 	// Use this for initialization
 	void Start () {
 		ik = GetComponent<AimIK>();
 		rockDistance = shootRange;
-		_stateMan = GetComponent<PlayerStateManager>();
+		stateMan = GetComponent<PlayerStateManager>();
 		aimForcusSys = GetComponent<AimForcusSystem>();
 		
 		bgLayerMask = LayerMask.GetMask("BackGround");
@@ -128,14 +163,12 @@ public class PlayerShootingSystem : ShootingSystem {
 			bool atk = Input.GetButtonDown("Fire1");
 			if (atk) {
 				shoot();
-				//反動
-//				recoiler.recoilCemera(recoil);
 				recoilMan.recoil(recoil);
 				burstTimer = burstSeconds;
 			}
 		} else {
 			burstTimer -= Time.deltaTime;
-			_stateMan.IsShooting = false;
+			stateMan.IsShooting = false;
 		}
 
 		forcusAim();
@@ -162,16 +195,16 @@ public class PlayerShootingSystem : ShootingSystem {
 					realAimDistanceToObject = dist;
 					//aimCapになるまでaimpointを調節
 					aimpoint += cam.transform.forward * (aimCapDistance - realAimDistanceToObject);
-					dist = aimCapDistance;
 					isAimCap = true;
 				} else {
 					isAimCap = false;
 				}
+					
+				//距離を更新：カメラからの距離の方がつごうがいいのでそっち
+				rockDistance = Vector3.Distance(cam.transform.position,aimpoint);
 
 				//物体に当たればそっちを向く
 				ik.solver.IKPosition = aimpoint;
-				//距離を更新
-				rockDistance = Vector3.Distance(cam.transform.position,hit.point);
 			}
 		} else {
 			ik.solver.IKPosition = ray.direction * shootRange + cam.transform.position;
@@ -179,17 +212,22 @@ public class PlayerShootingSystem : ShootingSystem {
 			rockDistance = Vector3.Distance(cam.transform.position,ik.solver.IKPosition);
 		}
 	}
-
+	
+	/// <summary>
+	/// エイムズーム値の計算
+	/// </summary>
 	void forcusAim() {
+		//入力管理
 		if (Input.GetButtonDown("Aim")) {
-			_stateMan.IsAiming = true;
+			stateMan.IsAiming = true;
 		}
 
 		if (Input.GetButtonUp("Aim")) {
-			_stateMan.IsAiming = false;
+			stateMan.IsAiming = false;
 		}
-
-		currentAimCorrection = (_stateMan.IsAiming) ? aimForcusSys.CurrentForcusRate - aimMomentryForcusDegree : 1.0f;
+		
+		//エイムフォーカスシステムの値を通じて補正値を設定
+		currentAimCorrection = (stateMan.IsAiming) ? aimForcusSys.CurrentForcusRate - aimMomentryForcusDegree : 1.0f;
 		currentAimCorrection = (currentAimCorrection > 0) ? currentAimCorrection : 0f;
 	}
 	
@@ -197,7 +235,7 @@ public class PlayerShootingSystem : ShootingSystem {
 	/// 射撃します
 	/// </summary>
 	void shoot() {
-		_stateMan.IsShooting = true;
+		stateMan.IsShooting = true;
 		
 		//射撃の方向を取得
 		var vector = getBulletVector(currentAimCorrection);
@@ -211,5 +249,7 @@ public class PlayerShootingSystem : ShootingSystem {
 			Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
 		}
 		
+		//反動処理
+		recoilMan.recoil(recoil);
 	}
 }
