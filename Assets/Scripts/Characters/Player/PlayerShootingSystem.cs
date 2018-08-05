@@ -200,7 +200,7 @@ public class PlayerShootingSystem : ShootingSystem {
 					isAimCap = false;
 				}
 					
-				//距離を更新：カメラからの距離の方がつごうがいいのでそっち
+				//距離を更新：カメラからの距離の方がaimcursor的に都合がいいのでそっち
 				rockDistance = Vector3.Distance(cam.transform.position,aimpoint);
 
 				//物体に当たればそっちを向く
@@ -211,6 +211,7 @@ public class PlayerShootingSystem : ShootingSystem {
 			//距離は最大距離
 			rockDistance = Vector3.Distance(cam.transform.position,ik.solver.IKPosition);
 		}
+//		cheakIKPosLegal();
 	}
 	
 	/// <summary>
@@ -251,5 +252,17 @@ public class PlayerShootingSystem : ShootingSystem {
 		
 		//反動処理
 		recoilMan.recoil(recoil);
+	}
+
+	void cheakIKPosLegal() {
+		if(Mathf.DeltaAngle(transform.position.y,ik.solver.IKPosition.y) > 90) {
+			ik.solver.IKPosition.y = transform.position.y;
+			ik.solver.IKPosition += transform.forward * shootRange;
+		}
+		var xzPos = new Vector2(ik.solver.IKPosition.x,ik.solver.IKPosition.z).normalized;
+		if (Vector2.Angle(new Vector2(transform.forward.x, transform.forward.z), xzPos) < 100) {
+			ik.solver.IKPosition *= -1;
+		}
+		
 	}
 }

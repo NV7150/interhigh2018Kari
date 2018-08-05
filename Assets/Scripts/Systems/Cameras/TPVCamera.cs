@@ -17,6 +17,9 @@ public class TPVCamera : MonoBehaviour {
 	public float SlideDistanceM = 0f;       // カメラを横にスライドさせる；プラスの時右へ，マイナスの時左へ[m]
 	public float HeightM = 1.2f;            // 注視点の高さ[m]
 	public float RotationSensability = 300f;
+	public bool isFPS = false;
+
+	private bool isBacking = false;
 
 	/// <summary>
 	/// 背景のレイヤーマスク
@@ -71,17 +74,11 @@ public class TPVCamera : MonoBehaviour {
 		var lookAt = Target.position + Vector3.up * (HeightM - heightCorrectVal);
 
 		tpvCamChanging(lookAt);
-		
-		//カメラとPLの間を調整
-		adjustToSeePL(lookAt);
 
-		if (Input.GetKeyDown(KeyCode.T)) {
-			HeightM -= 0.2f;
+		if (Input.GetButtonDown("ChangeViewpoint")) {
+			//FPS視点化
+			isFPS = !isFPS;
 		}
-		if (Input.GetKeyUp(KeyCode.T)) {
-			HeightM += 0.2f;
-		}
-		
 		
 	}
 	
@@ -111,36 +108,37 @@ public class TPVCamera : MonoBehaviour {
 		if (Math.Abs(Target.forward.normalized.z - transform.forward.normalized.z) >= 1) {
 			transform.RotateAround(lookAt,Target.up,180);
 		}
+		
+		// カメラを横にずらして中央を開ける値を計算
+		var slide = transform.right * SlideDistanceM;
 
-		// カメラとプレイヤーとの間の距離を調整
-		transform.position = lookAt - transform.forward * DistanceToPlayerM;
-
-		// 注視点の設定
-		transform.LookAt(lookAt);
-
-		// カメラを横にずらして中央を開ける
-		transform.position = transform.position + transform.right * SlideDistanceM;
+		if (!isFPS) {
+			// カメラとプレイヤーとの間の距離を調整
+			transform.position = lookAt - transform.forward * DistanceToPlayerM;
+			
+			// 注視点の設定
+			transform.LookAt(lookAt);
+			
+			
+			//距離の調整
+			adjustToSeePL(slide);
+		}else{
+			//FPS視点ならFPS視点に変更
+			transform.position = Target.position + new Vector3(0, 1.5f, 0);
+		}
+		
+		transform.position += slide;
 	}
 	
 	/// <summary>
 	/// PLとの間に物があってPLが見えなくなる時、カメラを近づけます
 	/// </summary>
 	/// <param name="lookAt">PL</param>
-	void adjustToSeePL(Vector3 lookAt) {
+	void adjustToSeePL(Vector3 slide) {
 		//カメラからプレイヤーにレイを飛ばす
-		Ray camToPlRay = new Ray(transform.position,Target.position + new Vector3(0,1.25f,0) - transform.position);
 		RaycastHit hit;
-		if (Physics.Raycast(camToPlRay,out hit)) {
-			Debug.DrawLine(transform.position,hit.point);
-			//プレイヤーに当たらなかったら
-			if (!hit.collider.CompareTag("Player")) {
-				Ray plTocamRay = new Ray(Target.position,transform.position - Target.position + new Vector3(0,1.25f,0) );
-				RaycastHit nearestHit;
-				if (Physics.Raycast(plTocamRay,out nearestHit,DistanceToPlayerM,bgLayerMask)) {
-					//距離を調整
-					transform.position = lookAt - transform.forward * nearestHit.distance;
-				}
-			}
+		if (Physics.Linecast(Target.position + new Vector3(0, 1.5f, 0), transform.position + slide, out hit, bgLayerMask)) {
+			transform.position = Target.position + new Vector3(0, 1.5f, 0);
 		}
 	}
 }

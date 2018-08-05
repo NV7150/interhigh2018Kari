@@ -1228,13 +1228,13 @@ MonoBehaviour:
   shootFrom: {fileID: 205644667}
   shootWide: 3
   shootRange: 50
-  bulletPrefab: {fileID: 1553966638100084, guid: 32f2e3c8deef14a12b2a4ceb1e6d82fb,
-    type: 2}
-  cam: {fileID: 1546292394}
-  recoil: 100
   aimCapDistance: 0
+  recoil: 100
   aimMomentryForcusDegree: 0.2
   burstSeconds: 0.1
+  cam: {fileID: 1546292394}
+  bulletPrefab: {fileID: 1553966638100084, guid: 32f2e3c8deef14a12b2a4ceb1e6d82fb,
+    type: 2}
   recoilMan: {fileID: 0}
   aimObj: {fileID: 0}
 --- !u!114 &114812301
@@ -2034,10 +2034,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 601229987}
   DistanceToPlayerM: 2
-  SlideDistanceM: 0.1
+  SlideDistanceM: 0.8
   HeightM: 2
+  RotationSensability: 300
   StateMan: {fileID: 601229979}
-  configs: {fileID: 601229981}
 --- !u!81 &277881305
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4053,7 +4053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixTransforms: 1
   solver:
-    IKPosition: {x: 7.9874744, y: 0.04761827, z: -6.0604534}
+    IKPosition: {x: 6.7444744, y: 0.04761827, z: -6.0604534}
     IKPositionWeight: 1
     root: {fileID: 601229987}
     target: {fileID: 0}
@@ -4103,10 +4103,10 @@ MonoBehaviour:
     transform: {fileID: 1273930200}
     axis: {x: 0, y: 0, z: 1}
     poleAxis: {x: 0, y: 1, z: 0}
-    polePosition: {x: 4.9139724, y: 2.2730207, z: -4.162779}
+    polePosition: {x: 3.670972, y: 2.2730207, z: -4.162779}
     poleWeight: 0
     poleTarget: {fileID: 0}
-    clampWeight: 0.1
+    clampWeight: 0.5
     clampSmoothing: 2
 --- !u!114 &601229979
 MonoBehaviour:
@@ -4134,27 +4134,15 @@ MonoBehaviour:
   shootFrom: {fileID: 205644667}
   shootWide: 3
   shootRange: 50
-  bulletPrefab: {fileID: 1553966638100084, guid: 32f2e3c8deef14a12b2a4ceb1e6d82fb,
-    type: 2}
-  cam: {fileID: 277881307}
-  recoil: 200
-  aimCapDistance: 4
+  aimCapDistance: 4.7
+  recoil: 100
   aimMomentryForcusDegree: 0.2
   burstSeconds: 0.1
+  cam: {fileID: 277881307}
+  bulletPrefab: {fileID: 1553966638100084, guid: 32f2e3c8deef14a12b2a4ceb1e6d82fb,
+    type: 2}
   recoilMan: {fileID: 97064660}
   aimObj: {fileID: 97064661}
---- !u!114 &601229981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601229976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3082bf13977224116aead381805819f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseRotationSensability: 300
 --- !u!114 &601229982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4281,7 +4269,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh11926
+  m_Name: pb_Mesh20800
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6199,13 +6187,13 @@ MonoBehaviour:
   shootFrom: {fileID: 741174076}
   shootWide: 10
   shootRange: 10
-  bulletPrefab: {fileID: 1661285401720426, guid: 23e293e3e798b478787fddf5b6366d88,
-    type: 2}
-  cam: {fileID: 1546292394}
-  recoil: 0
   aimCapDistance: 0
+  recoil: 0
   aimMomentryForcusDegree: 0.2
   burstSeconds: 0.1
+  cam: {fileID: 1546292394}
+  bulletPrefab: {fileID: 1661285401720426, guid: 23e293e3e798b478787fddf5b6366d88,
+    type: 2}
   recoilMan: {fileID: 0}
   aimObj: {fileID: 0}
 --- !u!135 &833965623
@@ -11395,7 +11383,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh94396
+  m_Name: pb_Mesh20742
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -11581,8 +11569,8 @@ MonoBehaviour:
   DistanceToPlayerM: 2
   SlideDistanceM: 0
   HeightM: 2
+  RotationSensability: 300
   StateMan: {fileID: 0}
-  configs: {fileID: 0}
 --- !u!81 &1389428726
 AudioListener:
   m_ObjectHideFlags: 0
@@ -13994,13 +13982,13 @@ MonoBehaviour:
   shootFrom: {fileID: 741174076}
   shootWide: 10
   shootRange: 10
-  bulletPrefab: {fileID: 1661285401720426, guid: 23e293e3e798b478787fddf5b6366d88,
-    type: 2}
-  cam: {fileID: 1546292394}
-  recoil: 0
   aimCapDistance: 0
+  recoil: 0
   aimMomentryForcusDegree: 0.2
   burstSeconds: 0.1
+  cam: {fileID: 1546292394}
+  bulletPrefab: {fileID: 1661285401720426, guid: 23e293e3e798b478787fddf5b6366d88,
+    type: 2}
   recoilMan: {fileID: 0}
   aimObj: {fileID: 0}
 --- !u!114 &1514605851
@@ -21397,7 +21385,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1791495661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 150.7, y: -2.5, z: 22.5}
+  m_LocalPosition: {x: -22.3, y: -2.5, z: 22.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 920590384}
@@ -23094,7 +23082,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh12652
+  m_Name: pb_Mesh21070
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2

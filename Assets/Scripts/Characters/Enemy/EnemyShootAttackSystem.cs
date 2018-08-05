@@ -52,9 +52,12 @@ public class EnemyShootAttackSystem : ShootingSystem{
 	}
 	
 	void searchAim() {
-		aimIk.solver.IKPosition = stateMan.Player.position + new Vector3(0,1,0);
-		aimIk.solver.IKPosition +=
-			shootFrom.forward * (shootRange - Vector3.Distance(shootFrom.position, stateMan.Player.position));
+		aimIk.solver.IKPosition = stateMan.Player.position;
+		aimIk.solver.IKPosition.x +=
+			shootFrom.forward.x * (shootRange - Vector3.Distance(shootFrom.position, stateMan.Player.position));
+		aimIk.solver.IKPosition.z +=
+			shootFrom.forward.z * (shootRange - Vector3.Distance(shootFrom.position, stateMan.Player.position));
+		aimIk.solver.IKPosition.y += 1.5f;
 	}
 
 	void shoot() {
