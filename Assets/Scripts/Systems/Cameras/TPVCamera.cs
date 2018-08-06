@@ -74,14 +74,16 @@ public class TPVCamera : MonoBehaviour {
 		var lookAt = Target.position + Vector3.up * (HeightM - heightCorrectVal);
 
 		tpvCamChanging(lookAt);
+		
+	}
 
+	private void Update() {
 		if (Input.GetButtonDown("ChangeViewpoint")) {
 			//FPS視点化
 			isFPS = !isFPS;
 		}
-		
 	}
-	
+
 	/// <summary>
 	/// マウス操作や反動によってtpvカメラを回転させます
 	/// </summary>

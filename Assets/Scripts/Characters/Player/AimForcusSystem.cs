@@ -11,24 +11,23 @@ namespace Characters.Player{
         /// 単位は割合
         /// </summary>
         private float currentForcusRate = 1.0f;
-
-        public float CurrentForcusRate {
-            get { return currentForcusRate; }
-        }
-
-        /// <summary>
-        /// どのくらいの速さで命中円を狭めるか
-        /// 単位は割合/秒
-        /// </summary>
-        public float forcusSpeed = 0.5f;
         
         /// <summary>
         /// ステートマネージャ
         /// </summary>
         private PlayerStateManager _stateMan;
-
+        
+        /// <summary>
+        /// プレイヤーの能力値
+        /// </summary>
+        private PlayerAbilities abilities;
+        
+        public float CurrentForcusRate {
+            get { return currentForcusRate; }
+        }
         
         private void Start() {
+            abilities = GetComponent<PlayerAbilities>();
             _stateMan = GetComponent<PlayerStateManager>();
         }
 
@@ -37,7 +36,7 @@ namespace Characters.Player{
             //条件判定
             if (judgeForcussing()) {
                 //命中円の割合を狭める
-                currentForcusRate -= forcusSpeed * Time.deltaTime;
+                currentForcusRate -= abilities.ForcusSpeed * Time.deltaTime;
                 currentForcusRate = (currentForcusRate > 0) ? currentForcusRate : 0f;
             } else {
                 currentForcusRate = 1.0f;

@@ -516,6 +516,7 @@
           </e>
         </e>
         <e p="Tests" t="Include">
+          <e p="abilityTest.cs" t="Include" />
           <e p="BulTest.cs" t="Include" />
           <e p="FightingUnityChan_FreeAsset" t="Include">
             <e p="FightingUnityChan_FreeAsset" t="Include">

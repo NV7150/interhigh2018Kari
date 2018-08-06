@@ -26,7 +26,7 @@ public abstract class ShootingSystem : MonoBehaviour {
         //半径1の円の円周上のある一点をランダムに設定
         //そこに0~shootWideをかけることでランダムな平面円の中にある一点を生成
         //この時、射程によってshootWideを変化させることでshootWideとshootRangeのバランスが変わらない様にする
-        var randomCerclePoint = new Vector2(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f)).normalized * Random.Range(0f,(ShootWide + ShootRange / 10) * forcusRate);
+        var randomCerclePoint = new Vector2(Random.Range(-1.0f,1.0f),Random.Range(-1.0f,1.0f)).normalized * Random.Range(0f,(ShootWide + ShootRange / 100) * forcusRate);
 		
         //上を三次元化して回転
         //rockDistanceじゃなくてshootRange分射撃するのでz軸はshootRange

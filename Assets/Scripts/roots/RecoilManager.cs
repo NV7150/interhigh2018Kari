@@ -33,7 +33,8 @@ public abstract class RecoilManager : MonoBehaviour {
     /// リコイルに対抗する加速度
     /// 単位は角度/秒^2
     /// </summary>
-    public float recoilControll;
+    protected abstract float RecoilControll { get; }
+
 
     protected virtual void FixedUpdate() {
         updateCurrentRecoilAngle();
@@ -67,9 +68,9 @@ public abstract class RecoilManager : MonoBehaviour {
         //recoilVelocity(recoil()の引数)が初速度、recoilControllが加速度の加速度運動として処理
         //反動仕切ったところから戻る時は2倍速
         if (recoilCurrentVelocity > 0) {
-            recoilCurrentVelocity -= recoilControll * Time.deltaTime;
+            recoilCurrentVelocity -= RecoilControll * Time.deltaTime;
         } else {
-            recoilCurrentVelocity -= recoilControll * 2 * Time.deltaTime;
+            recoilCurrentVelocity -= RecoilControll * 2 * Time.deltaTime;
         }
         
         return recoilCurrentVelocity * Time.deltaTime;

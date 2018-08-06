@@ -11,14 +11,25 @@ public class AimObjectRecoiler : RecoilManager {
     /// リコイル時、この感度の分だけマウス動作による制御が行われる
     /// </summary>
     public float recoilMouseSensability = 50f;
+    
     /// <summary>
     /// プレイヤーのステートマネージャ
     /// </summary>
     public PlayerStateManager stateMan;
+    
     /// <summary>
     /// カメラ（親オブジェクト）
     /// </summary>
     public GameObject cam;
+    
+    /// <summary>
+    /// 能力値
+    /// </summary>
+    public PlayerAbilities abilities;
+
+    protected override float RecoilControll {
+        get { return abilities.RecoilControll; }
+    }
 
     protected override void FixedUpdate() {
         base.FixedUpdate();

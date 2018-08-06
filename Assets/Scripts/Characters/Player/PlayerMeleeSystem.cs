@@ -11,10 +11,16 @@ namespace Characters.Player{
         public Animator animator;
 
         public Camera cam;
+        
         private AimIK ik;
 
+        private PlayerAbilities abilities;
+
+        public Animation attack;
+        
         void Start() {
             ik = GetComponent<AimIK>();
+            abilities = GetComponent<PlayerAbilities>();
         }
 	
         // Update is called once per frame
@@ -28,8 +34,10 @@ namespace Characters.Player{
         /// <summary>
         ///　攻撃を行います
         /// </summary>
-        void Attack(){
-           animator.SetBool("Attack",true);
+        void Attack() {
+            attack["Attack"].speed = abilities.MeleeAttackSpeedRate;
+            animator.SetBool("Attack",true);
+            
         }
         
         /// <summary>

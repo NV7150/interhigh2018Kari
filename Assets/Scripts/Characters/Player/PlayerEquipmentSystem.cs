@@ -34,7 +34,6 @@ namespace Characters.Player {
 	    public GameObject meleeWp;
 
 	    public Transform shootAim;
-	    public Transform meleeAim;
 	    
 	    /// <summary>
 	    /// アニメーター
