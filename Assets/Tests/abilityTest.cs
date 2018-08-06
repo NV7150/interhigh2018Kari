@@ -15,8 +15,8 @@ public class abilityTest : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		text.text = "str:" + Abilities.Strength + " tech:" + Abilities.Technic + " agi:" + Abilities.Agility;
-		if (Input.GetKeyDown(KeyCode.S)) {
+		text.text = "str:" + Abilities.Strength + " tech:" + Abilities.Technic + " agi:" + Abilities.Agility + " tough:" + Abilities.Toughness;
+		if (Input.GetKeyDown(KeyCode.R)) {
 			Abilities.plusStr();
 		}
 
@@ -24,8 +24,12 @@ public class abilityTest : MonoBehaviour {
 			Abilities.plusTech();
 		}
 
-		if (Input.GetKeyDown(KeyCode.A)) {
+		if (Input.GetKeyDown(KeyCode.G)) {
 			Abilities.plusAgi();
+		}
+
+		if (Input.GetKeyDown(KeyCode.O)) {
+			Abilities.plusTough();
 		}
 	}
 }

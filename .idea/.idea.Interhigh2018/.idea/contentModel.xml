@@ -487,6 +487,7 @@
               <e p="AimObjectRecoiler.cs" t="Include" />
               <e p="PlayerAbilities.cs" t="Include" />
               <e p="PlayerEquipmentSystem.cs" t="Include" />
+              <e p="PlayerHealth.cs" t="Include" />
               <e p="PlayerMeleeSystem.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
               <e p="PlayerShootingSystem.cs" t="Include" />
@@ -499,7 +500,6 @@
             <e p="ShootingSystem.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
-            <e p="AimCursor.cs" t="Include" />
             <e p="Cameras" t="Include">
               <e p="AimObject.cs" t="Include" />
               <e p="CameraAimer.cs" t="Include" />
@@ -507,6 +507,10 @@
             </e>
             <e p="Inputs" t="Include">
               <e p="InputInfo.cs" t="Include" />
+            </e>
+            <e p="UI" t="Include">
+              <e p="AimCursor.cs" t="Include" />
+              <e p="DamageEffectController.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -542,6 +546,7 @@
               </e>
             </e>
           </e>
+          <e p="HealthTest.cs" t="Include" />
           <e p="IkTest.cs" t="Include" />
           <e p="Mixamo" t="Include">
             <e p="Melee Axe Pack" t="Include">
