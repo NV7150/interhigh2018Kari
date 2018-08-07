@@ -28,7 +28,7 @@ namespace Characters.Player {
 		
 		/// <summary>
 		/// リロード速度
-		/// 単位は割合：1.0f~0.5f
+		/// 単位は秒：1.0f~0.5f
 		/// 計算式：-0.01f * strength + 1.00f
 		/// </summary>
 		private float reloadRate;

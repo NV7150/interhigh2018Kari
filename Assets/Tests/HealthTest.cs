@@ -16,6 +16,5 @@ public class HealthTest : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.H)) {
 			health.damage(0.1f);
 		}
-		Debug.Log("HP" + health.Hp);
 	}
 }

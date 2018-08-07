@@ -1179,11 +1179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootFrom: {fileID: 205644667}
-  shootRange: 50
   aimCapDistance: 0
-  recoil: 100
   aimMomentryForcusDegree: 0.2
-  burstSeconds: 0.1
   cam: {fileID: 1546292394}
   bulletPrefab: {fileID: 1553966638100084, guid: 32f2e3c8deef14a12b2a4ceb1e6d82fb,
     type: 2}
@@ -2089,6 +2086,48 @@ Transform:
   m_Father: {fileID: 923686489}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &320407049
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4663722459603008, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 3.966
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663722459603008, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.427
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663722459603008, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -6.334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663722459603008, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.5577863
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663722459603008, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.23194899
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663722459603008, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.07307282
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663722459603008, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.79355824
+      objectReference: {fileID: 0}
+    - target: {fileID: 4663722459603008, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2de3b36d3312c4c35b948fa3e701d93d, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &321966772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,7 +4146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.07058824}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5904,11 +5943,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootFrom: {fileID: 741174076}
-  shootRange: 10
   aimCapDistance: 0
-  recoil: 0
   aimMomentryForcusDegree: 0.2
-  burstSeconds: 0.1
   cam: {fileID: 1546292394}
   bulletPrefab: {fileID: 1661285401720426, guid: 23e293e3e798b478787fddf5b6366d88,
     type: 2}
@@ -6447,6 +6483,8 @@ GameObject:
   - component: {fileID: 880068758}
   - component: {fileID: 880068757}
   - component: {fileID: 880068759}
+  - component: {fileID: 880068761}
+  - component: {fileID: 880068760}
   m_Layer: 0
   m_Name: Tester
   m_TagString: Untagged
@@ -6492,6 +6530,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Abilities: {fileID: 601229977}
   text: {fileID: 773163802}
+--- !u!114 &880068760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 880068756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6848655662d41dead2dac245e218e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &880068761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 880068756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf4584230f5ca4327afc0036a28d3765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxId: 0
+  getPath: MasterDatas/WeaponMasterData.csv
 --- !u!1 &889447582
 GameObject:
   m_ObjectHideFlags: 0
@@ -7525,6 +7587,15 @@ Prefab:
       propertyPath: SPEED
       value: 250
       objectReference: {fileID: 0}
+    - target: {fileID: 1380078543160560, guid: 631721cc3399d4051af6decd5e3a1793, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114742555975388946, guid: 631721cc3399d4051af6decd5e3a1793,
+        type: 2}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 1935116770}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 631721cc3399d4051af6decd5e3a1793, type: 2}
   m_IsPrefabAsset: 0
@@ -13681,11 +13752,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootFrom: {fileID: 741174076}
-  shootRange: 10
   aimCapDistance: 0
-  recoil: 0
   aimMomentryForcusDegree: 0.2
-  burstSeconds: 0.1
   cam: {fileID: 1546292394}
   bulletPrefab: {fileID: 1661285401720426, guid: 23e293e3e798b478787fddf5b6366d88,
     type: 2}
@@ -20754,7 +20822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0.043965846, b: 0.043965846, a: 0.105882354}
+  m_Color: {r: 0.7169812, g: 0.043965846, b: 0.043965846, a: 0}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -22315,6 +22383,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1806037619968950, guid: 631721cc3399d4051af6decd5e3a1793,
     type: 2}
   m_PrefabInternal: {fileID: 1061885690}
+--- !u!114 &1935116770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1935116763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a891ddf7e8ca94e0f90e17ce2c22a4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1959155438
 GameObject:
   m_ObjectHideFlags: 0

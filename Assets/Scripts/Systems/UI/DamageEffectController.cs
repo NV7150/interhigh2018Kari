@@ -61,7 +61,6 @@ public class DamageEffectController : MonoBehaviour {
 	/// bloodImageのアルファ値を更新します
 	/// </summary>
 	void changeBloodAlpha() {
-		Debug.Log("index" + judgeIndex());
 		bloodImage.color = bloodImageColors[judgeIndex()];
 	}
 	

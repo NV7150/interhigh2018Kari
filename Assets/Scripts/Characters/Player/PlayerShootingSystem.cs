@@ -8,21 +8,9 @@ namespace Characters.Player {
 	public class PlayerShootingSystem : ShootingSystem {
 
 		/// <summary>
-		/// 射程
-		/// 単位はVector3のと同じ
-		/// </summary>
-		public float shootRange;
-
-		/// <summary>
 		/// エイムを行う最大近接距離
 		/// </summary>
 		public float aimCapDistance = 0f;
-
-		/// <summary>
-		/// リコイルする値
-		/// 単位は度/秒の速度
-		/// </summary>
-		public float recoil;
 
 		/// <summary>
 		/// エイム開始時に瞬時にズームする値
@@ -30,16 +18,10 @@ namespace Characters.Player {
 		public float aimMomentryForcusDegree = 0.2f;
 
 		/// <summary>
-		/// 発砲間隔
-		/// </summary>
-		public float burstSeconds = 0.1f;
-
-		/// <summary>
 		/// プレイヤーの能力値
 		/// </summary>
 		private PlayerAbilities abilities;
-
-
+		
 		/// <summary>
 		/// ロック中の物体からカメラへの距離
 		/// </summary>
@@ -66,6 +48,7 @@ namespace Characters.Player {
 		/// </summary>
 		private float burstTimer = 0.0f;
 
+		private int remainingAmmo = 0;
 
 
 		/// <summary>
@@ -103,7 +86,9 @@ namespace Characters.Player {
 		/// カメラから独立してエイムの補助を行うオブジェクト
 		/// </summary>
 		public AimObject aimObj;
-
+		
+		private ShootWeapon weapon;
+		
 
 		/// <summary>
 		/// 背景データのマスク
@@ -122,7 +107,7 @@ namespace Characters.Player {
 		}
 
 		public override float ShootRange {
-			get { return shootRange; }
+			get { return weapon.Range; }
 		}
 
 		public float RockDistance {
@@ -141,13 +126,21 @@ namespace Characters.Player {
 			get { return currentAimCorrection; }
 		}
 
+		public ShootWeapon Weapon {
+			get { return weapon; }
+		}
+
 		// Use this for initialization
 		void Start() {
+			weapon = ShootWeaponMasterManager.INSTANCE.creatWeapon(0).GetComponent<ShootWeapon>();
+			
 			abilities = GetComponent<PlayerAbilities>();
 			ik = GetComponent<AimIK>();
-			rockDistance = shootRange;
+			rockDistance = weapon.Range;
 			stateMan = GetComponent<PlayerStateManager>();
 			aimForcusSys = GetComponent<AimForcusSystem>();
+
+			remainingAmmo = weapon.Ammo;
 
 			bgLayerMask = LayerMask.GetMask("BackGround");
 			rockAbleLayerMask = ~(1 << 9);
@@ -158,11 +151,16 @@ namespace Characters.Player {
 
 			searchAim();
 			if (burstTimer <= 0f) {
-				bool atk = Input.GetButtonDown("Fire1");
+				
+				bool atk = (weapon.IsAutomatic) ? Input.GetButton("Fire1") : Input.GetButtonDown("Fire1");
 				if (atk) {
-					shoot();
-					recoilMan.recoil(recoil);
-					burstTimer = burstSeconds;
+					if (remainingAmmo > 0) {
+						shoot();
+						recoilMan.recoil(weapon.Recoil);
+						burstTimer = weapon.FireSec;
+					} else {
+						reload();
+					}
 				}
 			} else {
 				burstTimer -= Time.deltaTime;
@@ -182,11 +180,11 @@ namespace Characters.Player {
 
 			RaycastHit hit;
 			//とりあえずPlayer以外なら命中判定
-			if (Physics.Raycast(ray, out hit, shootRange * 10) && !hit.collider.CompareTag("Player")) {
+			if (Physics.Raycast(ray, out hit, weapon.Range * 10) && !hit.collider.CompareTag("Player")) {
 				var aimpoint = hit.point;
 				var dist = Vector3.Distance(shootFrom.transform.position, aimpoint);
 				//当たったところが射程圏内ならそこをロック
-				if (dist < shootRange) {
+				if (dist < weapon.Range) {
 					//エイムキャップ圏内なら壁にめりこむ
 					if (dist <= aimCapDistance) {
 						//実距離を保存
@@ -205,7 +203,7 @@ namespace Characters.Player {
 					ik.solver.IKPosition = aimpoint;
 				}
 			} else {
-				ik.solver.IKPosition = ray.direction * shootRange + cam.transform.position;
+				ik.solver.IKPosition = ray.direction * weapon.Range + cam.transform.position;
 				//距離は最大距離
 				rockDistance = Vector3.Distance(cam.transform.position, ik.solver.IKPosition);
 			}
@@ -243,14 +241,27 @@ namespace Characters.Player {
 			//射撃
 			var shootRay = new Ray(shootFrom.position, vector);
 			var hit = new RaycastHit();
-			if (Physics.Raycast(shootRay, out hit, shootRange, bgLayerMask)) {
+			if (Physics.Raycast(shootRay, out hit, weapon.Range, bgLayerMask)) {
 				Debug.DrawLine(shootFrom.position, hit.point, Color.blue);
 
 				Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
 			}
-
+			
+			//残弾を減らす
+			remainingAmmo -= 1;
+			
 			//反動処理
-			recoilMan.recoil(recoil);
+			recoilMan.recoil(weapon.Recoil);
+		}
+		
+		/// <summary>
+		/// リロードします
+		/// </summary>
+		void reload() {
+			//リロード時間を計算
+			burstTimer = abilities.ReloadRate * weapon.ReloadSec;
+			//全弾リロード
+			remainingAmmo = weapon.Ammo;
 		}
 	}
 }

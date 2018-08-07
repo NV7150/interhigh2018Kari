@@ -10,7 +10,6 @@ namespace Characters.Player {
         /// </summary>
         private SphereCollider soundCol;
 	
-	
         /// <summary>
         /// 隠密状態時、範囲が何倍されるか((1 - sneakMag) * 100% 分縮小する)
         /// </summary>

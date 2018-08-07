@@ -1,0 +1,2 @@
+ID,Name,Ammo,Damage,FireRate,NeedSTR,Range,Recoil,Weight,ZoomRate,isAutomatic,ReloadSec,ObjectPath
+0,蒸気ライフル,30,0.2,1,0,30,100,0,1,FALSE,3,Prefabs/Rifle

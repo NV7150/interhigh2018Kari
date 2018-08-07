@@ -30,6 +30,8 @@ public class AimCursor : MonoBehaviour {
 	private PlayerShootingSystem shootSys;
 	
 	private PlayerAbilities abilities;
+
+	private ShootWeapon weapon;
 	
 	/// <summary>
 	/// 通常時の画面命中半径
@@ -87,10 +89,11 @@ public class AimCursor : MonoBehaviour {
 		shootSys = player.GetComponent<PlayerShootingSystem>();
 		_stateMan = player.GetComponent<PlayerStateManager>();
 		abilities = player.GetComponent<PlayerAbilities>();
+		weapon = shootSys.Weapon;
 		
 		//各種値を計算
 		//通常時の最大射程スクリーンの高さ
-		hitScrHeight = shootSys.shootRange * 2.0f * Mathf.Tan(aimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
+		hitScrHeight = weapon.Range * 2.0f * Mathf.Tan(aimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
 		//通常時の最大射程命中円の半径
 		shootRadius = abilities.ShootWide + shootSys.ShootRange / 100;
 		//通常時の画面命中円の半径
@@ -103,7 +106,7 @@ public class AimCursor : MonoBehaviour {
 		
 		//変更感知用に覚えておく
 		shootWideRem = abilities.ShootWide;
-		shootRangeRem = shootSys.shootRange;
+		shootRangeRem = weapon.Range;
 	}
 	
 	// Update is called once per frame
@@ -151,8 +154,9 @@ public class AimCursor : MonoBehaviour {
 	}
 
 	void checkChange() {
-		//射程変更感知
-		if(Math.Abs(shootSys.ShootRange - shootRangeRem) > 0.01f){
+		//武器変更感知
+		if(shootSys.Weapon.Id != weapon.Id){
+			weapon = shootSys.Weapon;
 			reDefRange();
 		}
 		
@@ -184,7 +188,7 @@ public class AimCursor : MonoBehaviour {
 	/// </summary>
 	void reDefRange() {
 		//通常時の最大射程スクリーンの高さ
-		hitScrHeight = shootSys.shootRange * 2.0f * Mathf.Tan(aimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
+		hitScrHeight = weapon.Range * 2.0f * Mathf.Tan(aimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
 		//通常時の最大射程命中円の半径
 		shootRadius = abilities.ShootWide + shootSys.ShootRange / 100;
 		//通常時の画面命中円の半径
@@ -196,7 +200,7 @@ public class AimCursor : MonoBehaviour {
 		aimIngRadius = shootRadius / aimIngHitScrHeight * Screen.height;
 		
 		//変更感知用に覚えておく
-		shootRangeRem = shootSys.shootRange;
+		shootRangeRem = weapon.Range;
 		
 	}
 }
