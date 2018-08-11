@@ -35,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4302515631980434}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AimTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 95373619871779458}
   - component: {fileID: 65655396762873500}
   - component: {fileID: 54743569532317734}
-  - component: {fileID: 114817768554773144}
+  - component: {fileID: 114770949715796056}
   m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1970538835472860}
   m_LocalRotation: {x: -0.5577863, y: 0.23194899, z: 0.07307282, w: -0.79355824}
-  m_LocalPosition: {x: 3.966, y: 1.427, z: -6.334}
+  m_LocalPosition: {x: -0.11, y: 0.022, z: 0.03}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4302515631980434}
@@ -190,7 +190,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114817768554773144
+--- !u!114 &114770949715796056
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,6 +198,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1970538835472860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a891ddf7e8ca94e0f90e17ce2c22a4b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7160f97bbbbb247e99ea901c21e1e295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootFrom: {fileID: 4941953315796392}
+  aimTransform: {fileID: 4302515631980434}

@@ -18,7 +18,7 @@ namespace Characters.Player{
 
         public Animation attack;
         
-        void Start() {
+        void Awake() {
             ik = GetComponent<AimIK>();
             abilities = GetComponent<PlayerAbilities>();
         }

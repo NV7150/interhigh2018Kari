@@ -22,12 +22,14 @@ public class AimCursor : MonoBehaviour {
 	/// <summary>
 	/// カメラのエイムズームコンポーネント
 	/// </summary>
-	public CameraAimer aimer;
-	
+	public CameraAimer camAimer;
+
 	/// <summary>
 	/// PlayerShootingSystemのコンポーネント
 	/// </summary>
 	private PlayerShootingSystem shootSys;
+
+	private PlayerAimer plAimer;
 	
 	private PlayerAbilities abilities;
 
@@ -66,7 +68,9 @@ public class AimCursor : MonoBehaviour {
 	/// <summary>
 	/// プレイヤーのステートマネージャ
 	/// </summary>
-	private PlayerStateManager _stateMan;
+	private PlayerStateManager stateMan;
+
+	private PlayerEquipmentManager equipMan;
 
 	/// <summary>
 	/// リコイルマネージャ
@@ -83,24 +87,29 @@ public class AimCursor : MonoBehaviour {
 	/// </summary>
 	private float shootRangeRem;
 
+	private void Awake() {
+		rect = GetComponent<RectTransform>();
+		stateMan = player.GetComponent<PlayerStateManager>();
+		abilities = player.GetComponent<PlayerAbilities>();
+		equipMan = player.GetComponent<PlayerEquipmentManager>();
+		plAimer = player.GetComponent<PlayerAimer>();
+		shootSys = player.GetComponent<PlayerShootingSystem>();
+	}
+
 	// Use this for initialization
 	void Start () {
-		rect = GetComponent<RectTransform>();
-		shootSys = player.GetComponent<PlayerShootingSystem>();
-		_stateMan = player.GetComponent<PlayerStateManager>();
-		abilities = player.GetComponent<PlayerAbilities>();
-		weapon = shootSys.Weapon;
+		weapon = equipMan.CurrentShootWeapon;
 		
 		//各種値を計算
 		//通常時の最大射程スクリーンの高さ
-		hitScrHeight = weapon.Range * 2.0f * Mathf.Tan(aimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
+		hitScrHeight = weapon.Range * 2.0f * Mathf.Tan(camAimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
 		//通常時の最大射程命中円の半径
-		shootRadius = abilities.ShootWide + shootSys.ShootRange / 100;
+		shootRadius = abilities.ShootWide + weapon.Range / 100;
 		//通常時の画面命中円の半径
 		radius = shootRadius / hitScrHeight * Screen.height;
 		
 		//エイム時の最大射程スクリーンの高さ
-		aimIngHitScrHeight = shootSys.ShootRange * 2.0f * Mathf.Tan(aimer.AimZoomFov * 0.5f * Mathf.Deg2Rad);
+		aimIngHitScrHeight = weapon.Range * 2.0f * Mathf.Tan(camAimer.AimZoomFov * 0.5f * Mathf.Deg2Rad);
 		//エイム時の画面命中円半径
 		aimIngRadius = shootRadius / aimIngHitScrHeight * Screen.height;
 		
@@ -115,14 +124,14 @@ public class AimCursor : MonoBehaviour {
 		checkChange();
 		
 		float screenRad;
-		if (shootSys.IsAimCap) {
+		if (plAimer.IsAimCap) {
 			//エイム制限にかかった場合はその分補正して半径を計算
-			var aimCapShootRadius = shootRadius * shootSys.RealAimDistanceToObject / shootSys.RockDistance;
-			var scrHeight = ((_stateMan.IsAiming) ? aimIngHitScrHeight : hitScrHeight);
+			var aimCapShootRadius = shootRadius * plAimer.RealAimDistToObj / plAimer.RockDist;
+			var scrHeight = ((stateMan.IsAiming) ? aimIngHitScrHeight : hitScrHeight);
 			screenRad = aimCapShootRadius / scrHeight  * Screen.height * shootSys.CurrentAimCorrection + 6.25f;
 		} else {
 			//それ以外は事前計算分を使用
-			screenRad = (_stateMan.IsAiming) ?  aimIngRadius : radius;
+			screenRad = (stateMan.IsAiming) ?  aimIngRadius : radius;
 			//最終計算
 			screenRad *= shootSys.CurrentAimCorrection;
 			screenRad += 6.25f;
@@ -135,7 +144,7 @@ public class AimCursor : MonoBehaviour {
 		cursorLeft.rectTransform.localPosition = new  Vector3(-screenRad,0);
 		
 		//反動分エイムカーソルを上下
-		if (_stateMan.IsRecoilEffecting) {
+		if (stateMan.IsRecoilEffecting) {
 			rect.localPosition = new Vector3(0,computeRecoilOffset());
 		} else {
 			rect.localPosition = new Vector3(0,0);
@@ -147,16 +156,16 @@ public class AimCursor : MonoBehaviour {
 	/// </summary>
 	/// <returns>発生した高さ</returns>
 	float computeRecoilOffset() {
-		var worldSin = Mathf.Sin(recoilMan.Recoiled * Mathf.PI / 180) * shootSys.RockDistance;
-		var fov = (_stateMan.IsAiming) ? aimer.AimZoomFov : aimer.NonAimZoomFov;
-		var sinHeight = shootSys.RockDistance * 2.0f * Mathf.Tan(fov * 0.5f * Mathf.Deg2Rad);
+		var worldSin = Mathf.Sin(recoilMan.Recoiled * Mathf.PI / 180) * plAimer.RockDist;
+		var fov = (stateMan.IsAiming) ? camAimer.AimZoomFov : camAimer.NonAimZoomFov;
+		var sinHeight = plAimer.RockDist * 2.0f * Mathf.Tan(fov * 0.5f * Mathf.Deg2Rad);
 		return worldSin / sinHeight * Screen.height;
 	}
 
 	void checkChange() {
 		//武器変更感知
-		if(shootSys.Weapon.Id != weapon.Id){
-			weapon = shootSys.Weapon;
+		if(equipMan.CurrentShootWeapon.Id != weapon.Id){
+			weapon = equipMan.CurrentShootWeapon;
 			reDefRange();
 		}
 		
@@ -171,7 +180,7 @@ public class AimCursor : MonoBehaviour {
 	/// </summary>
 	void reDefWide() {
 		//通常時の最大射程命中円の半径
-		shootRadius = abilities.ShootWide + shootSys.ShootRange / 100;
+		shootRadius = abilities.ShootWide + weapon.Range / 100;
 		//通常時の画面命中円の半径
 		radius = shootRadius / hitScrHeight * Screen.height;
 		
@@ -188,14 +197,14 @@ public class AimCursor : MonoBehaviour {
 	/// </summary>
 	void reDefRange() {
 		//通常時の最大射程スクリーンの高さ
-		hitScrHeight = weapon.Range * 2.0f * Mathf.Tan(aimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
+		hitScrHeight = weapon.Range * 2.0f * Mathf.Tan(camAimer.NonAimZoomFov * 0.5f * Mathf.Deg2Rad);
 		//通常時の最大射程命中円の半径
-		shootRadius = abilities.ShootWide + shootSys.ShootRange / 100;
+		shootRadius = abilities.ShootWide + weapon.Range / 100;
 		//通常時の画面命中円の半径
 		radius = shootRadius / hitScrHeight * Screen.height;
 		
 		//エイム時の最大射程スクリーンの高さ
-		aimIngHitScrHeight = shootSys.ShootRange * 2.0f * Mathf.Tan(aimer.AimZoomFov * 0.5f * Mathf.Deg2Rad);
+		aimIngHitScrHeight = weapon.Range * 2.0f * Mathf.Tan(camAimer.AimZoomFov * 0.5f * Mathf.Deg2Rad);
 		//エイム時の画面命中円半径
 		aimIngRadius = shootRadius / aimIngHitScrHeight * Screen.height;
 		

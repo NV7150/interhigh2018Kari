@@ -24,13 +24,17 @@ namespace Characters.Player {
         /// 能力値
         /// </summary>
         private PlayerAbilities abilities;
-	
-        // Use this for initialization
-        void Start () {
+
+        private void Awake() {
             abilities = GetComponent<PlayerAbilities>();
             soundCol = GetComponent<SphereCollider>();
-            soundCol.radius = abilities.SneakRad;
             _stateMan = GetComponent<PlayerStateManager>();
+
+        }
+
+        // Use this for initialization
+        void Start () {
+            soundCol.radius = abilities.SneakRad;
         }
 	
         // Update is called once per frame

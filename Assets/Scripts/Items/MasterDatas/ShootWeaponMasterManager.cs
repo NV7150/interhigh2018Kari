@@ -9,7 +9,7 @@ public class ShootWeaponMasterManager : MasterDataManager{
 	public static readonly ShootWeaponMasterManager INSTANCE = new ShootWeaponMasterManager();
 
 	private ShootWeaponMasterManager() {
-		base.loadData("MasterDatas/WeaponMasterData");
+		base.loadData("MasterDatas/ShootWeaponMasterData");
 		loadBuilder();
 	}
 	
@@ -34,7 +34,8 @@ public class ShootWeaponMasterManager : MasterDataManager{
 			builder.ZoomRate = float.Parse(getRawParam(i, "ZoomRate"));
 			builder.IsAutomatic = (getRawParam(i,"isAutomatic") == "TRUE");
 			builder.ReloadSec = float.Parse(getRawParam(i, "ReloadSec"));
-			builder.WeaponPrefab = (GameObject) Resources.Load(getRawParam(i, "ObjectPath"));
+			builder.WeaponPrefab = (GameObject) Resources.Load("Prefabs/" + getRawParam(i, "ObjectName"));
+			builder.WeaponAnim = (RuntimeAnimatorController) RuntimeAnimatorController.Instantiate(Resources.Load("Animators/" + getRawParam(i, "AnimName")));
 			
 			builders.Add(builder);
 		}
@@ -44,25 +45,10 @@ public class ShootWeaponMasterManager : MasterDataManager{
 	/// idから武器を生成します
 	/// </summary>
 	/// <param name="id">生成したい武器のID</param>
-	/// <returns>生成した武器のGameObject</returns>
-	public GameObject creatWeapon(int id) {
-		var builder = builders[id];
-		GameObject weapon = MonoBehaviour.Instantiate(builder.WeaponPrefab);
-		weapon.GetComponent<ShootWeapon>().setBuilder(builder);
-		return weapon;
-	}
-	
-	/// <summary>
-	/// idから武器を生成します
-	/// </summary>
-	/// <param name="id">生成したい武器のID</param>
 	/// <param name="pos">生成した武器の希望するPosition</param>
 	/// <param name="rotation">生成した武器の希望するRotation</param>
-	/// <returns>生成した武器のGameObject</returns>
-	public GameObject creatWeapon(int id, Vector3 pos, Quaternion rotation) {
-		var builder = builders[id];
-		GameObject weapon = MonoBehaviour.Instantiate(builder.WeaponPrefab,pos,rotation);
-		weapon.GetComponent<ShootWeapon>().setBuilder(builder);
-		return weapon;
+	/// <returns>生成した武器</returns>
+	public ShootWeapon creatWeapon(int id) {
+		return builders[id].creatWeapon();
 	}
 }

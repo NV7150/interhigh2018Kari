@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 /// <summary>
@@ -19,6 +20,7 @@ public class ShootWeaponBuilder{
     private float fireRate;
     private float reloadSec;
     private bool isAutomatic;
+    private RuntimeAnimatorController weaponAnim;
 
     /// <summary>
     /// 対象Weaponのプレファブ
@@ -86,11 +88,20 @@ public class ShootWeaponBuilder{
         set { reloadSec = value; }
     }
 
+    public RuntimeAnimatorController WeaponAnim {
+        get { return weaponAnim; }
+        set { weaponAnim = value; }
+    }
+
     /// <summary>
     /// 対象武器ののプレファブ
     /// </summary>
     public GameObject WeaponPrefab {
         get { return weaponPrefab; }
         set { weaponPrefab = value; }
+    }
+
+    public ShootWeapon creatWeapon() {
+        return new ShootWeapon(this);
     }
 }

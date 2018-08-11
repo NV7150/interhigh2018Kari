@@ -22,7 +22,7 @@ namespace Characters.Player {
 			get { return hp; }
 		}
 
-		private void Start() {
+		private void Awake() {
 			abilities = GetComponent<PlayerAbilities>();
 		}
 

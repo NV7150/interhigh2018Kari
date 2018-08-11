@@ -15,7 +15,7 @@ namespace Characters.Player{
         /// <summary>
         /// ステートマネージャ
         /// </summary>
-        private PlayerStateManager _stateMan;
+        private PlayerStateManager stateMan;
         
         /// <summary>
         /// プレイヤーの能力値
@@ -26,9 +26,9 @@ namespace Characters.Player{
             get { return currentForcusRate; }
         }
         
-        private void Start() {
+        private void Awake() {
             abilities = GetComponent<PlayerAbilities>();
-            _stateMan = GetComponent<PlayerStateManager>();
+            stateMan = GetComponent<PlayerStateManager>();
         }
 
         // Update is called once per frame
@@ -87,7 +87,7 @@ namespace Characters.Player{
         /// </summary>
         /// <returns>この時点までのjudgeForcussingの結果</returns>
         bool isntRecoiling() {
-            if (_stateMan.IsRecoilEffecting)
+            if (stateMan.IsRecoilEffecting)
                 return false;
             return isAiming();
         }
@@ -99,7 +99,7 @@ namespace Characters.Player{
         /// <returns>この時点までのjudgeForcussingの結果</returns>
         bool isAiming() {
             //注：フォーカスはエイム中のみ
-            if (!_stateMan.IsAiming)
+            if (!stateMan.IsAiming)
                 return false;
             return true;
         }

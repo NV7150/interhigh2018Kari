@@ -483,16 +483,26 @@
               <e p="EnemyStateManager.cs" t="Include" />
             </e>
             <e p="Player" t="Include">
-              <e p="AimForcusSystem.cs" t="Include" />
-              <e p="AimObjectRecoiler.cs" t="Include" />
-              <e p="PlayerAbilities.cs" t="Include" />
-              <e p="PlayerEquipmentSystem.cs" t="Include" />
-              <e p="PlayerHealth.cs" t="Include" />
-              <e p="PlayerMeleeSystem.cs" t="Include" />
-              <e p="PlayerMovement.cs" t="Include" />
-              <e p="PlayerShootingSystem.cs" t="Include" />
-              <e p="PlayerSneakSystem.cs" t="Include" />
-              <e p="PlayerStateManager.cs" t="Include" />
+              <e p="Action" t="Include">
+                <e p="PlayerMovement.cs" t="Include" />
+                <e p="PlayerSneakSystem.cs" t="Include" />
+              </e>
+              <e p="Melee" t="Include">
+                <e p="PlayerMeleeSystem.cs" t="Include" />
+              </e>
+              <e p="Property" t="Include">
+                <e p="PlayerAbilities.cs" t="Include" />
+                <e p="PlayerEquipmentManager.cs" t="Include" />
+                <e p="PlayerEquipmentSwitcher.cs" t="Include" />
+                <e p="PlayerHealth.cs" t="Include" />
+                <e p="PlayerStateManager.cs" t="Include" />
+              </e>
+              <e p="Shooting" t="Include">
+                <e p="AimForcusSystem.cs" t="Include" />
+                <e p="AimObjectRecoiler.cs" t="Include" />
+                <e p="PlayerAimer.cs" t="Include" />
+                <e p="PlayerShootingSystem.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Items" t="Include">
@@ -501,6 +511,9 @@
               <e p="ShootWeaponMasterManager.cs" t="Include" />
             </e>
             <e p="ShootWeapon.cs" t="Include" />
+            <e p="ShootWeaponProperties.cs" t="Include" />
+            <e p="Weapon.cs" t="Include" />
+            <e p="WeaponType.cs" t="Include" />
           </e>
           <e p="roots" t="Include">
             <e p="MasterDataManager.cs" t="Include" />

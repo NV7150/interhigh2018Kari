@@ -50,12 +50,7 @@ namespace Characters.Player {
 
 		private int remainingAmmo = 0;
 
-
-		/// <summary>
-		/// AimIK
-		/// </summary>
-		private AimIK ik;
-
+		
 		/// <summary>
 		/// ステートマネージャ
 		/// </summary>
@@ -65,6 +60,8 @@ namespace Characters.Player {
 		/// エイムズームを行うコンポーネント
 		/// </summary>
 		private AimForcusSystem aimForcusSys;
+
+		private PlayerEquipmentManager equipMan;
 
 
 		/// <summary>
@@ -82,24 +79,11 @@ namespace Characters.Player {
 		/// </summary>
 		public AimObjectRecoiler recoilMan;
 
-		/// <summary>
-		/// カメラから独立してエイムの補助を行うオブジェクト
-		/// </summary>
-		public AimObject aimObj;
-		
-		private ShootWeapon weapon;
-		
 
 		/// <summary>
 		/// 背景データのマスク
 		/// </summary>
 		private int bgLayerMask = 0;
-
-		/// <summary>
-		/// unrockable以外のもののマスク
-		/// プレイヤーにめっちゃ近いところをロックする不具合が生じているので今は不使用
-		/// </summary>
-		private int rockAbleLayerMask = 0;
 
 
 		public override float ShootWide {
@@ -107,7 +91,7 @@ namespace Characters.Player {
 		}
 
 		public override float ShootRange {
-			get { return weapon.Range; }
+			get { return equipMan.CurrentShootWeapon.Range; }
 		}
 
 		public float RockDistance {
@@ -126,38 +110,30 @@ namespace Characters.Player {
 			get { return currentAimCorrection; }
 		}
 
-		public ShootWeapon Weapon {
-			get { return weapon; }
+		private void Awake() {
+			abilities = GetComponent<PlayerAbilities>();
+			stateMan = GetComponent<PlayerStateManager>();
+			aimForcusSys = GetComponent<AimForcusSystem>();
+			equipMan = GetComponent<PlayerEquipmentManager>();
 		}
 
 		// Use this for initialization
 		void Start() {
-			weapon = ShootWeaponMasterManager.INSTANCE.creatWeapon(0).GetComponent<ShootWeapon>();
-			
-			abilities = GetComponent<PlayerAbilities>();
-			ik = GetComponent<AimIK>();
-			rockDistance = weapon.Range;
-			stateMan = GetComponent<PlayerStateManager>();
-			aimForcusSys = GetComponent<AimForcusSystem>();
-
-			remainingAmmo = weapon.Ammo;
+			remainingAmmo = equipMan.CurrentShootWeapon.Ammo;
 
 			bgLayerMask = LayerMask.GetMask("BackGround");
-			rockAbleLayerMask = ~(1 << 9);
 		}
 
 		// Update is called once per frame
 		void Update() {
-
-			searchAim();
 			if (burstTimer <= 0f) {
 				
-				bool atk = (weapon.IsAutomatic) ? Input.GetButton("Fire1") : Input.GetButtonDown("Fire1");
+				bool atk = (equipMan.CurrentShootWeapon.IsAutomatic) ? Input.GetButton("Fire1") : Input.GetButtonDown("Fire1");
 				if (atk) {
 					if (remainingAmmo > 0) {
 						shoot();
-						recoilMan.recoil(weapon.Recoil);
-						burstTimer = weapon.FireSec;
+						recoilMan.recoil(equipMan.CurrentShootWeapon.Recoil);
+						burstTimer = equipMan.CurrentShootWeapon.FireSec;
 					} else {
 						reload();
 					}
@@ -174,42 +150,40 @@ namespace Characters.Player {
 		/// 銃口の向き（AimIKの位置）を修正します。
 		/// update毎に呼ばれます。
 		/// </summary>
-		void searchAim() {
-			//エイムオブジェクトからRayを発信
-			var ray = aimObj.getFrontRay();
-
-			RaycastHit hit;
-			//とりあえずPlayer以外なら命中判定
-			if (Physics.Raycast(ray, out hit, weapon.Range * 10) && !hit.collider.CompareTag("Player")) {
-				var aimpoint = hit.point;
-				var dist = Vector3.Distance(shootFrom.transform.position, aimpoint);
-				//当たったところが射程圏内ならそこをロック
-				if (dist < weapon.Range) {
-					//エイムキャップ圏内なら壁にめりこむ
-					if (dist <= aimCapDistance) {
-						//実距離を保存
-						realAimDistanceToObject = dist;
-						//aimCapになるまでaimpointを調節
-						aimpoint += cam.transform.forward * (aimCapDistance - realAimDistanceToObject);
-						isAimCap = true;
-					} else {
-						isAimCap = false;
-					}
-
-					//距離を更新：カメラからの距離の方がaimcursor的に都合がいいのでそっち
-					rockDistance = Vector3.Distance(cam.transform.position, aimpoint);
-
-					//物体に当たればそっちを向く
-					ik.solver.IKPosition = aimpoint;
-				}
-			} else {
-				ik.solver.IKPosition = ray.direction * weapon.Range + cam.transform.position;
-				//距離は最大距離
-				rockDistance = Vector3.Distance(cam.transform.position, ik.solver.IKPosition);
-			}
-
-//		cheakIKPosLegal();
-		}
+//		void searchAim() {
+//			//エイムオブジェクトからRayを発信
+//			var ray = aimObj.getFrontRay();
+//
+//			RaycastHit hit;
+//			//とりあえずPlayer以外なら命中判定
+//			if (Physics.Raycast(ray, out hit, weapon.Range * 10) && !hit.collider.CompareTag("Player")) {
+//				var aimpoint = hit.point;
+//				var dist = Vector3.Distance(shootFrom.transform.position, aimpoint);
+//				//当たったところが射程圏内ならそこをロック
+//				if (dist < weapon.Range) {
+//					//エイムキャップ圏内なら壁にめりこむ
+//					if (dist <= aimCapDistance) {
+//						//実距離を保存
+//						realAimDistanceToObject = dist;
+//						//aimCapになるまでaimpointを調節
+//						aimpoint += cam.transform.forward * (aimCapDistance - realAimDistanceToObject);
+//						isAimCap = true;
+//					} else {
+//						isAimCap = false;
+//					}
+//
+//					//距離を更新：カメラからの距離の方がaimcursor的に都合がいいのでそっち
+//					rockDistance = Vector3.Distance(cam.transform.position, aimpoint);
+//
+//					//物体に当たればそっちを向く
+//					ik.solver.IKPosition = aimpoint;
+//				}
+//			} else {
+//				ik.solver.IKPosition = ray.direction * weapon.Range + cam.transform.position;
+//				//距離は最大距離
+//				rockDistance = Vector3.Distance(cam.transform.position, ik.solver.IKPosition);
+//			}
+//		}
 
 		/// <summary>
 		/// エイムズーム値の計算
@@ -241,7 +215,7 @@ namespace Characters.Player {
 			//射撃
 			var shootRay = new Ray(shootFrom.position, vector);
 			var hit = new RaycastHit();
-			if (Physics.Raycast(shootRay, out hit, weapon.Range, bgLayerMask)) {
+			if (Physics.Raycast(shootRay, out hit, equipMan.CurrentShootWeapon.Range, bgLayerMask)) {
 				Debug.DrawLine(shootFrom.position, hit.point, Color.blue);
 
 				Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
@@ -251,7 +225,7 @@ namespace Characters.Player {
 			remainingAmmo -= 1;
 			
 			//反動処理
-			recoilMan.recoil(weapon.Recoil);
+			recoilMan.recoil(equipMan.CurrentShootWeapon.Recoil);
 		}
 		
 		/// <summary>
@@ -259,9 +233,9 @@ namespace Characters.Player {
 		/// </summary>
 		void reload() {
 			//リロード時間を計算
-			burstTimer = abilities.ReloadRate * weapon.ReloadSec;
+			burstTimer = abilities.ReloadRate * equipMan.CurrentShootWeapon.ReloadSec;
 			//全弾リロード
-			remainingAmmo = weapon.Ammo;
+			remainingAmmo = equipMan.CurrentShootWeapon.Ammo;
 		}
 	}
 }

@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 	private PlayerStateManager _stateMan;
 	
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		_characterController = GetComponent<CharacterController>();
 		_animator = GetComponent<Animator>();
 		abilities = GetComponent<PlayerAbilities>();

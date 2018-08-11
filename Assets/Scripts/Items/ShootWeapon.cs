@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Characters.Player;
+using UnityEditorInternal;
 using UnityEngine;
 
-public class ShootWeapon : MonoBehaviour {
+public class ShootWeapon :Weapon {
 	private int id;
 	private string name;
 	private float recoil;
@@ -17,6 +18,15 @@ public class ShootWeapon : MonoBehaviour {
 	private float reloadSec;
 	private bool isAutomatic;
 
+	private RuntimeAnimatorController weaponAnim;
+	private GameObject weaponPrefab;
+	/// <summary>
+	/// 生成されていたら生成されたゲームオブジェクトが代入される
+	/// </summary>
+	private GameObject weaponObj;
+	
+	private int uniqueId;
+	
 	/// <summary>
 	/// この射撃武器のID
 	/// </summary>
@@ -101,15 +111,40 @@ public class ShootWeapon : MonoBehaviour {
 	public bool IsAutomatic {
 		get { return isAutomatic; }
 	}
-
+	
+	/// <summary>
+	/// リロードに要する基礎時間
+	/// </summary>
 	public float ReloadSec {
 		get { return reloadSec; }
 	}
+	
+	/// <summary>
+	/// 
+	/// </summary>
+	public WeaponType WeaponType {
+		get { return WeaponType.SHOOT; }
+	}
+
+	public int UniqueId {
+		get { return uniqueId; }
+	}
+
+	public GameObject WeaponObj {
+		get { return weaponObj; }
+	}
+	
+	public RuntimeAnimatorController WeaponAnim {
+		get { return weaponAnim; }
+	}
+	
 
 	/// <summary>
-	/// データを入れます
+	/// コンストラクタ
+	/// ビルダーを用いて初期化
 	/// </summary>
-	public void setBuilder(ShootWeaponBuilder builder) {
+	/// <param name="builder">データが入力されたビルダー</param>
+	public ShootWeapon(ShootWeaponBuilder builder) {
 		id = builder.Id;
 		name = builder.Name;
 		recoil = builder.Recoil;
@@ -122,5 +157,18 @@ public class ShootWeapon : MonoBehaviour {
 		fireSec = builder.FireRate;
 		reloadSec = builder.ReloadSec;
 		isAutomatic = builder.IsAutomatic;
+		weaponPrefab = builder.WeaponPrefab;
+		weaponAnim = builder.WeaponAnim;
+		
+		//ユニークIDを取得：getterに更新作業が含まれている
+		uniqueId = WeaponHelper.NewestId;
 	}
+	
+	public void creatObject(Vector3 handPos) {
+		if (weaponObj == null) {
+			weaponObj = MonoBehaviour.Instantiate(weaponPrefab);
+			weaponObj.transform.position += handPos;
+		}
+	}
+	
 }
