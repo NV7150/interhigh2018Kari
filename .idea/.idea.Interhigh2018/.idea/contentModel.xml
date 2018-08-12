@@ -476,6 +476,7 @@
         <e p="Scripts" t="Include">
           <e p="Characters" t="Include">
             <e p="Enemy" t="Include">
+              <e p="EnemyHelth.cs" t="Include" />
               <e p="EnemyMotionSystem.cs" t="Include" />
               <e p="EnemyNotifySystem.cs" t="Include" />
               <e p="EnemyShootAttackSystem.cs" t="Include" />

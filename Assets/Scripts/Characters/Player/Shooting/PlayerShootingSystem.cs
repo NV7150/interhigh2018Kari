@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Characters.Enemy;
 using Characters.Player;
 using RootMotion.FinalIK;
 using UnityEngine;
@@ -39,9 +40,9 @@ namespace Characters.Player {
 
 
 		/// <summary>
-		/// 背景データのマスク
+		/// 射撃に反応するもののみを集めたマスク
 		/// </summary>
-		private int bgLayerMask = 0;
+		public LayerMask ignoreMask;
 
 
 		public override float ShootWide {
@@ -78,8 +79,8 @@ namespace Characters.Player {
 			stateMan = GetComponent<PlayerStateManager>();
 			aimForcusSys = GetComponent<AimForcusSystem>();
 			equipMan = GetComponent<PlayerEquipmentManager>();
-			
-			bgLayerMask = LayerMask.GetMask("BackGround");
+
+			ignoreMask = ~ignoreMask;
 		}
 
 		// Update is called once per frame
@@ -127,10 +128,15 @@ namespace Characters.Player {
 			//射撃
 			var shootRay = new Ray(shootFrom.position, vector);
 			var hit = new RaycastHit();
-			if (Physics.Raycast(shootRay, out hit, equipMan.CurrentShootWeapon.Range, bgLayerMask)) {
-				Debug.DrawLine(shootFrom.position, hit.point, Color.blue);
-
-				Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
+			if (Physics.Raycast(shootRay, out hit, equipMan.CurrentShootWeapon.Range, ignoreMask)) {
+//				Instantiate(bulletPrefab, hit.point, new Quaternion(0, 0, 0, 0));
+				Debug.DrawLine(shootFrom.transform.position,hit.point);
+				var hitObj = hit.collider.gameObject;
+				if (hitObj.CompareTag("Enemy")) {
+					//敵ならダメージを与える
+					var damage = equipMan.CurrentShootWeapon.Damage;
+					hitObj.GetComponent<EnemyHelth>().damage(damage);
+				}
 			}
 			
 			//残弾を減らす

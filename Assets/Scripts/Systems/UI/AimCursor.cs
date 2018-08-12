@@ -83,9 +83,9 @@ public class AimCursor : MonoBehaviour {
 	private float shootWideRem;
 	
 	/// <summary>
-	/// 変更感知用に覚えておくshootRage
+	/// 変更感知用に覚えておくScreenHeight
 	/// </summary>
-	private float shootRangeRem;
+	private float scrHeightRem;
 
 	private void Awake() {
 		rect = GetComponent<RectTransform>();
@@ -115,7 +115,7 @@ public class AimCursor : MonoBehaviour {
 		
 		//変更感知用に覚えておく
 		shootWideRem = abilities.ShootWide;
-		shootRangeRem = weapon.Range;
+		scrHeightRem = Screen.height;
 	}
 	
 	// Update is called once per frame
@@ -173,6 +173,11 @@ public class AimCursor : MonoBehaviour {
 		if (Math.Abs(abilities.ShootWide - shootWideRem) > 0.016f) {
 			reDefWide();
 		}
+		
+		//画面の大きさの変更感知
+		if (Math.Abs(scrHeightRem - Screen.height) > 0.1f) {
+			reDefRad();
+		}
 	}
 	
 	/// <summary>
@@ -192,7 +197,7 @@ public class AimCursor : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// shootRangeが変更された時に各値を再定義します
+	/// shootRangeが変更された(武器が変更された)時に各値を再定義します
 	/// っていうか全部変わるので全部再定義します
 	/// </summary>
 	void reDefRange() {
@@ -208,8 +213,18 @@ public class AimCursor : MonoBehaviour {
 		//エイム時の画面命中円半径
 		aimIngRadius = shootRadius / aimIngHitScrHeight * Screen.height;
 		
-		//変更感知用に覚えておく
-		shootRangeRem = weapon.Range;
+	}
+	
+	/// <summary>
+	/// 画面の大きさが変更（正確には高さが）された時に各値を再定義します
+	/// </summary>
+	void reDefRad() {
+		//通常時の画面命中円の半径
+		radius = shootRadius / hitScrHeight * Screen.height;
+		//エイム時の画面命中円半径
+		aimIngRadius = shootRadius / aimIngHitScrHeight * Screen.height;
 		
+		//再記憶
+		scrHeightRem = Screen.height;
 	}
 }
