@@ -792,7 +792,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh11654
+  m_Name: pb_Mesh12348
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1179,9 +1179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootFrom: {fileID: 205644667}
-  aimCapDistance: 0
   aimMomentryForcusDegree: 0.2
-  cam: {fileID: 1546292394}
   bulletPrefab: {fileID: 1553966638100084, guid: 32f2e3c8deef14a12b2a4ceb1e6d82fb,
     type: 2}
   recoilMan: {fileID: 0}
@@ -1333,11 +1331,6 @@ Transform:
   m_Father: {fileID: 45336992}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &154159632 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4692775941785688, guid: 631721cc3399d4051af6decd5e3a1793,
-    type: 2}
-  m_PrefabInternal: {fileID: 1061885690}
 --- !u!1 &166606142
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,6 +2748,13 @@ MonoBehaviour:
   shootFrom: {fileID: 1276180307}
   shootWide: 3
   shootRange: 10
+  _burstTime: 0
+  _reloadTime: 0
+  _reloadRate: 0
+  _maxAmmo: 0
+  ignoreMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &429935727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3800,55 +3800,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1380078543160560, guid: 631721cc3399d4051af6decd5e3a1793,
     type: 2}
   m_PrefabInternal: {fileID: 1061885690}
---- !u!114 &601229977
+--- !u!114 &601229977 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601229976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114254464389920568, guid: 631721cc3399d4051af6decd5e3a1793,
+    type: 2}
+  m_PrefabInternal: {fileID: 1061885690}
   m_Script: {fileID: 11500000, guid: 8c1a83c7daa29498b9c3d680f48a929f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &601229978
+--- !u!114 &601229978 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601229976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114752789517836516, guid: 631721cc3399d4051af6decd5e3a1793,
+    type: 2}
+  m_PrefabInternal: {fileID: 1061885690}
   m_Script: {fileID: 11500000, guid: ca906cf6863a64f5496e03082e1c462e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &601229979
+--- !u!114 &601229980 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601229976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a7adf0d79d96439cbc5c789f0fb0858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimObj: {fileID: 1975873188}
-  cam: {fileID: 154159632}
-  shootFrom: {fileID: 0}
-  aimCapDistance: 4.5
---- !u!114 &601229980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601229976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114277501482841730, guid: 631721cc3399d4051af6decd5e3a1793,
+    type: 2}
+  m_PrefabInternal: {fileID: 1061885690}
   m_Script: {fileID: 11500000, guid: 146cdeac037b8435e9f6e6193b412656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hand: {fileID: 2121339331}
 --- !u!1 &625970675
 GameObject:
   m_ObjectHideFlags: 0
@@ -5934,9 +5903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootFrom: {fileID: 741174076}
-  aimCapDistance: 0
   aimMomentryForcusDegree: 0.2
-  cam: {fileID: 1546292394}
   bulletPrefab: {fileID: 1661285401720426, guid: 23e293e3e798b478787fddf5b6366d88,
     type: 2}
   recoilMan: {fileID: 0}
@@ -7536,48 +7503,10 @@ Prefab:
       propertyPath: aimCursor
       value: 
       objectReference: {fileID: 918361538}
-    - target: {fileID: 114742555975388946, guid: 631721cc3399d4051af6decd5e3a1793,
+    - target: {fileID: 135697987604130510, guid: 631721cc3399d4051af6decd5e3a1793,
         type: 2}
-      propertyPath: shootWide
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114891123856624442, guid: 631721cc3399d4051af6decd5e3a1793,
-        type: 2}
-      propertyPath: forcusSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 135029762610161296, guid: 631721cc3399d4051af6decd5e3a1793,
-        type: 2}
-      propertyPath: m_Radius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114349487505946236, guid: 631721cc3399d4051af6decd5e3a1793,
-        type: 2}
-      propertyPath: abilities
-      value: 
-      objectReference: {fileID: 601229977}
-    - target: {fileID: 114100998960174284, guid: 631721cc3399d4051af6decd5e3a1793,
-        type: 2}
-      propertyPath: SPEED
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 1380078543160560, guid: 631721cc3399d4051af6decd5e3a1793, type: 2}
-      propertyPath: m_IsActive
+      propertyPath: m_IsTrigger
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742555975388946, guid: 631721cc3399d4051af6decd5e3a1793,
-        type: 2}
-      propertyPath: weapon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1806037619968950, guid: 631721cc3399d4051af6decd5e3a1793, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114742555975388946, guid: 631721cc3399d4051af6decd5e3a1793,
-        type: 2}
-      propertyPath: shootFrom
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 631721cc3399d4051af6decd5e3a1793, type: 2}
@@ -9412,6 +9341,13 @@ MonoBehaviour:
   shootFrom: {fileID: 112661697}
   shootWide: 3
   shootRange: 10
+  _burstTime: 0.1
+  _reloadTime: 1
+  _reloadRate: 1
+  _maxAmmo: 5
+  ignoreMask:
+    serializedVersion: 2
+    m_Bits: 4
 --- !u!114 &1214714201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13732,9 +13668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootFrom: {fileID: 741174076}
-  aimCapDistance: 0
   aimMomentryForcusDegree: 0.2
-  cam: {fileID: 1546292394}
   bulletPrefab: {fileID: 1661285401720426, guid: 23e293e3e798b478787fddf5b6366d88,
     type: 2}
   recoilMan: {fileID: 0}
@@ -22510,12 +22444,6 @@ Transform:
   m_Father: {fileID: 1195524179}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1975873188 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114071385272456286, guid: 631721cc3399d4051af6decd5e3a1793,
-    type: 2}
-  m_PrefabInternal: {fileID: 1061885690}
-  m_Script: {fileID: 11500000, guid: 76e8eb08d3cd949749599c50d7704e98, type: 3}
 --- !u!1 &1979708721
 GameObject:
   m_ObjectHideFlags: 0
@@ -22994,11 +22922,6 @@ Transform:
   m_Father: {fileID: 1549379957}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2121339331 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1355001151038908, guid: 631721cc3399d4051af6decd5e3a1793,
-    type: 2}
-  m_PrefabInternal: {fileID: 1061885690}
 --- !u!1 &2126486975
 GameObject:
   m_ObjectHideFlags: 0

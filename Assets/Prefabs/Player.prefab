@@ -86,6 +86,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1104795075975848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4374593644761694}
+  - component: {fileID: 135697987604130510}
+  - component: {fileID: 114305804755176300}
+  m_Layer: 2
+  m_Name: SoundSphere
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1105064466086772
 GameObject:
   m_ObjectHideFlags: 1
@@ -556,7 +573,6 @@ GameObject:
   - component: {fileID: 4528818197632792}
   - component: {fileID: 95032216712663672}
   - component: {fileID: 143311784793556826}
-  - component: {fileID: 135029762610161296}
   - component: {fileID: 114827308815617962}
   - component: {fileID: 114458280611020860}
   - component: {fileID: 114742555975388946}
@@ -564,7 +580,10 @@ GameObject:
   - component: {fileID: 114112051570969520}
   - component: {fileID: 114537580433145516}
   - component: {fileID: 114891123856624442}
-  - component: {fileID: 114402573692050418}
+  - component: {fileID: 114254464389920568}
+  - component: {fileID: 114752789517836516}
+  - component: {fileID: 114558847537115824}
+  - component: {fileID: 114277501482841730}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -981,7 +1000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1849777735417320
 GameObject:
   m_ObjectHideFlags: 1
@@ -1473,6 +1492,19 @@ Transform:
   m_Father: {fileID: 4472272998965008}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4374593644761694
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104795075975848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4528818197632792}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4379249157683524
 Transform:
   m_ObjectHideFlags: 1
@@ -1654,6 +1686,7 @@ Transform:
   - {fileID: 4720007467364134}
   - {fileID: 4439315323127478}
   - {fileID: 4692775941785688}
+  - {fileID: 4374593644761694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2465,8 +2498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46523c315798b463da2a709bb8901b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sneakSpeedRedRate: 0.8
-  aimingSpeedRedRate: 0.8
+  SPEED: 250
 --- !u!114 &114112051570969520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2480,6 +2512,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95032216712663672}
   cam: {fileID: 20248057244665378}
+  attack: {fileID: 0}
+--- !u!114 &114254464389920568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1380078543160560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1a83c7daa29498b9c3d680f48a929f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114277501482841730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1380078543160560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146cdeac037b8435e9f6e6193b412656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 1355001151038908}
+--- !u!114 &114305804755176300
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104795075975848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67431a7f77c8456694ed6eeb486fb4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1380078543160560}
+  sneakMag: 0.5
 --- !u!114 &114349487505946236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2491,24 +2560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb06ff3295f244818a242fa78253cd37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recoilControll: 1000
   recoilMouseSensability: 50
   stateMan: {fileID: 114458280611020860}
   cam: {fileID: 1287576336408190}
---- !u!114 &114402573692050418
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1380078543160560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a67431a7f77c8456694ed6eeb486fb4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  normalStaySoundRange: 3
-  normalMoveSoundMag: 2
-  sneakMag: 0.8
+  abilities: {fileID: 114254464389920568}
 --- !u!114 &114435862380677048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2568,10 +2623,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimCursor: {fileID: 0}
-  shootWp: {fileID: 1806037619968950}
-  meleeWp: {fileID: 1363903416647534}
-  shootAim: {fileID: 4866733986575200}
-  meleeAim: {fileID: 4670070076163256}
+--- !u!114 &114558847537115824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1380078543160560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7adf0d79d96439cbc5c789f0fb0858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimObj: {fileID: 114071385272456286}
+  cam: {fileID: 4692775941785688}
+  shootFrom: {fileID: 0}
+  aimCapDistance: 4.5
 --- !u!114 &114742555975388946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2583,18 +2649,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc5dcac16126342f4857fb940697be8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootFrom: {fileID: 4866733986575200}
-  shootWide: 1
-  shootRange: 50
+  shootFrom: {fileID: 0}
   aimCapDistance: 4.7
-  recoil: 100
   aimMomentryForcusDegree: 0.2
-  burstSeconds: 0.1
   cam: {fileID: 20248057244665378}
   bulletPrefab: {fileID: 1553966638100084, guid: 32f2e3c8deef14a12b2a4ceb1e6d82fb,
     type: 2}
   recoilMan: {fileID: 114349487505946236}
-  aimObj: {fileID: 114071385272456286}
+--- !u!114 &114752789517836516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1380078543160560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca906cf6863a64f5496e03082e1c462e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114827308815617962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2674,7 +2746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6702aff95a642deb09a995bfe3d1d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcusSpeed: 0.5
 --- !u!124 &124388452837077060
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2682,17 +2753,17 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287576336408190}
   m_Enabled: 1
---- !u!135 &135029762610161296
+--- !u!135 &135697987604130510
 SphereCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1380078543160560}
+  m_GameObject: {fileID: 1104795075975848}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137495328003020454
 SkinnedMeshRenderer:

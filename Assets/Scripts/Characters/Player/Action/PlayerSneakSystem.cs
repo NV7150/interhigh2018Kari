@@ -6,6 +6,11 @@ using UnityEngine;
 namespace Characters.Player {
     public class PlayerSneakSystem : MonoBehaviour {
         /// <summary>
+        /// プレイヤーのGameObject
+        /// </summary>
+        public GameObject player;
+        
+        /// <summary>
         /// 音が出ている範囲を示すSphereCollider
         /// </summary>
         private SphereCollider soundCol;
@@ -18,7 +23,7 @@ namespace Characters.Player {
         /// <summary>
         /// スニークマネージャ
         /// </summary>
-        private PlayerStateManager _stateMan;
+        private PlayerStateManager stateMan;
         
         /// <summary>
         /// 能力値
@@ -26,10 +31,9 @@ namespace Characters.Player {
         private PlayerAbilities abilities;
 
         private void Awake() {
-            abilities = GetComponent<PlayerAbilities>();
             soundCol = GetComponent<SphereCollider>();
-            _stateMan = GetComponent<PlayerStateManager>();
-
+            abilities = player.GetComponent<PlayerAbilities>();
+            stateMan = player.GetComponent<PlayerStateManager>();
         }
 
         // Use this for initialization
@@ -44,12 +48,12 @@ namespace Characters.Player {
             if (Input.GetButton("Sneak")) {
                 //隠密状態にする
                 radius *= sneakMag;
-                _stateMan.IsSneaking = true;
+                stateMan.IsSneaking = true;
             } else {
-                _stateMan.IsSneaking = false;
+                stateMan.IsSneaking = false;
             }
 
-            if (_stateMan.IsMoving) {
+            if (stateMan.IsMoving) {
                 radius *= 1.5f;
             }
 

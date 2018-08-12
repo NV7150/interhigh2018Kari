@@ -58,7 +58,6 @@ namespace Characters.Player {
 		    //一度装備解除
 		    disarm();
 		    
-		    Debug.Log("equiped");
 		    currentWeapon = weapon;
 		    
 		    registerWeapon(weapon);
