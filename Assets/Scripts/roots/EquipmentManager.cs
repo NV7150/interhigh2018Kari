@@ -17,9 +17,14 @@ public abstract class EquipmentManager : MonoBehaviour {
 	private Weapon currentWeapon;
 	
 	/// <summary>
-	/// 現在装備中の武器がShootWeaponであったらキャッシュ済みのその武器が入る
+	/// 現在装備中の武器がShootWeaponであったらその武器が入る
 	/// </summary>
 	private ShootWeapon currentShootWeapon;
+	
+	/// <summary>
+	/// 現在装備中の武器がMeleeWeaponだったらその武器が入る
+	/// </summary>
+	private MeleeWeapon currentMeleeWeapon;
 	
 	/// <summary>
 	/// 生成済みオブジェクトのプール
@@ -43,7 +48,16 @@ public abstract class EquipmentManager : MonoBehaviour {
 		}
 	}
 
+	public MeleeWeapon CurrentMeleeWeapon {
+		get {
+			var meleeWeapon = (CurrentWeaponType == WeaponType.MELEE) ? currentMeleeWeapon : null;
+			return meleeWeapon;
+		}
+	}
+
 	protected abstract WeaponSwitcher Switcher { get; }
+	protected abstract MeleeSystem MeleeSys { get; }
+	protected abstract string EnemyTag { get; }
 	
 	protected virtual void Awake() {
 		anim = GetComponent<Animator>();
@@ -53,7 +67,7 @@ public abstract class EquipmentManager : MonoBehaviour {
 	/// 該当武器を装備します
 	/// </summary>
 	/// <param name="weapon">装備したい武器</param>
-	public void equip(Weapon weapon) {
+	public virtual void equip(Weapon weapon) {
 		//一度装備解除
 		disarm();
 		
@@ -68,8 +82,12 @@ public abstract class EquipmentManager : MonoBehaviour {
 			//諸々の設定
 			Switcher.switchShoot(properties.aimTransform,properties.shootFrom);
 		} else {
-			//ここに近接武器の処理を記入
-			Switcher.switchMelee();
+			currentMeleeWeapon = (MeleeWeapon) weapon;
+			var obj = weapon.WeaponObj.GetComponent<MeleeWeaponObject>();
+			obj.animator = anim;
+			obj.Enemytag = EnemyTag;
+			obj.MeleeSys = MeleeSys;
+ 			Switcher.switchMelee();
 		}
 		
 		//アニメータを編集
@@ -111,7 +129,6 @@ public abstract class EquipmentManager : MonoBehaviour {
 	/// <param name="uniqueId">active化したい武器のユニークID</param>
 	void activateObject(int uniqueId) {
 		createdObjects[uniqueId].SetActive(true);
-		
 	}
 	
 	/// <summary>

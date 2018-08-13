@@ -7,11 +7,13 @@ public class EnemyEquipmentSwitcher : MonoBehaviour, WeaponSwitcher  {
     private Animator anim;
 
     private EnemyShootAttackSystem shootSys;
+    private EnemyMeleeSystem meleeSys;
     private AimIK ik;
 
     private void Awake() {
         anim = GetComponent<Animator>();
         shootSys = GetComponent<EnemyShootAttackSystem>();
+        meleeSys = GetComponent<EnemyMeleeSystem>();
         ik = GetComponent<AimIK>();
     }
 
@@ -25,6 +27,7 @@ public class EnemyEquipmentSwitcher : MonoBehaviour, WeaponSwitcher  {
         //スクリプトの設定
         shootSys.enabled = true;
         shootSys.shootFrom = shootFrom;
+        meleeSys.enabled = false;
         
         //アニメータのレイヤのweight設定
         anim.SetLayerWeight(2, 0);

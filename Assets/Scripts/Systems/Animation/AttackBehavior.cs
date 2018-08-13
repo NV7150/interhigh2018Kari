@@ -5,9 +5,9 @@ using UnityEngine;
 public class AttackBehavior : StateMachineBehaviour {
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-	//override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	//
-	//}
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+		animator.SetBool("Attacking",true);
+	}
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	//override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -16,7 +16,8 @@ public class AttackBehavior : StateMachineBehaviour {
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-		animator.SetBool("Attack",false);
+		animator.SetBool("Attacking",false);
+		animator.speed = 1.0f;
 	}
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

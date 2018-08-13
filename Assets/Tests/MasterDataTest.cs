@@ -9,7 +9,7 @@ public class MasterDataTest : MonoBehaviour {
 	
 	// Use this for initialization
 	void Awake () {
-		Weapon weapon = ShootWeaponMasterManager.INSTANCE.creatWeapon(0);
+		Weapon weapon = MeleeWeaponMasterManager.INSTANCE.creatWeapon(0);
 		equipMan.equip(weapon);
 	}
 

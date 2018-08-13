@@ -42,6 +42,8 @@ public abstract class Ability : MonoBehaviour {
 	
 	/// <summary>
 	/// 近接攻撃力
+	/// 単位は割合(1~2.5)
+	/// 計算式：0.05 * strength + 1f
 	/// </summary>
 	private float meleeAttack;
 	
@@ -232,7 +234,7 @@ public abstract class Ability : MonoBehaviour {
 	protected virtual void defStrParam() {
 		reloadRate = -0.01f * strength + 1.00f;
 		recoilControll = 80 * strength + 1000f;
-		//ここに近接攻撃力の計算式
+		meleeAttack = 0.05f * strength + 1f;
 	}
 	
 	/// <summary>

@@ -6,14 +6,24 @@ public class EnemyEquipmentManager : EquipmentManager {
     private bool isBuilderSet;
     
     private WeaponSwitcher switcher;
+    private MeleeSystem meleeSys;
 
     protected override WeaponSwitcher Switcher {
         get { return switcher; }
     }
 
+    protected override MeleeSystem MeleeSys {
+        get { return meleeSys; }
+    }
+
+    protected override string EnemyTag {
+        get { return "Player"; }
+    }
+
     protected override void Awake() {
         base.Awake();
         switcher = GetComponent<EnemyEquipmentSwitcher>();
+        meleeSys = GetComponent<EnemyMeleeSystem>();
     }
     
     /// <summary>
