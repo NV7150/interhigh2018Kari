@@ -7,7 +7,7 @@ namespace Characters.Player {
 	/// <summary>
 	/// 近接武器と射撃武器の切り替えを行います
 	/// </summary>
-    public class PlayerEquipmentSwitcher : MonoBehaviour {
+    public class PlayerEquipmentSwitcher : MonoBehaviour,WeaponSwitcher {
 	    /// <summary>
 	    /// エイムカーソルのオブジェクト
 	    /// </summary>
@@ -94,5 +94,7 @@ namespace Characters.Player {
 		    //射撃フラグの解消
 		    stateMan.IsShooting = false;
 	    }
+		
+		
     }
 }

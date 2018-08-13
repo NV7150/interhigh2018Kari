@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Characters.Player;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -17,28 +18,36 @@ namespace Characters.Enemy {
         /// </summary>
         private EnemyMotionSystem enemyMotion;
 
+        private EnemyAbilities abilities;
+        
+
         /// <summary>
         /// 視界の距離
         /// </summary>
         public float seeRange = 1000;
         
         /// <summary>
-        /// 隠密判定を行う間隔
-        /// 単位は秒
-        /// </summary>
-        public float judgeInterval = 2.0f;
-        
-        /// <summary>
         /// 隠密判定を続けるかのフラグ
         /// </summary>
         private bool isInJudge = false;
-
+        
+        /// <summary>
+        /// 隠密判定のコルーチンが出てるかのフラグ
+        /// </summary>
         private bool isCoroutineStarted = false;
-
+        
+        /// <summary>
+        /// 発見したプレイヤー
+        /// </summary>
         private Transform foundPlayer;
         
+        /// <summary>
+        /// プレイヤーのAGI値
+        /// </summary>
+        private float playerAgi;
+        
         // Use this for initialization
-        void Start() {
+        void Awake() {
             stateMan = GetComponent<EnemyStateManager>();
             enemyMotion = GetComponent<EnemyMotionSystem>();
         }
@@ -58,12 +67,14 @@ namespace Characters.Enemy {
             //プレイヤーを感知したら
             if (other.CompareTag("Player")) {
                 foundPlayer = other.transform;
+                
                 //プレイヤーを視認していれば無条件で発見
                 if (isEnemySeeingPlayer(foundPlayer)) {
                     notified(foundPlayer);
                 } else {
                     //それ以外なら隠密判定（コルーチン）を開始
                     StartCoroutine(judgeNotifyCoroutine(foundPlayer));
+                    playerAgi = foundPlayer.GetComponent<PlayerAbilities>().Agility;
                 }
             }
         }
@@ -124,7 +135,7 @@ namespace Characters.Enemy {
                     notified(player);
                     break;
                 }
-                yield return new WaitForSeconds(judgeInterval);
+                yield return new WaitForSeconds(abilities.JudgeSec);
             }
 
             isCoroutineStarted = false;
@@ -135,9 +146,12 @@ namespace Characters.Enemy {
         /// </summary>
         /// <returns>エネミーが勝利したらtrue</returns>
         private bool judgeNotify() {
-            //仮（10%）
-            int rand = UnityEngine.Random.Range(0,10);
-            return rand == 0;
+            /*
+             隠密判定の計算式（%）
+             50 + (enemyAgi - playerAgi)
+            */
+            var notifyRate = 50 + (abilities.Agility - playerAgi);
+            return (UnityEngine.Random.Range(0, 100) + 1) < notifyRate;
         }
     }
 }

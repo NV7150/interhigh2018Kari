@@ -4,34 +4,31 @@ using UnityEngine;
 
 namespace Characters.Enemy {
     public class EnemyHelth : MonoBehaviour {
-        //仮設定
-        public float recoveryRate;
-        public float recoverySpeed;
-
         /// <summary>
         /// 残りHP
         /// </summary>
-        private float hp;
+        private float hp = 1.0f;
         
         /// <summary>
         /// 自然回復が発生するまでの時間を計測するタイマー
         /// </summary>
         private float recoveryTimer;
 
+        
         private EnemyStateManager stateMan;
+        private EnemyAbilities abilities;
+        
 
         private void Awake() {
             stateMan = GetComponent<EnemyStateManager>();
+            abilities = GetComponent<EnemyAbilities>();
         }
-
-        private void Start() {
-            hp = 1.0f;
-        }
-
+        
         // Update is called once per frame
         void Update () {
             if(stateMan.State != EnemyState.DEAD)
                 autoHeal();
+            Debug.Log("HP : " + hp);
         }
         
         /// <summary>
@@ -39,14 +36,14 @@ namespace Characters.Enemy {
         /// </summary>
         /// <param name="damage">ダメージ</param>
         public void damage(float damage) {
-            hp -= damage;
+            hp -= damage * abilities.Protect;
             if (hp <= 0) {
                 dead();
                 hp = 0;
             }
             
             //自然回復までの残り時間を設定
-            recoveryTimer = recoverySpeed;
+            recoveryTimer = abilities.RecoveryStart;
         }
         
         /// <summary>
@@ -65,7 +62,7 @@ namespace Characters.Enemy {
         void autoHeal() {
             if (recoveryTimer < 0) {
                 //自然回復
-                hp += recoveryRate * Time.deltaTime;
+                hp += abilities.RecoveryRate * Time.deltaTime;
                 hp = (hp < 1.0f) ? hp : 1.0f;
             } else {
                 //自然回復までの残り時間を減らす

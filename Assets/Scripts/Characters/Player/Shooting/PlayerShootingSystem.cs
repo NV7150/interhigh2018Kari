@@ -25,7 +25,7 @@ namespace Characters.Player {
 
 		private AimForcusSystem aimForcusSys;
 
-		private PlayerEquipmentManager equipMan;
+		private EquipmentManager equipMan;
 
 
 		/// <summary>
@@ -78,7 +78,7 @@ namespace Characters.Player {
 			abilities = GetComponent<PlayerAbilities>();
 			stateMan = GetComponent<PlayerStateManager>();
 			aimForcusSys = GetComponent<AimForcusSystem>();
-			equipMan = GetComponent<PlayerEquipmentManager>();
+			equipMan = GetComponent<EquipmentManager>();
 
 			ignoreMask = ~ignoreMask;
 		}

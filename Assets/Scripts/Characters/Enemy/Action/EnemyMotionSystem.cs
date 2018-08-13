@@ -8,6 +8,19 @@ using UnityEngine.UI;
 namespace Characters.Enemy {
     public class EnemyMotionSystem : MonoBehaviour {
         /// <summary>
+        /// 未発見最終接近距離
+        /// プレイヤーを見失った場合、最後にプレイヤーを見失った地点にこの値の分だけ近づこうとします
+        /// </summary>
+        public float searchNear = 0.15f;
+        
+        /// <summary>
+        /// 視覚によって追う最大範囲
+        /// この長さのRayがプレイヤーに命中すれば追います
+        /// </summary>
+        public float searchRange = 100;
+        
+        
+        /// <summary>
         /// ステートマネージャ
         /// </summary>
         private EnemyStateManager stateMan;
@@ -22,33 +35,24 @@ namespace Characters.Enemy {
         /// </summary>
         private Animator anim;
 
-        /// <summary>
-        /// 武器の射程
-        /// 距離がこの値になるまでプレイヤーに近づこうとします
-        /// </summary>
-        public float weaponRange;
+        private EnemyAbilities abilities;
 
-        /// <summary>
-        /// 未発見最終接近距離
-        /// プレイヤーを見失った場合、最後にプレイヤーを見失った地点にこの値の分だけ近づこうとします
-        /// </summary>
-        public float searchNear = 0.15f;
-        
-        /// <summary>
-        /// 視覚によって追う最大範囲
-        /// この長さのRayがプレイヤーに命中すれば追います
-        /// </summary>
-        public float searchRange = 100;
+        private EnemyEquipmentManager equipMan;
 
-        public float rotateSpeed = 100f;
         
-        private void Start() {
+        private void Awake() {
             stateMan = GetComponent<EnemyStateManager>();
             nav = GetComponent<NavMeshAgent>();
             anim = GetComponent<Animator>();
+            equipMan = GetComponent<EnemyEquipmentManager>();
+            abilities = GetComponent<EnemyAbilities>();
             
             //ナビゲーションだと動かない限りローテーションが更新されないのでナビゲーションのローテーションは切る
             nav.updateRotation = false;
+        }
+
+        private void Start() {
+            nav.speed = abilities.WalkSpeed;
         }
 
         private void Update() {
@@ -63,16 +67,10 @@ namespace Characters.Enemy {
                         foundFunc();
                         break;
             }
-             
-            float speed = nav.desiredVelocity.magnitude;
-            anim.SetFloat("speed",speed,0.1f,Time.deltaTime);
+
+            animate();
+            lookPlayer();
             
-            //プレイヤーの方を向く
-            if(stateMan.State == EnemyState.FOUND || stateMan.State == EnemyState.ATTACKING) {
-                var relativeVector = stateMan.Player.position - transform.position;
-                var plAngle = Quaternion.LookRotation(relativeVector);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation,plAngle,rotateSpeed);
-            }
         }
 
         private void findingFunc() {
@@ -83,7 +81,7 @@ namespace Characters.Enemy {
         /// プレイヤーを発見した時の処理
         /// プレイヤーを可能な限り追います
         /// </summary>
-        /// <exception cref="Exception"></exception>
+        /// <exception cref="Exception">プレイヤーが設定されていない時</exception>
         private void foundFunc() {
             //プレイヤーが発見されていない時の例外
             if (stateMan.Player == null)
@@ -102,7 +100,7 @@ namespace Characters.Enemy {
                 if (Physics.Raycast(ray, out hit, searchRange)) {
                     if (hit.collider.CompareTag("Player")) {
                         //プレイヤーが視界内にいるなら武器射程までで止まる
-                        nav.stoppingDistance = weaponRange;
+                        nav.stoppingDistance = equipMan.getWeaponRange(searchNear);
                         //目標地点を決定
                         nav.destination = stateMan.Player.transform.position;
                         foundPlayer = true;
@@ -111,12 +109,12 @@ namespace Characters.Enemy {
                     //攻撃中でないなら
                     if (stateMan.State != EnemyState.ATTACKING) {
                         //射程内に入った時点で攻撃中にステート変更
-                        if (nav.remainingDistance <= weaponRange) {
+                        if (nav.remainingDistance <= equipMan.getWeaponRange(searchNear)) {
                             stateMan.State = EnemyState.ATTACKING;
                         }
                     } else {
                         //攻撃中なら、射程外に行くと攻撃中ステートを解除
-                        if (nav.remainingDistance >= weaponRange) {
+                        if (nav.remainingDistance >= equipMan.getWeaponRange(searchNear)) {
                             stateMan.State = EnemyState.FOUND;
                         }
                     }
@@ -125,7 +123,7 @@ namespace Characters.Enemy {
                 //プレイヤーが見つからなかったら
                 if (!foundPlayer) {
                     if (nav.remainingDistance >= 0.15f) {
-                        if (nav.stoppingDistance >= weaponRange)
+                        if (nav.stoppingDistance >= equipMan.getWeaponRange(searchNear))
                             //まだ最後に見かけた地点まで到達しておらず、stopDistanceが再設定されていなかったら0.15fまで
                             //射程を踏み越えて見かけた地点まで行く
                             nav.stoppingDistance = searchNear;
@@ -136,6 +134,27 @@ namespace Characters.Enemy {
                 }
 
                 
+            }
+        }
+        
+        /// <summary>
+        /// 敵をアニメーションさせます
+        /// </summary>
+        void animate() {
+            //スピード値をアニメータに設定
+            float speed = nav.desiredVelocity.magnitude;
+            anim.SetFloat("speed",speed,0.1f,Time.deltaTime);
+        }
+        
+        /// <summary>
+        /// プレイヤーの方を向きます
+        /// </summary>
+        void lookPlayer() {
+            //プレイヤーの方を向く
+            if(stateMan.State == EnemyState.FOUND || stateMan.State == EnemyState.ATTACKING) {
+                var relativeVector = stateMan.Player.position - transform.position;
+                var plAngle = Quaternion.LookRotation(relativeVector);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation,plAngle,abilities.RotateSpeed);
             }
         }
         

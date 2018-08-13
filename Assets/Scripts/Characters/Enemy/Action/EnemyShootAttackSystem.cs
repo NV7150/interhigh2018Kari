@@ -5,19 +5,6 @@ using RootMotion.FinalIK;
 using UnityEngine;
 
 public class EnemyShootAttackSystem : ShootingSystem{
-	/// <summary>
-	/// エイムする速さ
-	/// </summary>
-	private readonly float AIMING_SPEED = 10.0f;
-	
-	//仮設定
-	public float shootWide;
-	public float shootRange;
-	public float _burstTime;
-	public float _reloadTime;
-	public float _reloadRate;
-	public int _maxAmmo;
-	
 	
 	/// <summary>
 	/// ステートマネージャ
@@ -28,6 +15,9 @@ public class EnemyShootAttackSystem : ShootingSystem{
 	/// AimIkのコンポーネント
 	/// </summary>
 	private AimIK aimIk;
+
+	private EnemyAbilities abilities;
+	private EnemyEquipmentManager equipMan;
 	
 	
 	/// <summary>
@@ -39,27 +29,27 @@ public class EnemyShootAttackSystem : ShootingSystem{
 	
 
 	public override float ShootWide {
-		get { return shootWide; }
+		get { return abilities.ShootWide; }
 	}
 	
 	public override float ShootRange {
-		get { return shootRange; }
+		get { return equipMan.CurrentShootWeapon.Range; }
 	}
 
 	protected override float BurstTime {
-		get { return _burstTime; }
+		get { return equipMan.CurrentShootWeapon.FireSec; }
 	}
 
 	protected override float ReloadTime {
-		get { return _reloadTime; }
+		get { return equipMan.CurrentShootWeapon.ReloadSec; }
 	}
 
 	protected override float ReloadRate {
-		get { return _reloadRate; }
+		get { return abilities.ReloadRate; }
 	}
 
 	protected override int maxAmmo {
-		get { return _maxAmmo; }
+		get { return equipMan.CurrentShootWeapon.Ammo; }
 	}
 
 
@@ -67,6 +57,8 @@ public class EnemyShootAttackSystem : ShootingSystem{
 	void Awake () {
 		stateMan = GetComponent<EnemyStateManager>();
 		aimIk = GetComponent<AimIK>();
+		equipMan = GetComponent<EnemyEquipmentManager>();
+		abilities = GetComponent<EnemyAbilities>();
 		
 		//条件を否定
 		ignoreMask = ~ignoreMask;
@@ -92,7 +84,7 @@ public class EnemyShootAttackSystem : ShootingSystem{
 	/// 見つけてない時のエイム
 	/// </summary>
 	void normalAim() {
-		aimIk.solver.IKPosition = transform.forward * shootRange + shootFrom.position;
+		aimIk.solver.IKPosition = transform.forward * ShootRange + shootFrom.position;
 	}
 	
 	/// <summary>
@@ -104,9 +96,9 @@ public class EnemyShootAttackSystem : ShootingSystem{
 		
 		//プレイヤーによりすぎると下をエイムするのであくまで最大射程の部分を狙う：ただしステージは２次元的じゃないと効果がない
 		aimIk.solver.IKPosition.x +=
-			shootFrom.forward.x * (shootRange - Vector3.Distance(shootFrom.position, stateMan.Player.position));
+			shootFrom.forward.x * (ShootRange - Vector3.Distance(shootFrom.position, stateMan.Player.position));
 		aimIk.solver.IKPosition.z +=
-			shootFrom.forward.z * (shootRange - Vector3.Distance(shootFrom.position, stateMan.Player.position));
+			shootFrom.forward.z * (ShootRange - Vector3.Distance(shootFrom.position, stateMan.Player.position));
 		aimIk.solver.IKPosition.y += 1.5f;
 	}
 
@@ -119,7 +111,7 @@ public class EnemyShootAttackSystem : ShootingSystem{
 		
 		var ray = new Ray(shootFrom.position,vector);
 		RaycastHit hit;
-		if (Physics.Raycast(ray,out hit,shootRange,ignoreMask)) {
+		if (Physics.Raycast(ray,out hit,ShootRange,ignoreMask)) {
 			Debug.DrawLine(shootFrom.position,hit.point,Color.green);
 			if (hit.collider.CompareTag("Player")) {
 				

@@ -70,7 +70,7 @@ public class AimCursor : MonoBehaviour {
 	/// </summary>
 	private PlayerStateManager stateMan;
 
-	private PlayerEquipmentManager equipMan;
+	private EquipmentManager equipMan;
 
 	/// <summary>
 	/// リコイルマネージャ
@@ -91,7 +91,7 @@ public class AimCursor : MonoBehaviour {
 		rect = GetComponent<RectTransform>();
 		stateMan = player.GetComponent<PlayerStateManager>();
 		abilities = player.GetComponent<PlayerAbilities>();
-		equipMan = player.GetComponent<PlayerEquipmentManager>();
+		equipMan = player.GetComponent<EquipmentManager>();
 		plAimer = player.GetComponent<PlayerAimer>();
 		shootSys = player.GetComponent<PlayerShootingSystem>();
 	}

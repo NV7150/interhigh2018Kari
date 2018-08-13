@@ -1,0 +1,2 @@
+ID,Name,Strength,Technic,Agility,Toughness,WeaponType,WeaponID,PrefabName
+0,テスト用ダミー,10,10,10,10,SHOOT,0,EnemyDummy

@@ -476,12 +476,23 @@
         <e p="Scripts" t="Include">
           <e p="Characters" t="Include">
             <e p="Enemy" t="Include">
-              <e p="EnemyHelth.cs" t="Include" />
-              <e p="EnemyMotionSystem.cs" t="Include" />
-              <e p="EnemyNotifySystem.cs" t="Include" />
-              <e p="EnemyShootAttackSystem.cs" t="Include" />
-              <e p="EnemyState.cs" t="Include" />
-              <e p="EnemyStateManager.cs" t="Include" />
+              <e p="Action" t="Include">
+                <e p="EnemyMotionSystem.cs" t="Include" />
+                <e p="EnemyNotifySystem.cs" t="Include" />
+                <e p="EnemyShootAttackSystem.cs" t="Include" />
+              </e>
+              <e p="MasterData" t="Include">
+                <e p="EnemyBuilder.cs" t="Include" />
+                <e p="EnemyMasterDataManager.cs" t="Include" />
+              </e>
+              <e p="Properties" t="Include">
+                <e p="EnemyAbilities.cs" t="Include" />
+                <e p="EnemyEquipmentManager.cs" t="Include" />
+                <e p="EnemyEquipmentSwitcher.cs" t="Include" />
+                <e p="EnemyHelth.cs" t="Include" />
+                <e p="EnemyState.cs" t="Include" />
+                <e p="EnemyStateManager.cs" t="Include" />
+              </e>
             </e>
             <e p="Player" t="Include">
               <e p="Action" t="Include">
@@ -517,9 +528,12 @@
             <e p="WeaponType.cs" t="Include" />
           </e>
           <e p="roots" t="Include">
+            <e p="Ability.cs" t="Include" />
+            <e p="EquipmentManager.cs" t="Include" />
             <e p="MasterDataManager.cs" t="Include" />
             <e p="RecoilManager.cs" t="Include" />
             <e p="ShootingSystem.cs" t="Include" />
+            <e p="WeaponSwitcher.cs" t="Include" />
           </e>
           <e p="Systems" t="Include">
             <e p="Cameras" t="Include">

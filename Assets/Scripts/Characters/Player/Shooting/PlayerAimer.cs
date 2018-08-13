@@ -23,7 +23,7 @@ namespace Characters.Player {
         
         private IKSolverAim ikSol;
 
-        private PlayerEquipmentManager equipmentMan;
+        private EquipmentManager equipmentMan;
         
         
         /// <summary>
@@ -62,7 +62,7 @@ namespace Characters.Player {
         }
 
         private void Awake() {
-            equipmentMan = GetComponent<PlayerEquipmentManager>();
+            equipmentMan = GetComponent<EquipmentManager>();
             ikSol = GetComponent<AimIK>().solver;
         }
 
