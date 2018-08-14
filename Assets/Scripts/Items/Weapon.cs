@@ -27,7 +27,7 @@ public interface Weapon{
     /// <summary>
     /// GameObjectを生成します
     /// </summary>
-    void creatObject(Vector3 handPos);
+    void creatObject();
 }
 
 /// <summary>

@@ -164,10 +164,9 @@ public class ShootWeapon :Weapon {
 		uniqueId = WeaponHelper.NewestId;
 	}
 	
-	public void creatObject(Vector3 handPos) {
+	public void creatObject() {
 		if (weaponObj == null) {
 			weaponObj = MonoBehaviour.Instantiate(weaponPrefab);
-			weaponObj.transform.position += handPos;
 		}
 	}
 	

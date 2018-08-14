@@ -13,7 +13,6 @@ public abstract class MeleeSystem : MonoBehaviour{
 
 	protected virtual void Awake() {
 		animator = GetComponent<Animator>();
-		Debug.Log(animator);
 	}
 
 	/// <summary>

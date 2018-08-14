@@ -68,14 +68,15 @@ public class MeleeWeapon : Weapon {
 	public MeleeWeapon(MeleeWeaponBuilder builder) {
 		uniqueId = WeaponHelper.NewestId;
 		id = builder.Id;
-		damage = builder.Damage;
+		damage = builder.Damage; 
 		name = builder.Name;
 		weaponAnim = builder.WeaponAnim;
 		objPrefab = builder.WeponPrefab;
 	}
 	
-	public void creatObject(Vector3 handPos) {
-		currentObj = MonoBehaviour.Instantiate(objPrefab);
-		currentObj.transform.position += handPos;
+	public void creatObject() {
+		if (currentObj == null) {
+			currentObj = MonoBehaviour.Instantiate(objPrefab);
+		}
 	}
 }

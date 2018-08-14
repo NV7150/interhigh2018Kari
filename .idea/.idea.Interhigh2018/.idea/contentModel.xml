@@ -532,7 +532,7 @@
                 <e p="ShootWeaponMasterManager.cs" t="Include" />
               </e>
               <e p="ShootWeapon.cs" t="Include" />
-              <e p="ShootWeaponProperties.cs" t="Include" />
+              <e p="ShootWeaponObject.cs" t="Include" />
             </e>
             <e p="Weapon.cs" t="Include" />
             <e p="WeaponType.cs" t="Include" />

@@ -7,6 +7,8 @@ public class EnemyEquipmentManager : EquipmentManager {
     
     private WeaponSwitcher switcher;
     private MeleeSystem meleeSys;
+    private Vector3 _meleeWeaponVector;
+    private Vector3 _shootWeaponVector;
 
     protected override WeaponSwitcher Switcher {
         get { return switcher; }

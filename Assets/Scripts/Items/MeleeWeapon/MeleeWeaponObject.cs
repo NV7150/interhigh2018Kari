@@ -5,6 +5,8 @@ using UnityEngine;
 public class MeleeWeaponObject : MonoBehaviour {
 
 	public Animator animator;
+	public Transform tipVector;
+	public Transform grip;
 	
 	/// <summary>
 	/// 武器の持ち主が攻撃中かどうか
@@ -18,13 +20,16 @@ public class MeleeWeaponObject : MonoBehaviour {
 
 	private MeleeSystem meleeSys;
 	
-	
 	public MeleeSystem MeleeSys {
 		set { meleeSys = value; }
 	}
 
 	public string Enemytag {
 		set { enemytag = value; }
+	}
+
+	public Vector3 tipForward {
+		get { return tipVector.forward; }
 	}
 
 	// Update is called once per frame

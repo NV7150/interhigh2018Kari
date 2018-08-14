@@ -57,6 +57,9 @@ public abstract class EquipmentManager : MonoBehaviour {
 
 	protected abstract WeaponSwitcher Switcher { get; }
 	protected abstract MeleeSystem MeleeSys { get; }
+	/// <summary>
+	/// 敵と判断するゲームオブジェクトのタグ
+	/// </summary>
 	protected abstract string EnemyTag { get; }
 	
 	protected virtual void Awake() {
@@ -78,16 +81,26 @@ public abstract class EquipmentManager : MonoBehaviour {
 		
 		if (CurrentWeaponType == WeaponType.SHOOT) {
 			currentShootWeapon = (ShootWeapon) weapon;
-			var properties = weapon.WeaponObj.GetComponent<ShootWeaponProperties>();
-			//諸々の設定
-			Switcher.switchShoot(properties.aimTransform,properties.shootFrom);
+			var obj = weapon.WeaponObj.GetComponent<ShootWeaponObject>();
+			//パラメータの設定
+			Switcher.switchShoot(obj.aimTransform,obj.shootFrom);
+			
+			//位置設定
+			rotateShootWeapon(obj);
+			moveToGrip(obj.gameObject,obj.girp.position);
 		} else {
 			currentMeleeWeapon = (MeleeWeapon) weapon;
 			var obj = weapon.WeaponObj.GetComponent<MeleeWeaponObject>();
+			
+			//パラメータの設定
 			obj.animator = anim;
 			obj.Enemytag = EnemyTag;
 			obj.MeleeSys = MeleeSys;
  			Switcher.switchMelee();
+			
+			//位置設定
+			rotateMeleeWeapon(obj);
+			moveToGrip(obj.gameObject,obj.grip.position);
 		}
 		
 		//アニメータを編集
@@ -113,7 +126,7 @@ public abstract class EquipmentManager : MonoBehaviour {
 		//ユニークIDを元にすでにオブジェクトが生成済みかどうかを検索
 		if (!createdObjects.ContainsKey(weapon.UniqueId)) {
 			//生成してなかったら生成してプールに加える
-			weapon.creatObject(hand.transform.position);
+			weapon.creatObject();
 			var weaponObject = weapon.WeaponObj;
 			//一応activeはfalseに
 			weaponObject.SetActive(false);
@@ -147,5 +160,19 @@ public abstract class EquipmentManager : MonoBehaviour {
 	public bool removeWeapon(int uniqueId) {
 		return createdObjects.Remove(uniqueId);
 	}
+
+	void rotateMeleeWeapon(MeleeWeaponObject meleeWeapon) {
+		meleeWeapon.transform.rotation = Quaternion.FromToRotation(meleeWeapon.tipForward, hand.transform.up);
+	}
+
+	void rotateShootWeapon(ShootWeaponObject shootWeapon) {
+		shootWeapon.transform.rotation = Quaternion.LookRotation(hand.transform.forward,hand.transform.up);
+	}
+
+	void moveToGrip(GameObject weapon,Vector3 gripPos) {
+		var difference = hand.transform.position - gripPos;
+		weapon.transform.position += difference;
+	}
+	
 }
 
